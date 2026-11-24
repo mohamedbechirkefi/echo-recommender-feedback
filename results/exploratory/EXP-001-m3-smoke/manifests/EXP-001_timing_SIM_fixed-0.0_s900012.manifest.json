@@ -1,0 +1,34 @@
+{
+ "config_hash": "b9499a4624421e377f7eadaa0ff978f8840eacec91d30d10092c4686c1d8a4d4",
+ "data_sha256": {
+  "data/fma_calibration_v1.json": "e3c763c27492dd7c7c06bbd73d5cf3a1cba232bf6bed1db80078791b6c208b98",
+  "data/manifest.json": "0db8d76f8dbc693496e7d5e5b35d9034fb98fd913d44ce379a9bb77669e0fae3"
+ },
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T23:36:37.120386Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "04bc3506a563834963b388ad2c9f84c0053ea7ca"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 177635328,
+ "result_path": "runs/EXP-001_timing_SIM_fixed-0.0_s900012.json",
+ "run_id": "EXP-001_timing_SIM_fixed-0.0_s900012",
+ "runtime_s": 5.613662083000236,
+ "seed": 900012,
+ "started_utc": "2026-11-24T23:36:31.506635Z",
+ "status": "ok"
+}
