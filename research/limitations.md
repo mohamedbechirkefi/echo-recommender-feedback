@@ -12,3 +12,12 @@ No results exist yet. This file lists the limitations that are already known fro
 5. **Single session horizon.** T = 100 steps with no return or churn dynamics.
 6. **No human validation.** The project has no user study, and none will be run without an owner-approved protocol and safeguards.
 7. **Toolchain.** No TeX is installed, so `manuscript.tex` is generated but not compile-tested locally.
+
+## Added after the M3 confirmatory runs (2026-11-25)
+
+10. **The EXP-002 contrast is assumption-dependent.** Under the frozen EXP-003 rule the EXP-002 interpretation is withdrawn: at eta 0.05 the bounded-confidence rule makes SIM minus RAND practically equivalent to 0 (estimated profile) or positive (oracle profile), and the sign also changes with eta under the consumed and exposure rules (C-004). Any statement about SIM "narrowing" or "amplifying" drift must name the update rule and rate.
+11. **The direction does not carry over to the real catalogue.** On FMA tracks SIM increases drift relative to RAND (+0.165 rad, C-006), the opposite sign to EXP-002. The catalogue geometry matters at least as much as the policy family.
+12. **Practical size of the EXP-002 effect is unresolved.** The point estimate (-0.0355 rad) is inside the SESOI; the CI reaches -0.0535 rad.
+13. **Drift is large relative to its ceiling.** RAND drift is about 1.11 rad in EXP-002 (pi/2 is about 1.57), so contrasts may be compressed (EXP-002 protocol item 16).
+14. **Holm intervals and ties.** The Holm construction is fixed in DEC-012, pending the owner's ratification. Several bootstrap p-values are exactly 0 (no resample on the other side of 0); ties are ranked by contrast name, which changes only the interval levels, not any rejection.
+15. **Runtime figures from M3 are not clean measurements.** The machine was shared with other sessions (load average up to about 87), so per-run runtimes in the manifests are upper bounds.

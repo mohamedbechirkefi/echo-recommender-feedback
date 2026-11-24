@@ -8,7 +8,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24) | none |
 | M1 | Research and preregistration | M0 | P0 | 0.5 | gate passed (2026-11-24: protocol v1.0 frozen by the owner, `research/freeze.json`); two literature items still open (citation chaining, Vargas and Castells check), carried to M4 | none for M3 |
 | M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | done (2026-11-24; gate checked, see progress.md session 2) | none |
-| M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | not started (unblocked; the coordinator schedules runs) | EXP-004 needs the FMA download and build on the run machine |
+| M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | gate holds (2026-11-25: complete planned matrix, 560/560 confirmatory runs ok, provenance captured); not closed: the four 11.3 experiment reports are not written | experiment reports (file tool refused them in the M3 session; DEC-013) |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
@@ -52,17 +52,17 @@ Target: five focused development days. The schedule is an estimate, never a reas
 - [x] Tests: cosine edge cases, normalisation, candidate exclusion, deterministic updates, zero drift under fixed preferences, hand-computed examples, property tests (hypothesis) and a differential test against a loop reference. 134 passed, 0 failed.
 - [x] CLI commands: smoke, run (refuses confirmatory configs while unfrozen), report, test.
 - [x] Exploratory EXP-001 run: checks V1 to V6 pass; runtime, seed spread and degenerate cases recorded (J-0002).
-- [ ] Holm adjustment for secondary contrasts (moved to M3 analysis).
+- [x] Holm adjustment for secondary contrasts (M3, `src/echo/analysis.py`, DEC-012).
 
 ### M3: Experiments
 
 **Gate:** the planned matrix is complete or its failure is documented; no run is silently dropped.
 
-- [ ] EXP-001 executed and its report written.
-- [ ] EXP-002, EXP-003 and EXP-004 executed after the freeze.
-- [ ] Reports generated as experiments finish (11.6).
-- [ ] All unsuccessful runs and deviations recorded.
-- [ ] Provenance captured at run time.
+- [x] EXP-001 executed (re-run 2026-11-25, J-0004). [ ] Its report written.
+- [x] EXP-002, EXP-003 and EXP-004 executed after the freeze (2026-11-25, revision afc0850; J-0005 to J-0007).
+- [ ] Reports generated as experiments finish (11.6): generated analysis tables and figures exist in `results/EXP-00N/analysis/`; the 11.3 reports are not written.
+- [x] All unsuccessful runs and deviations recorded (0 failed runs; DEC-013).
+- [x] Provenance captured at run time (per-run manifests with data hashes; `results/EXP-00N/provenance.csv`, `SHA256SUMS`).
 
 ### M4: Interpretation
 

@@ -103,3 +103,12 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 - **Choice 3, the oracle versus estimated check (protocol section 7).** "Differs in sign" is reported two ways: point-estimate signs, and both CIs excluding 0 with opposite signs.
 - **Descriptive secondaries:** per-arm seed-level means with 95 % percentile bootstrap CIs for all ten metrics, and seed-paired differences versus RAND, labelled descriptive (protocol section 5).
 - **Provenance:** per-run manifests now also record the SHA-256 of `data/manifest.json` and `data/fma_calibration_v1.json` at run time (`manifest.data_provenance`). No simulation, metric or guard code changed; the frozen protocols, configs and data files are untouched and their hashes still match `research/freeze.json`.
+
+## DEC-013 (2026-11-25): M3 execution record; no deviation in the confirmatory runs
+
+- **Decider:** the AI, under the M3 brief, following the frozen protocol; nothing was decided after seeing confirmatory output.
+- **Before the runs:** all frozen hashes (5 protocols, 4 configs, 2 data files, raw and processed FMA) matched the files on disk; FMA data were present, so no rebuild was needed. `uv sync --frozen --all-groups --all-extras` and pytest (174 passed) at 04bc350. Exploratory smoke (J-0004): EXP-001 re-run byte-identical to M2 and an FMA-path smoke at smoke size, both V1 to V6 pass. The FMA-path smoke is an M3 addition, exploratory, disclosed.
+- **Runs:** EXP-002 (100), EXP-003 (360) and EXP-004 (100) at revision afc0850 with clean code, through the run guard, frozen configs and seeds only, 2 worker processes under `nice`. 560 of 560 runs ok, 0 failed, 0 retried. Wall-clock 2026-11-24T23:39:23Z to 23:52:09Z UTC (12 min 46 s).
+- **Analysis:** `src/echo/analysis.py` as committed before the runs (DEC-012); no change to protocols, configs, seeds, exclusion rules or analysis code after output existed.
+- **Deviation from the brief, not from the protocol:** the experiment reports `research/experiments/EXP-00N/report.md` (11.6) were not written, because the session's file tool refused to write them and the coordinator instructed not to work around the refusal. The generated `results/EXP-00N/analysis/analysis.md` tables and figures exist; the 11.3 reports remain to be written in a session that may write them.
+- **Owner items:** ratify DEC-012 (Holm construction; two equivalence readings, which agreed in every verdict); note the results that contradict the EXP-002 direction (C-004, C-006).
