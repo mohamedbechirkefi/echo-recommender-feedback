@@ -1,0 +1,30 @@
+{
+ "config_hash": "a285a9526d26f6ce6df3c4c3f1d9f3e0714238b37e3d18c51632699dbc2eb890",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T16:12:25.140297Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "b2e97382d8e641c1a4404bee8392204f8da7854e"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 189202432,
+ "result_path": "runs/EXP-001_sensitivity_screen_exposure_0.2_estimated_RAND_s900012.json",
+ "run_id": "EXP-001_sensitivity_screen_exposure_0.2_estimated_RAND_s900012",
+ "runtime_s": 1.1137372499997582,
+ "seed": 900012,
+ "started_utc": "2026-11-24T16:12:24.026557Z",
+ "status": "ok"
+}

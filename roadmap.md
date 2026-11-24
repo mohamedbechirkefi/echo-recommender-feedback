@@ -6,8 +6,8 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | ID | Milestone | Depends on | Priority | Effort | Status | Blockers |
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24) | none |
-| M1 | Research and preregistration | M0 | P0 | 0.5 | in progress (drafts written) | owner freeze (G-FREEZE); owner choices DEC-002 and DEC-005 |
-| M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | not started | none |
+| M1 | Research and preregistration | M0 | P0 | 0.5 | in progress (drafts written) | owner freeze (G-FREEZE); owner choices DEC-002, DEC-005 and DEC-006 |
+| M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | done (2026-11-24; gate checked, see progress.md session 2) | none |
 | M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | not started | owner freeze |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | not started | none |
@@ -37,19 +37,21 @@ Target: five focused development days. The schedule is an estimate, never a reas
 - [ ] Citation chaining from kalimeris2021 and carroll2022; `research/paper/references.bib` from verified sources only.
 - [ ] Vargas and Castells metric definitions checked against the full paper.
 - [ ] Fixture manifest.
-- [ ] EXP-001 pilot variance used to confirm the seed count (10 or 30).
+- [x] EXP-001 pilot variance used to confirm the seed count (10 or 30): pilot SD 0.0159 rad, 10 seeds adequate (owner to confirm at freeze).
 - [ ] **Owner freezes** the protocols. The hash and the approval are recorded in the registry and the decision log.
 
 ### M2: Core implementation
 
 **Gate:** correctness before UI polish.
 
-- [ ] RAND baseline implemented first, then POP, SIM, MMR and EXPLORE.
-- [ ] Versioned JSON result schema with validation on export and import (11.6).
-- [ ] Run manifests: runtime, peak memory, OS, CPU, package versions, git revision, config hash.
-- [ ] Report generators built alongside the core (11.6).
-- [ ] Tests: cosine edge cases, normalisation, candidate exclusion, deterministic updates, zero drift under fixed preferences, hand-computed examples, and property tests (hypothesis).
-- [ ] CLI commands: smoke, run, report, test.
+- [x] RAND baseline implemented first, then POP, SIM, MMR and EXPLORE.
+- [x] Versioned JSON result schema with validation on export and import (11.6): `echo.result.v1`.
+- [x] Run manifests: runtime, peak memory (process max RSS; tracemalloc peak with `--trace-memory`), OS, CPU, package versions, git revision, config hash.
+- [x] Report generators built alongside the core (11.6): CSV, Markdown, SVG, PDF via pandoc to Typst.
+- [x] Tests: cosine edge cases, normalisation, candidate exclusion, deterministic updates, zero drift under fixed preferences, hand-computed examples, property tests (hypothesis) and a differential test against a loop reference. 134 passed, 0 failed.
+- [x] CLI commands: smoke, run (refuses confirmatory configs while unfrozen), report, test.
+- [x] Exploratory EXP-001 run: checks V1 to V6 pass; runtime, seed spread and degenerate cases recorded (J-0002).
+- [ ] Holm adjustment for secondary contrasts (moved to M3 analysis).
 
 ### M3: Experiments
 

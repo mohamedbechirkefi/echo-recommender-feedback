@@ -1,0 +1,30 @@
+{
+ "config_hash": "e70ff4ea7cbe1331a0b0a72488373e24a5f0df715ffde5e85f777213f4085030",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T16:10:54.724697Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "b2e97382d8e641c1a4404bee8392204f8da7854e"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 37142528,
+ "result_path": "runs/EXP-001_smoke_MMR_adaptive-0.05_s900000.json",
+ "run_id": "EXP-001_smoke_MMR_adaptive-0.05_s900000",
+ "runtime_s": 0.006975457999942591,
+ "seed": 900000,
+ "started_utc": "2026-11-24T16:10:54.717708Z",
+ "status": "ok"
+}

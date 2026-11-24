@@ -5,8 +5,8 @@
   "synthetic": [
     {
       "id": "echo-synthetic-v0",
-      "status": "planned",
-      "generator": "src/echo (not yet implemented)",
+      "status": "implemented (M2)",
+      "generator": "src/echo/catalogue.py (echo 0.1.0), parameters per run in each result file's config",
       "parameters": "research/protocol.md section 3 (draft)",
       "seeds": "smoke 900000+, confirmatory 20261124-20261133",
       "license": "LicenseRef-ECHO-NC-Research-1.0 (generated output, see NOTICE.md)",

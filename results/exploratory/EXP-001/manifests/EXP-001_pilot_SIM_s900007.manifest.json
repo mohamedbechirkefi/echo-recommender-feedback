@@ -1,0 +1,30 @@
+{
+ "config_hash": "a8d93d088f87654395fc74421d596a3509cbbddf31193bdbd6b4d63667193041",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T16:11:16.778203Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "b2e97382d8e641c1a4404bee8392204f8da7854e"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 163168256,
+ "result_path": "runs/EXP-001_pilot_SIM_s900007.json",
+ "run_id": "EXP-001_pilot_SIM_s900007",
+ "runtime_s": 1.9369116249999934,
+ "seed": 900007,
+ "started_utc": "2026-11-24T16:11:14.841234Z",
+ "status": "ok"
+}

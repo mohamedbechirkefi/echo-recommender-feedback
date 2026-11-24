@@ -1,0 +1,30 @@
+{
+ "config_hash": "662e8b8d4b8bf7bad366bfa384991cf00a898e8d08b9096974864cda137941d0",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T16:11:05.213664Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "b2e97382d8e641c1a4404bee8392204f8da7854e"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 109985792,
+ "result_path": "runs/EXP-001_pilot_RAND_s900011.json",
+ "run_id": "EXP-001_pilot_RAND_s900011",
+ "runtime_s": 1.0344394160001684,
+ "seed": 900011,
+ "started_utc": "2026-11-24T16:11:04.179150Z",
+ "status": "ok"
+}

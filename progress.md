@@ -93,3 +93,76 @@ DEC-001 to DEC-005 in `research/decision_log.md`. DEC-002 and DEC-005 are propos
 ### Next action
 
 M2: implement the RAND baseline, the catalogue and listener generators, the metrics and the result schema with tests. Then run EXP-001 as an exploratory run. In parallel, the owner reviews DEC-002, DEC-005, the SESOI and the parameters, and decides on the freeze.
+
+## 2026-11-24: Session 2 (M2, core implementation; protocol still unfrozen)
+
+**Milestone:** M2 core implementation. **Starting state:** clean tree on `main` at bc5bb42.
+
+### What was implemented
+
+- Package `src/echo`: typed and validated `SimConfig` with SHA-256 config hash; vector functions with explicit error paths; synthetic catalogue and listener generation; RAND (reference baseline), POP, SIM, MMR and EXPLORE policies; softmax choice with a skip option; consumed, exposure and bounded update rules; fixed preferences as exact identity; the session loop with common random numbers; all ten protocol metrics; result schema `echo.result.v1` validated at export and on import; per-run manifests (config hash, seed, git revision and dirty flag, Python and numpy versions, OS, CPU, runtime, process max RSS, optional tracemalloc peak); runner with matrix expansion, freeze guard, exploratory seed and path guards and the 10 % stop rule; seed-level statistics; report generator (CSV, Markdown, SVG figure, PDF via pandoc to Typst); EXP-001 checks V1 to V6; CLI `smoke`, `run`, `report`, `test`.
+- Configs: `experiments/EXP-001/config.json` (exploratory), `EXP-002` and `EXP-003` (confirmatory; refused while unfrozen).
+- Decisions: DEC-006 (implementation choices the draft protocol leaves open; proposed to the owner) and DEC-007 (run guards).
+
+### Commands and actual outputs
+
+```
+$ PYTHONPATH=src uv run --frozen python -m echo.cli test -q
+134 passed in 2.85s
+$ git commit ...   -> b2e9738 (code, tests, configs, docs)
+$ PYTHONPATH=src uv run --frozen python -m echo.cli smoke --trace-memory     # memory measurement, uncommitted code
+86 runs ok; V1..V6 PASS; 3:43.93 total (tracemalloc slows runs)
+$ PYTHONPATH=src uv run --frozen python -m echo.cli smoke                    # uncommitted code
+ALL CHECKS PASS; 1:54.11 total; shasum of all 86 result files identical to the first run
+$ rm -rf results/exploratory/EXP-001 && PYTHONPATH=src uv run --frozen python -m echo.cli smoke   # recorded run at b2e9738
+V1_determinism: PASS / V2_zero_drift_fixed: PASS / V3_candidate_exclusion: PASS / V4_unit_norm: PASS / V5_metric_bounds: PASS / V6_schema: PASS / ALL CHECKS PASS
+1:59.94 total; result files byte-identical to both earlier runs (third process)
+$ PYTHONPATH=src .venv/bin/python -m echo.cli report results/exploratory/EXP-001
+{"n_runs": 86, "n_failed": 0, "checks_all_pass": true, "pdf": [true, "results/exploratory/EXP-001/report/summary.pdf"]}
+$ pypdf: 5 pages; pages 1 and 4 rendered to PNG and inspected (tables, figure, captions legible)
+```
+
+All 86 manifests record revision b2e97382 with `code_dirty: false`. Load average during the runs was 20 to 36 (other sessions share the machine), so runtimes are upper-bound indications.
+
+### Exploratory smoke run (EXP-001): measurements for the owner, not findings
+
+Outputs: `results/exploratory/EXP-001/` (runs, manifests, `checks.json`, `report/summary.{md,pdf,json}`, `report/metrics.csv`, `report/fig-pilot-drift.svg`). Journal: J-0002.
+
+- **Runtime per full-size run** (N = 1000, U = 200, T = 100): RAND 1.15 s, POP 1.49 s, SIM 2.40 s, MMR 2.11 s, EXPLORE 2.85 s. Smoke-size runs about 0.01 s.
+- **Projected full matrix:** EXP-002 100 runs, about 200 s; EXP-003 360 runs, about 639 s. Total about 14 minutes single-process, far inside the 2-hour cap.
+- **Memory:** tracemalloc peak at most 13.6 MiB per full-size run; process max RSS 186 MiB.
+- **Seed spread:** pilot SD of the paired SIM minus RAND drift difference is 0.01587 rad over 10 seeds (seed-level drift SD 0.028 rad for RAND, 0.021 rad for SIM). Projected 95 % half-width: 0.0197 rad at n = 5, 0.0114 at n = 10, 0.0059 at n = 30. The protocol rule (raise to 30 if the half-width at 10 exceeds SESOI / 2 = 0.025) keeps **10 seeds**.
+- **Degenerate cases:**
+  - Skip rate is close to zero for RAND, SIM, MMR and EXPLORE (at most 0.022 at full size) with `skip_utility = 0`; only POP skips noticeably (0.13 to 0.29). The skip-rate confounder named in EXP-002 is therefore active for POP only, and "drift per accepted item" is almost proportional to drift for the other policies.
+  - RAND drift reaches 1.33 to 1.36 rad under the consumed and exposure rules at eta = 0.2, approaching the pi/2 compression noted in EXP-002 item 16.
+  - The bounded rule never froze a listener (no zero-drift listener in any adaptive full-size run). No run had a listener population without acceptances.
+  - RAND cells are identical under estimated and oracle profiles, as expected (RAND ignores the profile); this is an indirect check of common random numbers.
+- **Disclosure for the freeze record:** the pilot and the one-seed screen show the owner SIM minus RAND drift values before the freeze. The pilot was planned by the draft protocol; the timing and screen blocks were added this session for runtime and degenerate-case planning. These are exploratory seeds, disjoint from the confirmatory seeds.
+
+### Proposed amendments for the owner (not applied)
+
+1. Confirm or replace the DEC-006 implementation defaults (cluster spreads 0.1, `skip_utility = 0`, warm-up applied to the oracle profile too, MMR over the whole candidate set). In particular, decide whether a near-zero skip rate is intended; if skips should matter, a higher skip utility (for example 0.5) would need its own smoke check before the freeze.
+2. Keep 10 confirmatory seeds (the precision rule is met with margin).
+3. State how the decision rule reads when the CI excludes 0 and lies inside [-SESOI, SESOI] (the code reports "reject H0, smaller than SESOI").
+4. Record in the EXP-001 protocol that the timing and sensitivity-screen blocks were added, and disclose in the freeze record that exploratory SIM minus RAND values were seen before the freeze.
+5. The projected compute (about 14 minutes) leaves room under the 2-hour cap; the owner may consider whether 30 seeds for EXP-002 would be worth the extra few minutes, decided on precision grounds before the freeze, not on the pilot mean.
+
+### Files created or changed
+
+- Created: `src/echo/*.py` (14 modules), `tests/{reference_sim,test_vectors,test_components,test_simulation,test_schema_runner}.py`, `experiments/EXP-00{1,2,3}/config.json`, `results/exploratory/EXP-001/**`.
+- Changed: `pyproject.toml` (pytest paths), `.gitignore` (`.hypothesis/`), `CONTRIBUTING.md` (appended M2 commands), `README.md`, READMEs of `src`, `tests`, `experiments`, `results`, `research/decision_log.md` (DEC-006, DEC-007), `research/experiment_registry.csv` (EXP-001 status), `research/experiment_journal.jsonl` (J-0002), `data/manifest.json` (synthetic generator status), `roadmap.md`.
+
+### Not done
+
+- `research/experiments/EXP-001/report.md` (11.3 structure) is deferred to M3; the generated summary under `results/exploratory/EXP-001/report/` is its raw material.
+- Holm adjustment for the secondary drift contrasts is not implemented yet (M3 analysis code).
+- No confirmatory run, no freeze, no push.
+
+### Outstanding risks
+
+- Results depend on DEC-006 defaults that the owner has not confirmed.
+- Runtimes were measured on a heavily loaded shared machine.
+
+### Next action
+
+The owner reviews DEC-002, DEC-005, DEC-006, the SESOI and the amendments above, then decides on the freeze. After the freeze: write the EXP-001 report and run EXP-002 and EXP-003 (M3).

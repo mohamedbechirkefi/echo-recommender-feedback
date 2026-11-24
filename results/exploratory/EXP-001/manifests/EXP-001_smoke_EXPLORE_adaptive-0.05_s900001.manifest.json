@@ -1,0 +1,30 @@
+{
+ "config_hash": "c3991c9267ec8bddf545d7b4ec1072e084dd19fe4b3f0f4c16b0d3e0fa510d65",
+ "environment": {
+  "cpu": "Apple M1 Pro",
+  "cpu_count": 10,
+  "echo_version": "0.1.0",
+  "machine": "arm64",
+  "numpy": "2.2.6",
+  "os": "Darwin 24.3.0",
+  "platform": "macOS-15.3.1-arm64-arm-64bit",
+  "python": "3.12.1"
+ },
+ "experiment_id": "EXP-001",
+ "finished_utc": "2026-11-24T16:10:54.763996Z",
+ "git": {
+  "code_dirty": false,
+  "revision": "b2e97382d8e641c1a4404bee8392204f8da7854e"
+ },
+ "label": "exploratory",
+ "manifest_version": "echo.manifest.v1",
+ "memory_note": "peak_traced_bytes is the tracemalloc peak for this run (null unless --trace-memory); process_max_rss_bytes is the process high-water mark so far",
+ "peak_traced_bytes": null,
+ "process_max_rss_bytes": 37683200,
+ "result_path": "runs/EXP-001_smoke_EXPLORE_adaptive-0.05_s900001.json",
+ "run_id": "EXP-001_smoke_EXPLORE_adaptive-0.05_s900001",
+ "runtime_s": 0.007625958000062383,
+ "seed": 900001,
+ "started_utc": "2026-11-24T16:10:54.756357Z",
+ "status": "ok"
+}
