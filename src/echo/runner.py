@@ -45,7 +45,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import CONFIRMATORY_SEEDS, ConfigError, SimConfig
-from .manifest import REPO_ROOT, build_manifest, environment, git_state, utc_now
+from .manifest import REPO_ROOT, build_manifest, data_provenance, environment, git_state, utc_now
 from .metrics import compute_metrics
 from .schema import build_result, dumps_result, validate_result
 from .simulate import Trace, simulate
@@ -239,6 +239,7 @@ def run_experiment(
     check_permission(exp, runs, out, registry, config_path=Path(config_path), freeze_record=freeze_record)
     env = environment()
     git = git_state()
+    data = data_provenance()
     planned_per_arm: dict[str, int] = {}
     for r in runs:
         planned_per_arm[r.arm] = planned_per_arm.get(r.arm, 0) + 1
@@ -263,7 +264,7 @@ def run_experiment(
             run_id=run.run_id, experiment_id=exp["experiment_id"], label=exp["label"],
             config_hash=result["config_hash"], seed=run.config.seed, status=result["status"],
             started_utc=started, finished_utc=finished, runtime_s=runtime, peak_traced_bytes=peak,
-            env=env, git=git, result_path=str(rel),
+            env=env, git=git, result_path=str(rel), data=data,
         )
         mpath = out / "manifests" / f"{run.run_id}.manifest.json"
         mpath.parent.mkdir(parents=True, exist_ok=True)

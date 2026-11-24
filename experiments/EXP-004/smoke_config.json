@@ -1,0 +1,27 @@
+{
+ "experiment_id": "EXP-004",
+ "label": "exploratory",
+ "protocol_path": "research/experiments/EXP-004/protocol.md",
+ "note": "Exploratory smoke check of the FMA catalogue code path before the confirmatory EXP-004 run (M3 brief: smoke run on exploratory seeds). Smoke size as in the EXP-001 smoke block; exploratory seeds 900000 and 900001; never a finding. Not part of the frozen matrix.",
+ "blocks": [
+  {
+   "name": "smoke",
+   "base": {
+    "catalogue": "fma",
+    "n_clusters": 16,
+    "fma_catalogue_sha256": "e5a0084a28a4afbcb8cc2f6b212c7de678ab21ebf3146e0066bef43172a8dd30",
+    "n_tracks": 100,
+    "n_users": 20,
+    "n_steps": 20
+   },
+   "factors": {
+    "policy": ["RAND", "POP", "SIM", "MMR", "EXPLORE"],
+    "preference": [
+     {"preference_model": "fixed", "eta": 0.0},
+     {"preference_model": "adaptive", "eta": 0.05}
+    ]
+   },
+   "seeds": [900000, 900001]
+  }
+ ]
+}

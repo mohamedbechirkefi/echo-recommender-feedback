@@ -64,6 +64,17 @@ def max_rss_bytes() -> int:
     return int(rss if sys.platform == "darwin" else rss * 1024)
 
 
+def data_provenance() -> dict[str, Any]:
+    """SHA-256 of the committed data manifest and calibration record at run time (None if absent)."""
+    import hashlib
+
+    out: dict[str, Any] = {}
+    for rel in ("data/manifest.json", "data/fma_calibration_v1.json"):
+        f = REPO_ROOT / rel
+        out[rel] = hashlib.sha256(f.read_bytes()).hexdigest() if f.exists() else None
+    return out
+
+
 def utc_now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
@@ -71,9 +82,9 @@ def utc_now() -> str:
 def build_manifest(
     *, run_id: str, experiment_id: str, label: str, config_hash: str, seed: int, status: str,
     started_utc: str, finished_utc: str, runtime_s: float, peak_traced_bytes: int | None,
-    env: dict[str, Any], git: dict[str, Any], result_path: str,
+    env: dict[str, Any], git: dict[str, Any], result_path: str, data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    return {
+    out = {
         "manifest_version": MANIFEST_VERSION,
         "run_id": run_id,
         "experiment_id": experiment_id,
@@ -91,3 +102,6 @@ def build_manifest(
         "git": git,
         "environment": env,
     }
+    if data is not None:
+        out["data_sha256"] = data
+    return out
