@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0
+# Licence: ECHO Source-Available Non-Commercial Research License v1.0 (see LICENSE).
+[project]
+name = "echo-research"
+version = "0.0.1"
+description = "ECHO: simulation of music recommendation feedback on exposure and simulated taste"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.2.6",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+    "hypothesis==6.131.9",
+]
+
+[tool.uv]
+# Only versions released at least two weeks before 2026-11-24.
+exclude-newer = "2026-11-10T00:00:00Z"
+package = false

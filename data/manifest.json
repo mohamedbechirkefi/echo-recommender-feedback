@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-11-24",
+  "note": "No dataset has been downloaded. Primary data is synthetic and generated from seeds at run time. Licence statements below were read on 2026-11-24 from the URLs given.",
+  "synthetic": [
+    {
+      "id": "echo-synthetic-v0",
+      "status": "planned",
+      "generator": "src/echo (not yet implemented)",
+      "parameters": "research/protocol.md section 3 (draft)",
+      "seeds": "smoke 900000+, confirmatory 20261124-20261133",
+      "license": "LicenseRef-ECHO-NC-Research-1.0 (generated output, see NOTICE.md)",
+      "redistributable": true
+    }
+  ],
+  "candidates": [
+    {
+      "id": "fma-metadata",
+      "name": "FMA: A Dataset For Music Analysis, fma_metadata.zip (342 MiB)",
+      "source": "https://github.com/mdeff/fma",
+      "citation": "arXiv:1612.01840",
+      "license_metadata": "CC BY 4.0 (repository README: 'The metadata is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0)')",
+      "license_code": "MIT",
+      "audio": "Not used; per-track licences set by artists; excluded",
+      "redistributable": "Metadata yes, with attribution",
+      "verified": "README licence lines read 2026-11-24",
+      "decision": "Optional exploratory extension only, pending owner approval; not downloaded",
+      "sha256": null
+    },
+    {
+      "id": "musicbrainz-core",
+      "name": "MusicBrainz database core data",
+      "source": "https://musicbrainz.org/doc/About/Data_License",
+      "license": "Core data CC0; supplementary data CC BY-NC-SA 3.0",
+      "redistributable": "Core data yes",
+      "verified": "Data licence page read 2026-11-24",
+      "decision": "Not needed for the current protocol; not downloaded",
+      "sha256": null
+    },
+    {
+      "id": "lastfm-1k-360k",
+      "name": "lastfm Music Recommendation Dataset (LASTFM-1K, LASTFM-360K), Zenodo record 6090214",
+      "source": "https://zenodo.org/records/6090214",
+      "license": "Other (Non-Commercial); 'The data is made available for non-commercial use'; Last.fm terms of service also referenced",
+      "redistributable": "Unclear; not assumed",
+      "personal_data": "Yes: user identifiers and profile fields (gender, age, country, signup date)",
+      "verified": "Zenodo record page read 2026-11-24",
+      "decision": "Excluded: personal data requires owner approval and a protocol (master prompt section 1)",
+      "sha256": null
+    },
+    {
+      "id": "million-song-dataset",
+      "name": "The Million Song Dataset",
+      "source": "http://millionsongdataset.com/ (connection refused 2026-11-24); https://datadryad.org/dataset/doi:10.15146/R3467H",
+      "license": "UNVERIFIED: no licence shown on the Dryad page; official site unreachable",
+      "redistributable": "Unknown",
+      "decision": "Excluded while the licence is unverified (owner blocker only if the owner wants it)",
+      "sha256": null
+    },
+    {
+      "id": "spotify-any",
+      "name": "Any Spotify data or audio",
+      "decision": "Excluded by the master prompt claims boundary (no Spotify scraping, no licensed audio)"
+    }
+  ]
+}

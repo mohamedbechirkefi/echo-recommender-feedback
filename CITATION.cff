@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0
+# Licence: ECHO Source-Available Non-Commercial Research License v1.0 (custom; see LICENSE).
+# No SPDX "license" field is given because the licence is not on the SPDX list.
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. Status: M0, no results."
+title: "ECHO: music recommendation feedback"
+type: software
+authors:
+  - family-names: Kefi
+    given-names: Mohamed Bechir
+version: 0.0.1
+date-released: "2026-11-24"
+abstract: "A seeded simulation study of whether recommendation policies change exposure and simulated taste rather than simply reflect it. Work in progress; no findings."
+keywords:
+  - recommender systems
+  - feedback loops
+  - preference drift
+  - simulation
+  - music recommendation
