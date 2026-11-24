@@ -9,3 +9,6 @@ dist/
 results/raw/
 *.parquet
 .hypothesis/
+# real data (FMA metadata, 342 MiB): rebuilt by scripts/, never committed
+data/raw/
+data/processed/

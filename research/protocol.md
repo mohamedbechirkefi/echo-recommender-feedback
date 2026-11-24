@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # ECHO research protocol
 
-**Status: DRAFT v0.1 (2026-11-24). NOT FROZEN.** Freezing is the owner's decision (G-FREEZE). No run made under this draft is confirmatory. Protocol hash: none yet (assigned at freeze).
+**Status: v1.0, frozen by the owner on 2026-11-24 (G-FREEZE; second-round approval "Approve all").** The SHA-256 of this file is recorded in `research/freeze.json` and the registry. Section 10 holds the amendments made before the freeze; it overrides the planning values in sections 3 to 9 where they differ.
 
 Feasibility audit: `research/feasibility.md`. Literature: `research/literature_review.md`. Per-experiment protocols: `research/experiments/EXP-NNN/protocol.md`.
 
@@ -85,6 +85,43 @@ Cluster geometry (d, K), popularity skew, choice temperature and skip utility al
 
 Local only (Apple M1 Pro, CPU). Expected cost of a full run: U x T x N cosine scores = 2 x 10^7 per run. That should take seconds per run, but this is an estimate, not a measurement. EXP-001 measures it. Hard cap: 2 hours of wall-clock for EXP-002 plus EXP-003. No cloud.
 
-## 10. Amendments
+## 10. Amendments before freeze (owner-approved 2026-11-24, round 2)
 
-None. Any amendment after freeze is dated, justified and kept separate from the frozen analysis.
+Source: `labs/_shared/owner-approvals-2026-11-24b.md` (outside this repository), sections 1 and 7. The owner answered "Approve all" to the second-round list and "yes for all others" to the earlier amendment list. These amendments were written into this file before any fit to real data and before any confirmatory run. Where a fitted value replaces a planning value in sections 3 to 9, the fitted value wins; the earlier text is kept above for the record.
+
+### 10.1 How real data enters the study (FMA metadata, CC BY 4.0)
+
+- **Dataset.** FMA: A Dataset For Music Analysis, `fma_metadata.zip` (Defferrard et al., arXiv:1612.01840), from https://github.com/mdeff/fma. Metadata licence CC BY 4.0. Audio is never downloaded. Only `tracks.csv`, `genres.csv` and `features.csv` are read. Provenance (URL, access date, SHA-256, size) is in `data/manifest.json`.
+- **What stays simulated.** Listeners, their initial tastes, their choices and their preference updates. FMA contains no listening sessions that this study uses; the play count is used only as a popularity signal. Artist, title and other descriptive text fields are never read into the processed data.
+- **Splits.** FMA's own column `set/split` is used. The **calibration split** is `training`. The **second-test split** is `test`. The `validation` split is not used. Nothing fitted on the calibration split is evaluated on it, and the second-test catalogue never contributes to a fit except through the fixed PCA basis and genre centres, which come from the calibration split only.
+- **Calibration of the synthetic model (EXP-002 and EXP-003).** Three planning values are replaced by values fitted on the calibration split, by the following methods, fixed before fitting:
+  1. **K (number of genre clusters):** the number of top-level genres in `genres.csv` (rows whose `top_level` equals their own `genre_id`). Replaces the planning value K = 10.
+  2. **Cluster weights:** the share of each top-level genre among calibration-split tracks whose `genre_top` is not missing, ordered by `genre_id` and rounded to 6 decimals. Tracks are assigned to clusters with these probabilities (`cluster_weights`), instead of uniformly. Listener home clusters stay uniform over the K clusters (listening is simulated and FMA has no listener data).
+  3. **Zipf exponent s:** ordinary least squares of ln(listens) on ln(rank) over calibration-split tracks with listens >= 1, ranked 1..n by descending listens (ties do not change the fit); s = minus the slope, rounded to 4 decimals. Replaces the planning value s = 1.0. If the fitted s fell outside [0, 10] the calibration would stop and be reported; it would not be clipped.
+  - The fit reads only FMA metadata. It runs no simulation, uses no seed, and does not involve any policy, so it cannot use the primary contrast in any way. It is journaled as an exploratory entry (J-0003), and the fitted values are written into `experiments/EXP-002/config.json` and `experiments/EXP-003/config.json` (block `base`).
+  - The other parameters (d, N, U, T, k, tau, eta, warm-up, lambda, epsilon, spreads, skip utility) are not calibrated from FMA: they describe the simulated listener and recommender, which FMA does not observe.
+- **Second test (EXP-004): the primary contrast on a real catalogue.** EXP-004 repeats the EXP-002 matrix (5 policies x fixed and adaptive preferences x the same 10 confirmatory seeds, the same parameters) with the synthetic catalogue replaced by real FMA tracks:
+  - Eligible tracks: second-test split, `genre_top` not missing, all 518 librosa features finite. Exclusions are counted and reported by the ingestion step.
+  - Embeddings: the 518 features are standardised with the calibration-split means and standard deviations (a zero SD is replaced by 1), projected onto the first d = 16 principal components of the standardised calibration-split features (genre-labelled tracks with finite features; component signs fixed so that the largest-magnitude loading is positive), then L2-normalised.
+  - Clusters are the K top-level genres. Genre centres are the normalised means of the calibration-split embeddings of each genre. Simulated listeners start near a uniformly chosen genre centre exactly as in section 3.
+  - Base popularity: listens + 1 (add-one, so tracks with zero plays stay eligible), scaled to sum to N within the sampled catalogue.
+  - Per seed, N = 1000 tracks are drawn uniformly without replacement from the eligible set with the seed's catalogue stream.
+  - The processed catalogue is identified by its SHA-256, which is part of every EXP-004 run configuration.
+  - Primary estimand, decision rule, SESOI, uncertainty method and Holm family are those of EXP-002. EXP-004 is a pre-specified secondary test: it does not change the EXP-002 conclusion. Reading, fixed now: the EXP-002 direction **replicates on the real catalogue** if the EXP-004 Delta has the same sign as the EXP-002 Delta and its 95 % CI excludes 0; it **does not replicate** if the CI excludes 0 with the opposite sign or is practically equivalent to 0; otherwise it is **inconclusive on the real catalogue**.
+  - No simulation was run on the real catalogue before the freeze.
+- **Redistribution.** The archive is 342 MiB, above the 20 MB commit limit, so `data/raw/` and `data/processed/` are git-ignored and rebuilt by `scripts/download_fma_metadata.py` and `scripts/build_fma_catalogue.py`. Only aggregate calibration values (`data/fma_calibration_v1.json`) are committed. FMA holds no listener identifiers; artist fields are never processed.
+
+### 10.2 Section 7 amendments (approved "yes for all others")
+
+1. **Baseline.** RAND (uniform random slate) is confirmed as the primary comparator (DEC-005).
+2. **Skip utility.** `skip_utility = 0` is kept. Disclosure: under this value the skip rate is close to zero for RAND, SIM, MMR and EXPLORE (at most 0.022 at full size in the exploratory EXP-001 run, J-0002) and noticeable only for POP (0.13 to 0.29). The skip-rate confounder named in EXP-002 is therefore active for POP only, and drift per accepted item is almost proportional to drift for the other policies. This is reported as a limitation.
+3. **Seeds.** 10 confirmatory seeds per arm (20261124 to 20261133), confirmed. The pilot rule of section 5 was met (projected half-width 0.0114 rad < 0.025 rad, J-0002).
+4. **Decision rule, completed.** When the 95 % CI of Delta excludes 0 and lies inside [-SESOI, +SESOI], the result is reported as **"statistically detectable, practically negligible"**. The other three readings of section 2 are unchanged.
+5. **EXP-001 additions recorded.** The exploratory EXP-001 run added two blocks to the draft EXP-001 protocol: `timing` (5 policies x fixed and adaptive, seed 900012, full size) and `sensitivity_screen` (the 36 EXP-003 cells, seed 900012). They are recorded in `research/experiments/EXP-001/protocol.md` item 19.
+6. **Disclosure of SIM minus RAND values already seen** (before the freeze, exploratory seeds only, at the draft K = 10 and s = 1.0, synthetic catalogue): pilot mean paired difference -0.15881 rad, SD 0.01587 rad, 10 seeds 900002 to 900011 (per-arm means RAND 0.642, SIM 0.483); one-seed screen at seed 900012 for all 18 EXP-003 cell pairs. Paths: `results/exploratory/EXP-001/report/summary.md` and `summary.json`; journal J-0002. The freeze record repeats them.
+
+### 10.3 Implementation details frozen with the code
+
+The implementation choices of DEC-006 (cluster spreads 0.1, Zipf weights over a random rank permutation, warm-up applied to the oracle profile too, MMR over the whole candidate set, synchronous POP counts, drift computed as 2 arcsin(||p_0 - p_T|| / 2)) are part of the frozen model as implemented at the freeze revision.
+
+Any amendment after the freeze is dated, justified and kept separate from the frozen analysis.
