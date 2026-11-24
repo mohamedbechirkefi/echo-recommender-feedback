@@ -3,7 +3,7 @@
 
 Status: not started. The owner reviews and approves the following.
 
-- [ ] Authorship and affiliation metadata (no invented affiliation)
+- [x] Authorship and affiliation metadata (no invented affiliation): "Mohamed Bechir Kefi", no affiliation (C3, owner-approved 2026-11-24)
 - [ ] AI-assistance disclosure text
 - [ ] Frozen protocols and any amendments
 - [ ] Every claim in the manuscript and articles

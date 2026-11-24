@@ -6,9 +6,9 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | ID | Milestone | Depends on | Priority | Effort | Status | Blockers |
 |---|---|---|---|---|---|---|
 | M0 | Bootstrap and feasibility | none | P0 | 0.5 | done (2026-11-24) | none |
-| M1 | Research and preregistration | M0 | P0 | 0.5 | in progress (drafts written) | owner freeze (G-FREEZE); owner choices DEC-002, DEC-005 and DEC-006 |
+| M1 | Research and preregistration | M0 | P0 | 0.5 | gate passed (2026-11-24: protocol v1.0 frozen by the owner, `research/freeze.json`); two literature items still open (citation chaining, Vargas and Castells check), carried to M4 | none for M3 |
 | M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | done (2026-11-24; gate checked, see progress.md session 2) | none |
-| M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | not started | owner freeze |
+| M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | not started (unblocked; the coordinator schedules runs) | EXP-004 needs the FMA download and build on the run machine |
 | M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
 | M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
@@ -30,15 +30,16 @@ Target: five focused development days. The schedule is an estimate, never a reas
 
 **Gate:** protocols are frozen before confirmatory runs, and exploratory results are visibly separated.
 
-- [x] Registry initialised (EXP-001 to EXP-003).
+- [x] Registry initialised (EXP-001 to EXP-003; EXP-004 added 2026-11-24 for the real-data second test).
 - [x] Manuscript skeleton (headings only).
 - [x] Experiment-specific draft protocols (11.2).
 - [x] Zero-cost local publication toolchain confirmed.
 - [ ] Citation chaining from kalimeris2021 and carroll2022; `research/paper/references.bib` from verified sources only.
 - [ ] Vargas and Castells metric definitions checked against the full paper.
-- [ ] Fixture manifest.
-- [x] EXP-001 pilot variance used to confirm the seed count (10 or 30): pilot SD 0.0159 rad, 10 seeds adequate (owner to confirm at freeze).
-- [ ] **Owner freezes** the protocols. The hash and the approval are recorded in the registry and the decision log.
+- [x] Fixture manifest: synthetic FMA-schema fixture `tests/fixtures/fma_synthetic/` (no real rows); real data provenance in `data/manifest.json`.
+- [x] EXP-001 pilot variance used to confirm the seed count (10 or 30): pilot SD 0.0159 rad, 10 seeds (owner-approved 2026-11-24).
+- [x] **Owner freezes** the protocols (2026-11-24, "Approve all"). Hashes and approval in `research/freeze.json`, the registry and DEC-010.
+- [x] Real data (FMA metadata, CC BY 4.0) adopted, calibrated and recorded (DEC-008, J-0003).
 
 ### M2: Core implementation
 
@@ -58,7 +59,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 **Gate:** the planned matrix is complete or its failure is documented; no run is silently dropped.
 
 - [ ] EXP-001 executed and its report written.
-- [ ] EXP-002 and EXP-003 executed after the freeze.
+- [ ] EXP-002, EXP-003 and EXP-004 executed after the freeze.
 - [ ] Reports generated as experiments finish (11.6).
 - [ ] All unsuccessful runs and deviations recorded.
 - [ ] Provenance captured at run time.

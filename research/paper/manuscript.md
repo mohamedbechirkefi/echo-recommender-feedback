@@ -1,9 +1,13 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # [Title to be decided after results; working title: Does a recommender discover your taste or shape it?]
 
-Status: skeleton only (M0). No content, no results. Not peer reviewed.
+Status: skeleton only. Protocol v1.0 frozen by the owner on 2026-11-24; no confirmatory results. Not peer reviewed.
 
 ## Author and affiliation metadata
+
+Mohamed Bechir Kefi (no affiliation). An AI system (Claude, Anthropic) assisted with research engineering and drafting as a disclosed research and development assistant; it is not an author.
+
+Data: FMA metadata (Defferrard et al., arXiv:1612.01840), CC BY 4.0.
 
 ## Abstract
 

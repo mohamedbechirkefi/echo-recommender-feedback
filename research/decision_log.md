@@ -78,3 +78,11 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 - **Code:** `src/echo/fma.py` (pure ingestion and calibration with schema validation, missingness and exclusion counts); config fields `catalogue`, `cluster_weights`, `fma_catalogue_sha256` (omitted from the config dict at their defaults, so earlier config hashes are unchanged); the run guard now also requires each confirmatory config's file SHA-256 to match `research/freeze.json`.
 - **Editorial corrections:** the reproduction commands in the EXP-002 and EXP-003 protocols named a CLI form that does not exist (`uv run python -m echo.cli ...` without `PYTHONPATH`, and `report EXP-002`); they now give the working commands. No design content changed.
 - **DEC-006 defaults:** frozen as implemented (protocol 10.3); `skip_utility = 0` is the one the owner decided explicitly.
+
+## DEC-010 (2026-11-24): Protocol v1.0 frozen (G-FREEZE, owner-approved)
+
+- **Decider:** the owner ("Approve all", second round; "yes for all others", first round). The AI wrote the record.
+- **Record:** `research/freeze.json`: approval quotes, C1 to C4 (C1: real data as approved, synthetic otherwise), C4 disclosure of the SIM minus RAND values seen before the freeze (pilot mean -0.15881 rad, SD 0.01587, seeds 900002-900011; one-seed screen at seed 900012; none on the real catalogue), SHA-256 of `research/protocol.md` (`a81ed32c5e21f06e68d61e00250119762d1a56cdf4230a05ac3d89ff48c8f5dc`), of the four EXP protocols, of the four configs and of `data/manifest.json` and `data/fma_calibration_v1.json`, at revision 17ac055.
+- **Registry:** EXP-002, EXP-003 and EXP-004 "frozen (owner-approved 2026-11-24), not yet run"; EXP-001 frozen as the exploratory record.
+- **Guard:** `echo.cli run` accepts the frozen confirmatory configs and refuses a changed one (exit code 2); tested in `tests/test_schema_runner.py` and `tests/test_freeze_record.py`. No confirmatory run was made.
+- **Consequence:** any later change to a hashed file is an amendment after freeze: dated, justified and kept separate.

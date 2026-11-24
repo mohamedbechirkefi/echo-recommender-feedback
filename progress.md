@@ -166,3 +166,41 @@ Outputs: `results/exploratory/EXP-001/` (runs, manifests, `checks.json`, `report
 ### Next action
 
 The owner reviews DEC-002, DEC-005, DEC-006, the SESOI and the amendments above, then decides on the freeze. After the freeze: write the EXP-001 report and run EXP-002 and EXP-003 (M3).
+
+## 2026-11-24: Session 3 (real data, amendments and freeze; G-FREEZE owner-approved)
+
+**Milestone:** M1 gate (freeze), with the owner's real-data approval. **Starting state:** clean tree on `main` at c602e00. Authority: `labs/_shared/DATA-FREEZE-brief.md`, `labs/_shared/owner-approvals-2026-11-24b.md` sections 1 and 7 ("Approve all"; "yes for all others").
+
+### What was done
+
+1. **Licence check.** FMA README (https://github.com/mdeff/fma) read 2026-11-24: metadata CC BY 4.0, "meant for research purposes"; matches the approval. Recorded in `data/manifest.json` and DEC-008.
+2. **Method before fit.** Protocol section 10 (calibration method, splits, second test, section 7 amendments) written and committed first: a843fd4.
+3. **Download.** `scripts/download_fma_metadata.py`: 358,412,441 bytes, SHA-256 d9527a52...f265, published SHA-1 matches; about 26 minutes. `data/raw/` and `data/processed/` git-ignored (above 20 MB).
+4. **Ingestion and fit (exploratory, J-0003).** `src/echo/fma.py` pure functions; `scripts/build_fma_catalogue.py` (33 s; run twice, outputs byte-identical). Fitted on the training split: K = 16, genre weights (Rock 0.285, Experimental 0.214, Electronic 0.192, ...), Zipf s = 1.3065 (84,352 tracks; 1 zero-listens track excluded). Real catalogue: 4,951 eligible test-split tracks (6,312 excluded for missing genre), SHA-256 e5a0084a...dd30. Values written into the EXP-002 and EXP-003 configs; EXP-004 added. No simulation on the real catalogue.
+5. **Amendments** (DEC-009): all six section 7 items applied.
+6. **Code.** Config fields `catalogue`, `cluster_weights`, `fma_catalogue_sha256` (omitted at defaults, so old hashes hold); weighted cluster draw; real-catalogue sampling; decision-rule wording; run guard also checks config SHA-256 against `research/freeze.json`.
+7. **Freeze** (DEC-010): `research/freeze.json` at revision 17ac055; registry statuses and hashes; CITATION, manuscript metadata and author review (C3).
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+Audited 8 packages in 2ms
+$ .venv/bin/python -m pytest -q
+161 passed in 1.76s
+$ python3 scripts/write_freeze_record.py   -> frozen_revision 17ac055a8dbf1cef0f5406cad9437484cd0f736e; research/protocol.md a81ed32c5e21f06e68d61e00250119762d1a56cdf4230a05ac3d89ff48c8f5dc
+$ guard check (check_permission only, nothing simulated): EXP-002, EXP-003, EXP-004 accepted
+$ PYTHONPATH=src .venv/bin/python -m echo.cli run --config <scratchpad>/changed.json   (EXP-002 with one seed)
+REFUSED: refusing confirmatory EXP-002: config not frozen (... outside the repository) ...   exit 2
+```
+
+`.venv` is a plain sync (`package = false`), not an editable install, and no test calls `run` on a frozen config. `results/` holds only `exploratory/`.
+
+### Not done
+
+- No confirmatory run (the coordinator schedules M3). No push.
+- EXP-004 needs the download and build on the run machine; a different BLAS may change the processed SHA-256, and the run then refuses (fail closed).
+
+### Next action
+
+M3 when scheduled: EXP-002, EXP-003, EXP-004 on a quiet machine, then the EXP-001 report.

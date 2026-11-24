@@ -1,0 +1,99 @@
+{
+ "freeze_record_version": "1.0",
+ "project": "ECHO (echo-recommender-feedback), SPDX LicenseRef-ECHO-NC-Research-1.0",
+ "frozen_by_owner": true,
+ "approved_on": "2026-11-24",
+ "approval_source": "labs/_shared/owner-approvals-2026-11-24b.md (second round; sections 1 and 7) and labs/_shared/owner-approvals-2026-11-24.md (common decisions); shared folder outside this repository",
+ "owner_approval_quote": {
+  "second_round": "\"Approve all\"",
+  "earlier_amendment_list": "\"yes for all others\"",
+  "echo_real_data": "ECHO | FMA metadata, CC BY 4.0 | Real catalogue and genres; listening stays simulated",
+  "echo_amendments": "Baseline RAND. Keep `skip_utility = 0` and disclose it. 10 seeds. Decision rule when the CI excludes 0 but lies inside plus or minus SESOI: \"statistically detectable, practically negligible\". Record the EXP-001 additions. Disclose the SIM minus RAND values already seen."
+ },
+ "common_decisions": {
+  "C1": "Data. Real data as approved, synthetic otherwise: FMA metadata (CC BY 4.0) calibrates the synthetic catalogue (K, genre weights, Zipf s) and is the EXP-004 real catalogue; listeners and listening stay synthetic.",
+  "C2": "PDFs. Built with pandoc and Typst (-V mainfont=\"Libertinus Serif\"); there is no LaTeX on the machine.",
+  "C3": "Authorship. \"Mohamed Bechir Kefi\", no affiliation. The AI is disclosed as a research and development assistant, not as an author.",
+  "C4": "Disclosure. Where exploratory values of the primary contrast were seen before the freeze, the freeze record says so, with the values and where they are stored."
+ },
+ "amendments_applied": {
+  "AM-1": "Baseline RAND confirmed (protocol 10.2 item 1, DEC-005).",
+  "AM-2": "skip_utility = 0 kept and disclosed: skip rate at most 0.022 for RAND, SIM, MMR, EXPLORE; 0.13 to 0.29 for POP (J-0002). Protocol 10.2 item 2, limitations item 8.",
+  "AM-3": "10 confirmatory seeds, 20261124 to 20261133 (protocol 10.2 item 3).",
+  "AM-4": "CI excludes 0 and lies inside [-SESOI, SESOI] reads \"statistically detectable, practically negligible\" (protocol 10.2 item 4; src/echo/stats.py decide).",
+  "AM-5": "EXP-001 additions recorded: timing and sensitivity_screen blocks, 86 runs (EXP-001 protocol item 19).",
+  "AM-6": "SIM minus RAND values already seen disclosed (c4_disclosure below; protocol 10.2 item 6).",
+  "AM-7": "Real data (protocol 10.1): K = 16, genre weights and Zipf s = 1.3065 fitted on the FMA training split (J-0003), written into the EXP-002 and EXP-003 configs; second test EXP-004 on the FMA test split."
+ },
+ "not_applied": [],
+ "c4_disclosure": [
+  {
+   "contrast": "EXP-002 primary (SIM minus RAND drift, adaptive, eta 0.05), pilot block",
+   "parameters": "draft values: synthetic catalogue, K = 10 uniform, s = 1.0 (before the FMA calibration)",
+   "seeds": "900002-900011 (exploratory)",
+   "values": "mean paired difference -0.15881 rad, SD 0.01587 rad, n = 10; per-arm means RAND 0.642, SIM 0.483 rad",
+   "path": "results/exploratory/EXP-001/report/summary.md; results/exploratory/EXP-001/report/summary.json",
+   "journal": "J-0002"
+  },
+  {
+   "contrast": "EXP-003 cells (SIM and RAND drift), sensitivity_screen block, one seed",
+   "parameters": "draft values, as above",
+   "seeds": "900012 (exploratory)",
+   "values": "RAND / SIM drift (rad), estimated profile: consumed eta 0.01 0.217/0.257, 0.05 0.629/0.489, 0.2 1.334/0.669; exposure 0.01 0.246/0.263, 0.05 0.980/0.495, 0.2 1.363/0.654; bounded 0.01 0.144/0.200, 0.05 0.355/0.372, 0.2 0.489/0.462. Oracle profile: SIM consumed 0.223, 0.429, 0.625; exposure 0.220, 0.461, 0.657; bounded 0.221, 0.389, 0.458 (RAND identical to estimated).",
+   "path": "results/exploratory/EXP-001/report/summary.md (Degenerate-case screen table)",
+   "journal": "J-0002"
+  },
+  {
+   "contrast": "EXP-004 (real catalogue)",
+   "values": "none seen: no simulation on the FMA catalogue was run before the freeze",
+   "journal": "J-0003"
+  }
+ ],
+ "data_manifest": "data/manifest.json (hash in 'data')",
+ "real_data": {
+  "dataset": "FMA metadata, fma_metadata.zip, CC BY 4.0",
+  "raw_sha256": "d9527a5297a65da31c5676484d5047c3e2b8a8060ce72a46e26158be736bf265",
+  "processed_catalogue_sha256": "e5a0084a28a4afbcb8cc2f6b212c7de678ab21ebf3146e0066bef43172a8dd30",
+  "fitted_values": {
+   "n_clusters": 16,
+   "zipf_s": 1.3065,
+   "cluster_weights": "data/fma_calibration_v1.json"
+  }
+ },
+ "guard": "src/echo/runner.py: a confirmatory config runs only if its file SHA-256 equals configs[path].file_sha256 here and the registry row is frozen with the protocol's SHA-256.",
+ "reproduction": {
+  "EXP-002": "PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-002/config.json",
+  "EXP-003": "PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-003/config.json",
+  "EXP-004": "python3 scripts/download_fma_metadata.py && PYTHONPATH=src .venv/bin/python scripts/build_fma_catalogue.py && PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-004/config.json"
+ },
+ "frozen_revision": "17ac055a8dbf1cef0f5406cad9437484cd0f736e",
+ "protocols": {
+  "research/protocol.md": "a81ed32c5e21f06e68d61e00250119762d1a56cdf4230a05ac3d89ff48c8f5dc",
+  "research/experiments/EXP-001/protocol.md": "5d869d0f418956cdac48cb94a97a8a890aa96ba81193bb4a898664704830cff4",
+  "research/experiments/EXP-002/protocol.md": "3852ad1950f73740378c6f19339d912da57c69daab82d218c3b8efb33af192b2",
+  "research/experiments/EXP-003/protocol.md": "f0a3e1061d05bd5b58b9998112426b02eb62ef6f34d8783f42a787f19924e49a",
+  "research/experiments/EXP-004/protocol.md": "4f6a5ca60c788a2bee49abaef5af3ca2c039152d1ec0569ab4d54c0f79d75402"
+ },
+ "configs": {
+  "experiments/EXP-001/config.json": {
+   "file_sha256": "7fee59c4d7587d12b2dd473b16977bc5d902a42092be3dd92da523c742b53176",
+   "canonical_sha256": "d8ff17ac6799e1ab78ed58b3a5844ebea42cd4ee8d21cd874c2d434e111b4900"
+  },
+  "experiments/EXP-002/config.json": {
+   "file_sha256": "903f524679afb4a67fe4e6d36ff5b17f7f398475fa7f58c0c993846a64ef174c",
+   "canonical_sha256": "c03eb0b56517afce0a3bca14d11df8fccbedf3c3e73c17c519ccbef204e916ad"
+  },
+  "experiments/EXP-003/config.json": {
+   "file_sha256": "285e3dd6b52f271454f0d443934fc7588201247e09ec60d2f1496850254771c0",
+   "canonical_sha256": "48fd1ad616729ee293fddd148768716464744f5cb5175f4757a9aa892a038095"
+  },
+  "experiments/EXP-004/config.json": {
+   "file_sha256": "efb26feb7078799642631b15e6ec4604b59aebf49405c6ff3dec8bf3ad55560d",
+   "canonical_sha256": "a3dcf4780c096beddac7850fbb997db5f10354c740dfe7f81ea485dc1b7cf2bd"
+  }
+ },
+ "data": {
+  "data/manifest.json": "0db8d76f8dbc693496e7d5e5b35d9034fb98fd913d44ce379a9bb77669e0fae3",
+  "data/fma_calibration_v1.json": "e3c763c27492dd7c7c06bbd73d5cf3a1cba232bf6bed1db80078791b6c208b98"
+ }
+}
