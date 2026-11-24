@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0
 # Licence: ECHO Source-Available Non-Commercial Research License v1.0 (see LICENSE).
 [project]
-name = "echo-research"
+name = "echo-recommender-feedback"
 version = "0.0.1"
 description = "ECHO: simulation of music recommendation feedback on exposure and simulated taste"
 readme = "README.md"

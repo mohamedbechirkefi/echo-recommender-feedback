@@ -14,9 +14,9 @@ and
 **Contributor:** The individual accepting this Agreement.
 
 The Agreement concerns contributions intentionally submitted
-for inclusion in ECHO (research repository), planned at:
+for inclusion in ECHO (research repository), at:
 
-https://github.com/mohamedbechirkefi/echo-research
+https://github.com/mohamedbechirkefi/echo-recommender-feedback
 
 ## 1. Ownership of contributions
 
