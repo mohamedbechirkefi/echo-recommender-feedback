@@ -45,3 +45,12 @@ Run from the repository root with uv 0.9.5:
     uv run pytest             # test suite (no tests exist yet at M0)
 
 Planned at M2 (not yet implemented): `uv run python -m echo.cli smoke|run|report`.
+
+### M2 commands (implemented 2026-11-24)
+
+The package lives in `src/echo`; put `src` on the path:
+
+    PYTHONPATH=src uv run --frozen python -m echo.cli test                 # full test suite
+    PYTHONPATH=src uv run --frozen python -m echo.cli smoke                # exploratory EXP-001 matrix and checks V1 to V6
+    PYTHONPATH=src uv run --frozen python -m echo.cli report results/exploratory/EXP-001
+    PYTHONPATH=src uv run --frozen python -m echo.cli run --config experiments/EXP-002/config.json   # refused until the owner freezes the protocol

@@ -1,0 +1,43 @@
+{
+ "experiment_id": "EXP-002",
+ "label": "confirmatory",
+ "protocol_path": "research/experiments/EXP-002/protocol.md",
+ "note": "Confirmatory after the owner's freeze only. 'echo.cli run' refuses this config while the protocol is unfrozen.",
+ "blocks": [
+  {
+   "name": "main",
+   "base": {},
+   "factors": {
+    "policy": [
+     "RAND",
+     "POP",
+     "SIM",
+     "MMR",
+     "EXPLORE"
+    ],
+    "preference": [
+     {
+      "preference_model": "fixed",
+      "eta": 0.0
+     },
+     {
+      "preference_model": "adaptive",
+      "eta": 0.05
+     }
+    ]
+   },
+   "seeds": [
+    20261124,
+    20261125,
+    20261126,
+    20261127,
+    20261128,
+    20261129,
+    20261130,
+    20261131,
+    20261132,
+    20261133
+   ]
+  }
+ ]
+}

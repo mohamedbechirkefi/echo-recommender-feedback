@@ -1,0 +1,114 @@
+{
+ "experiment_id": "EXP-001",
+ "label": "exploratory",
+ "protocol_path": "research/experiments/EXP-001/protocol.md",
+ "note": "Exploratory verification and planning run. Never a finding. Blocks 'timing' and 'sensitivity_screen' are additions to the draft EXP-001 protocol (runtime per policy and degenerate-cell screening at full size); see progress.md 2026-11-24 session 2.",
+ "blocks": [
+  {
+   "name": "smoke",
+   "base": {
+    "n_tracks": 100,
+    "n_users": 20,
+    "n_steps": 20
+   },
+   "factors": {
+    "policy": [
+     "RAND",
+     "POP",
+     "SIM",
+     "MMR",
+     "EXPLORE"
+    ],
+    "preference": [
+     {
+      "preference_model": "fixed",
+      "eta": 0.0
+     },
+     {
+      "preference_model": "adaptive",
+      "eta": 0.05
+     }
+    ]
+   },
+   "seeds": [
+    900000,
+    900001
+   ]
+  },
+  {
+   "name": "pilot",
+   "base": {},
+   "factors": {
+    "policy": [
+     "RAND",
+     "SIM"
+    ]
+   },
+   "seeds": [
+    900002,
+    900003,
+    900004,
+    900005,
+    900006,
+    900007,
+    900008,
+    900009,
+    900010,
+    900011
+   ]
+  },
+  {
+   "name": "timing",
+   "base": {},
+   "factors": {
+    "policy": [
+     "RAND",
+     "POP",
+     "SIM",
+     "MMR",
+     "EXPLORE"
+    ],
+    "preference": [
+     {
+      "preference_model": "fixed",
+      "eta": 0.0
+     },
+     {
+      "preference_model": "adaptive",
+      "eta": 0.05
+     }
+    ]
+   },
+   "seeds": [
+    900012
+   ]
+  },
+  {
+   "name": "sensitivity_screen",
+   "base": {},
+   "factors": {
+    "update_rule": [
+     "consumed",
+     "exposure",
+     "bounded"
+    ],
+    "eta": [
+     0.01,
+     0.05,
+     0.2
+    ],
+    "profile": [
+     "estimated",
+     "oracle"
+    ],
+    "policy": [
+     "RAND",
+     "SIM"
+    ]
+   },
+   "seeds": [
+    900012
+   ]
+  }
+ ]
+}

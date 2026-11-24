@@ -20,3 +20,7 @@ dev = [
 # Only versions released at least two weeks before 2026-11-24.
 exclude-newer = "2026-11-10T00:00:00Z"
 package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]

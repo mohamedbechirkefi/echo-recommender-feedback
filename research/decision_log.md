@@ -38,3 +38,25 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
   - Primary metric: mean angular preference drift.
   - Primary contrast: SIM vs RAND under adaptive preferences.
 - **Alternative the owner may prefer:** POP as the primary comparator. It is the simplest of the three policy families named in the master prompt.
+
+## DEC-006 (2026-11-24): M2 implementation choices not fixed by the draft protocol (PROPOSED, awaiting owner confirmation at freeze)
+
+- **Decider:** the AI proposes; the owner confirms or replaces them at freeze.
+- **Context:** Draft protocol v0.1 leaves some model details open. The M2 code needs concrete values, so it uses the defaults below. They are recorded in every result file (`config`) and covered by the config hash.
+- **Choices:**
+  - Cluster geometry: K cluster centres are random unit vectors; a track is `normalise(centre + 0.1 * N(0, I_d))` with a uniformly random cluster (`track_spread = 0.1`); a listener's initial taste is `normalise(centre + 0.1 * N(0, I_d))` around a uniformly random centre (`listener_spread = 0.1`).
+  - Skip option utility: `skip_utility = 0.0` in cosine units (the skip logit is 0 / tau).
+  - Base popularity: Zipf weights `rank^(-s)` over a random permutation of ranks, scaled to sum to N, so POP scores are `consumption count + base popularity` on comparable scales.
+  - Warm-up: SIM, MMR and EXPLORE show RAND slates for the first `warmup_steps` steps and whenever the listener has no consumed track yet; the same rule applies with the oracle profile so that the oracle ablation only changes the profile. POP and RAND have no warm-up.
+  - Timing of POP counts: all listeners move one step at a time; counts are updated after every listener has chosen at step t.
+  - EXPLORE: each slot is random with probability epsilon (flag drawn per slot); random slots follow the RAND key order, SIM slots the SIM order, without duplicates.
+  - MMR: the first pick is argmax relevance; later picks maximise `lambda * rel - (1 - lambda) * max cos to the slate`, over the whole candidate set.
+  - Per-listener averages over consumed tracks (novelty, relevance, drift per accepted item) are averaged over listeners with at least one acceptance. A run where no listener accepts has non-finite metrics and is recorded as failed, as protocol section 5 requires.
+  - Drift is computed as `2 * arcsin(||p_0 - p_T|| / 2)`, which equals the protocol's `arccos(clip(<p_0, p_T>))` for unit vectors but is exactly 0 for identical vectors (needed for check V2) and accurate near 0. A property test checks agreement with the arccos form to 2e-7 rad.
+  - Common random numbers: the seed spawns four streams (catalogue, listeners, choice uniforms, policy keys); the policy stream draws the same amount every step for every policy.
+  - The protocol's decision rule does not name the case where the CI excludes 0 and also lies inside [-SESOI, SESOI]. The code reports it as "reject H0, smaller than SESOI". The owner should state the intended reading at freeze.
+
+## DEC-007 (2026-11-24): Run guards in the CLI
+
+- **Decider:** the AI, under the M2 brief.
+- **Decision:** `echo.cli run` refuses a confirmatory config (exit code 2) unless the registry row's status contains "frozen" and its protocol hash equals the SHA-256 of the protocol file. Exploratory configs may not use confirmatory seeds (20261124 to 20261133) and may only write under `results/exploratory/`. Result files hold deterministic content only; runtime, memory, host and git revision go to a separate run manifest, so check V1 can compare result bytes.
