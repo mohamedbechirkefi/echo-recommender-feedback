@@ -60,3 +60,21 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 
 - **Decider:** the AI, under the M2 brief.
 - **Decision:** `echo.cli run` refuses a confirmatory config (exit code 2) unless the registry row's status contains "frozen" and its protocol hash equals the SHA-256 of the protocol file. Exploratory configs may not use confirmatory seeds (20261124 to 20261133) and may only write under `results/exploratory/`. Result files hold deterministic content only; runtime, memory, host and git revision go to a separate run manifest, so check V1 can compare result bytes.
+
+## DEC-008 (2026-11-24): Real data adopted: FMA metadata (owner-approved, second round)
+
+- **Decider:** the owner ("Approve all", `labs/_shared/owner-approvals-2026-11-24b.md` section 1: "ECHO | FMA metadata, CC BY 4.0 | Real catalogue and genres; listening stays simulated").
+- **Licence check (2026-11-24):** official page https://github.com/mdeff/fma, README read on 2026-11-24: "The metadata is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0)" (https://creativecommons.org/licenses/by/4.0); "The dataset is meant for research purposes." Code MIT; audio under per-artist licences, never downloaded. The licence matches the approval.
+- **Download:** `fma_metadata.zip` from https://os.unil.cloud.switch.ch/fma/fma_metadata.zip, 358,412,441 bytes, SHA-256 `d9527a5297a65da31c5676484d5047c3e2b8a8060ce72a46e26158be736bf265`, SHA-1 matches the published value, accessed 2026-11-24T18:56:23Z (`scripts/download_fma_metadata.py`). Under the 2 GB cap.
+- **Commit rule:** CC BY 4.0 is redistributable, but the archive is above 20 MB, so `data/raw/` and `data/processed/` are git-ignored and rebuilt by script. Only aggregate calibration values (`data/fma_calibration_v1.json`) are committed. No listener data exists; artist and title fields are never processed.
+- **Supersedes:** DEC-002 in part. Listeners stay synthetic; the catalogue is calibrated on FMA, and EXP-004 uses real FMA tracks.
+
+## DEC-009 (2026-11-24): Amendments applied before the freeze
+
+- **Decider:** the owner approved them (section 7: "Baseline RAND. Keep `skip_utility = 0` and disclose it. 10 seeds. Decision rule when the CI excludes 0 but lies inside plus or minus SESOI: 'statistically detectable, practically negligible'. Record the EXP-001 additions. Disclose the SIM minus RAND values already seen."); the AI applied them.
+- **Applied, all six:** protocol section 10.2 items 1 to 6; `stats.decide` returns the new reading; EXP-001 protocol item 19; disclosure in protocol 10.2 item 6 and in `research/freeze.json`.
+- **Real-data method (protocol 10.1):** written and committed (a843fd4) before any fit. Fitted on the FMA training split (J-0003): K = 16, the 16 genre weights in `data/fma_calibration_v1.json`, Zipf s = 1.3065. These replace K = 10 (uniform) and s = 1.0 in the EXP-002 and EXP-003 configs. The fit used no simulation and no seed, so it did not touch the primary contrast.
+- **Second test:** new experiment EXP-004, the EXP-002 matrix on real FMA test-split tracks (4,951 eligible), with a pre-stated replicates / does not replicate / inconclusive reading. No simulation on the real catalogue was run before the freeze.
+- **Code:** `src/echo/fma.py` (pure ingestion and calibration with schema validation, missingness and exclusion counts); config fields `catalogue`, `cluster_weights`, `fma_catalogue_sha256` (omitted from the config dict at their defaults, so earlier config hashes are unchanged); the run guard now also requires each confirmatory config's file SHA-256 to match `research/freeze.json`.
+- **Editorial corrections:** the reproduction commands in the EXP-002 and EXP-003 protocols named a CLI form that does not exist (`uv run python -m echo.cli ...` without `PYTHONPATH`, and `report EXP-002`); they now give the working commands. No design content changed.
+- **DEC-006 defaults:** frozen as implemented (protocol 10.3); `skip_utility = 0` is the one the owner decided explicitly.

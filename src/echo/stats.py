@@ -69,8 +69,8 @@ def decide(ci: tuple[float, float], sesoi: float) -> str:
     excludes_zero = lo > 0 or hi < 0
     inside_band = -sesoi <= lo and hi <= sesoi
     if excludes_zero and inside_band:
-        # The draft protocol does not name this case; it is reported as both.
-        return "reject H0, smaller than SESOI"
+        # Protocol section 10.2 item 4 (owner-approved 2026-11-24).
+        return "statistically detectable, practically negligible"
     if excludes_zero:
         return "reject H0"
     if inside_band:

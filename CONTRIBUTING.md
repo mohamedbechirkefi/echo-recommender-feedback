@@ -54,3 +54,11 @@ The package lives in `src/echo`; put `src` on the path:
     PYTHONPATH=src uv run --frozen python -m echo.cli smoke                # exploratory EXP-001 matrix and checks V1 to V6
     PYTHONPATH=src uv run --frozen python -m echo.cli report results/exploratory/EXP-001
     PYTHONPATH=src uv run --frozen python -m echo.cli run --config experiments/EXP-002/config.json   # refused until the owner freezes the protocol
+
+### Real data (FMA metadata, added 2026-11-24)
+
+```
+python3 scripts/download_fma_metadata.py                                  # data/raw/ (git-ignored), checks the published SHA-1
+PYTHONPATH=src .venv/bin/python scripts/build_fma_catalogue.py            # data/fma_calibration_v1.json and data/processed/ (git-ignored)
+python3 tests/fixtures/make_fma_fixture.py                                # regenerates the synthetic FMA-schema test fixture
+```

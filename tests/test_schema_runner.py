@@ -15,7 +15,7 @@ from echo.config import SimConfig
 from echo.manifest import REPO_ROOT
 from echo.report import generate
 from echo.runner import (
-    PlannedRun, RefusedError, StopRuleError, check_permission, execute, expand, load_experiment,
+    PlannedRun, RefusedError, StopRuleError, check_permission, config_frozen, execute, expand, load_experiment,
     protocol_frozen, run_experiment,
 )
 from echo.schema import SchemaError, dumps_result, read_result, validate_result
@@ -81,19 +81,45 @@ def test_failed_run_is_recorded_not_raised():
 
 # ---------- guards ----------
 
-def test_confirmatory_configs_are_refused_while_unfrozen():
-    for exp_id in ("EXP-002", "EXP-003"):
-        exp = load_experiment(REPO_ROOT / "experiments" / exp_id / "config.json")
+FROZEN_EXPERIMENTS = ("EXP-002", "EXP-003", "EXP-004")
+
+
+def test_frozen_confirmatory_configs_are_accepted():
+    """The guard accepts the frozen configs. Only the guard runs; nothing is simulated."""
+    for exp_id in FROZEN_EXPERIMENTS:
+        path = REPO_ROOT / "experiments" / exp_id / "config.json"
+        exp = load_experiment(path)
         assert exp["label"] == "confirmatory"
-        with pytest.raises(RefusedError, match="not frozen"):
-            check_permission(exp, expand(exp), REPO_ROOT / "results" / exp_id)
+        assert config_frozen(path) == (True, "frozen")
+        check_permission(exp, expand(exp), REPO_ROOT / "results" / exp_id, config_path=path)
 
 
-def test_cli_run_refuses_confirmatory_with_exit_code_2(capsys):
-    code = cli.main(["run", "--config", str(REPO_ROOT / "experiments" / "EXP-002" / "config.json")])
+def test_changed_confirmatory_config_is_refused(tmp_path, capsys):
+    path = REPO_ROOT / "experiments" / "EXP-002" / "config.json"
+    exp = load_experiment(path)
+    # 1. The freeze record holds another hash for the same file.
+    rec = tmp_path / "freeze.json"
+    rec.write_text(json.dumps({"configs": {"experiments/EXP-002/config.json": {"file_sha256": "a" * 64}}}))
+    with pytest.raises(RefusedError, match="differs from the frozen"):
+        check_permission(exp, expand(exp), tmp_path / "out", config_path=path, freeze_record=rec)
+    # 2. A changed copy (one seed, tiny size) is not the frozen file. If the
+    #    guard failed, the run would be tiny and would write under tmp_path only.
+    changed = dict(exp)
+    changed["blocks"] = [dict(exp["blocks"][0], base=SMALL, seeds=[20261124])]
+    cpath = tmp_path / "config.json"
+    cpath.write_text(json.dumps(changed))
+    with pytest.raises(RefusedError, match="config not frozen"):
+        check_permission(changed, expand(changed), tmp_path / "out", config_path=cpath)
+    code = cli.main(["run", "--config", str(cpath), "--out", str(tmp_path / "out")])
     assert code == 2
     assert "REFUSED" in capsys.readouterr().err
-    assert not (REPO_ROOT / "results" / "EXP-002").exists()
+    assert not (tmp_path / "out").exists()
+    # 3. No record, or a record without the config, refuses too.
+    assert not config_frozen(path, tmp_path / "none.json")[0]
+    rec.write_text(json.dumps({"configs": {}}))
+    assert not config_frozen(path, rec)[0]
+    with pytest.raises(RefusedError, match="no config path"):
+        check_permission(exp, expand(exp), tmp_path / "out")
 
 
 def _registry(tmp_path, status, h):
@@ -206,7 +232,7 @@ def test_bootstrap_deterministic_and_contains_mean():
 
 @pytest.mark.parametrize("ci,expected", [
     ((0.06, 0.2), "reject H0"), ((-0.3, -0.1), "reject H0"), ((-0.02, 0.03), "practically equivalent"),
-    ((-0.1, 0.2), "inconclusive"), ((0.01, 0.04), "reject H0, smaller than SESOI"), ((-0.01, 0.07), "inconclusive"),
+    ((-0.1, 0.2), "inconclusive"), ((0.01, 0.04), "statistically detectable, practically negligible"), ((-0.01, 0.07), "inconclusive"),
 ])
 def test_decision_rule(ci, expected):
     assert decide(ci, 0.05) == expected

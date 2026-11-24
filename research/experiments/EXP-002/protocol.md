@@ -1,8 +1,8 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # EXP-002: Policy effect on simulated taste and exposure (primary)
 
-**Status:** planned (protocol draft, awaiting owner freeze). Confirmatory only after the owner freezes it.
-**Protocol version:** draft 0.1, 2026-11-24. **Hash:** none yet.
+**Status:** frozen by the owner on 2026-11-24 (v1.0), not yet run. Confirmatory.
+**Protocol version:** 1.0, 2026-11-24. **Hash:** recorded in `research/freeze.json` and the registry.
 **Depends on:** EXP-001 passing all verification checks.
 
 Section numbers follow master prompt 11.2.
@@ -28,7 +28,7 @@ Section numbers follow master prompt 11.2.
    - Preference model: fixed or adaptive (eta = 0.05).
 8. **Dependent variables.** Drift (primary), homogenisation, discovery, novelty, diversity, relevance (initial and current), exposure Gini, skip rate, and drift per accepted item.
 9. **Treatment, control and baseline.** RAND is the baseline. The fixed preference model is the control for "reflect only". The treatment is the personalised policy under adaptive preferences.
-10. **Seeds.** 10 confirmatory seeds, 20261124 to 20261133, with common random numbers across policies. The count is raised to 30 before freeze if the EXP-001 pilot projects a CI half-width above 0.025 rad.
+10. **Seeds.** 10 confirmatory seeds, 20261124 to 20261133, with common random numbers across policies. (The pilot rule to raise the count to 30 was checked before the freeze and not triggered: projected half-width 0.0114 rad.)
 11. **Sample-size rationale.** Precision-based, as in `research/protocol.md` section 5.
 12. **Compute budget.** 100 runs, at most 1 hour of wall-clock, local CPU.
 13. **Metric formulas.** `research/protocol.md` section 4.
@@ -43,5 +43,16 @@ Section numbers follow master prompt 11.2.
 17. **Sensitivity.** EXP-003 (drift rule, eta, profile).
 18. **What contradicts H1.** A 95 % CI for Delta inside [-0.05, 0.05] rad.
 19. **Reproduction (planned commands).**
-    - `uv run python -m echo.cli run --config experiments/EXP-002/config.json`
-    - `uv run python -m echo.cli report EXP-002`
+    - `PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-002/config.json`
+    - `PYTHONPATH=src .venv/bin/python -m echo.cli report results/EXP-002`
+
+## Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+See `research/protocol.md` section 10, which governs. For this experiment:
+
+- K = 16 genre clusters with FMA-fitted cluster weights and Zipf exponent s = 1.3065 replace K = 10 (uniform) and s = 1.0 (fitted on the FMA training split before the freeze, method in protocol 10.1, journal J-0003; values in `experiments/EXP-002/config.json` and `data/fma_calibration_v1.json`).
+- RAND is the confirmed baseline; `skip_utility = 0` is kept and disclosed (skips are near zero except under POP).
+- 10 confirmatory seeds, 20261124 to 20261133.
+- When the 95 % CI excludes 0 and lies inside [-0.05, 0.05] rad, the result reads "statistically detectable, practically negligible".
+- SIM minus RAND drift values seen before the freeze (exploratory seeds, draft parameters) are disclosed in protocol 10.2 item 6 and `research/freeze.json`.
+- The same matrix is repeated on a real FMA catalogue as the pre-specified second test EXP-004.

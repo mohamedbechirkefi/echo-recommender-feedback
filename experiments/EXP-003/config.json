@@ -2,11 +2,32 @@
  "experiment_id": "EXP-003",
  "label": "confirmatory",
  "protocol_path": "research/experiments/EXP-003/protocol.md",
- "note": "Confirmatory after the owner's freeze only. 'echo.cli run' refuses this config while the protocol is unfrozen.",
+ "note": "Confirmatory, frozen by the owner on 2026-11-24 (research/freeze.json). Calibrated before the freeze on FMA metadata, training split (research/protocol.md 10.1; journal J-0003; data/fma_calibration_v1.json): n_clusters, cluster_weights and zipf_s replace the planning values K = 10 (uniform) and s = 1.0.",
  "blocks": [
   {
    "name": "sensitivity",
-   "base": {},
+   "base": {
+    "n_clusters": 16,
+    "cluster_weights": [
+     0.02814,
+     0.002203,
+     0.011566,
+     0.026763,
+     0.011141,
+     0.003956,
+     0.04544,
+     0.285256,
+     0.000376,
+     0.002804,
+     0.191823,
+     0.056956,
+     0.00696,
+     0.072854,
+     0.21423,
+     0.039531
+    ],
+    "zipf_s": 1.3065
+   },
    "factors": {
     "update_rule": [
      "consumed",

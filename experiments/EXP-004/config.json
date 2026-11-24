@@ -1,0 +1,47 @@
+{
+ "experiment_id": "EXP-004",
+ "label": "confirmatory",
+ "protocol_path": "research/experiments/EXP-004/protocol.md",
+ "note": "Confirmatory second test, frozen by the owner on 2026-11-24 (research/freeze.json). The EXP-002 matrix on real FMA tracks (test split; research/protocol.md 10.1). Needs data/processed/fma_catalogue_v1.npz with the SHA-256 below (scripts/download_fma_metadata.py, then scripts/build_fma_catalogue.py). zipf_s is unused for this catalogue.",
+ "blocks": [
+  {
+   "name": "fma",
+   "base": {
+    "catalogue": "fma",
+    "n_clusters": 16,
+    "fma_catalogue_sha256": "e5a0084a28a4afbcb8cc2f6b212c7de678ab21ebf3146e0066bef43172a8dd30"
+   },
+   "factors": {
+    "policy": [
+     "RAND",
+     "POP",
+     "SIM",
+     "MMR",
+     "EXPLORE"
+    ],
+    "preference": [
+     {
+      "preference_model": "fixed",
+      "eta": 0.0
+     },
+     {
+      "preference_model": "adaptive",
+      "eta": 0.05
+     }
+    ]
+   },
+   "seeds": [
+    20261124,
+    20261125,
+    20261126,
+    20261127,
+    20261128,
+    20261129,
+    20261130,
+    20261131,
+    20261132,
+    20261133
+   ]
+  }
+ ]
+}

@@ -1,8 +1,8 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # EXP-003: Drift-assumption sensitivity and adaptation ablation
 
-**Status:** planned (protocol draft, awaiting owner freeze). Confirmatory only after the owner freezes it.
-**Protocol version:** draft 0.1, 2026-11-24. **Hash:** none yet.
+**Status:** frozen by the owner on 2026-11-24 (v1.0), not yet run. Confirmatory.
+**Protocol version:** 1.0, 2026-11-24. **Hash:** recorded in `research/freeze.json` and the registry.
 **Depends on:** EXP-001. It is analysed alongside EXP-002.
 
 Section numbers follow master prompt 11.2.
@@ -32,4 +32,15 @@ Section numbers follow master prompt 11.2.
 16. **Anticipated failure modes.** Under the exposure rule, RAND moves listeners toward the catalogue centroid, so drift may be large for every policy.
 17. **Ablation of adaptation.** The fixed vs adaptive ablation is in EXP-002. The oracle vs estimated profile ablation is here.
 18. **What contradicts robustness.** Defined in item 4.
-19. **Reproduction (planned command).** `uv run python -m echo.cli run --config experiments/EXP-003/config.json`
+19. **Reproduction.** `PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-003/config.json`
+
+## Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+See `research/protocol.md` section 10, which governs. For this experiment:
+
+- K = 16 genre clusters with FMA-fitted cluster weights and Zipf exponent s = 1.3065 replace K = 10 (uniform) and s = 1.0 (fitted on the FMA training split before the freeze, method in protocol 10.1, journal J-0003; values in `experiments/EXP-003/config.json` and `data/fma_calibration_v1.json`).
+- RAND is the confirmed baseline; `skip_utility = 0` is kept and disclosed (skips are near zero except under POP).
+- 10 confirmatory seeds, 20261124 to 20261133.
+- When the 95 % CI excludes 0 and lies inside [-0.05, 0.05] rad, the result reads "statistically detectable, practically negligible".
+- SIM minus RAND drift values seen before the freeze (exploratory seeds, draft parameters) are disclosed in protocol 10.2 item 6 and `research/freeze.json`.
+- EXP-003 stays on the synthetic (calibrated) catalogue.

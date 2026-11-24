@@ -23,6 +23,7 @@ PERSONALISED_POLICIES = ("SIM", "MMR", "EXPLORE")
 PREFERENCE_MODELS = ("fixed", "adaptive")
 UPDATE_RULES = ("consumed", "exposure", "bounded")
 PROFILES = ("estimated", "oracle")
+CATALOGUES = ("synthetic", "fma")
 
 SMOKE_SEED_BASE = 900000
 CONFIRMATORY_SEEDS = tuple(range(20261124, 20261134))
@@ -58,6 +59,13 @@ class SimConfig:
     skip_utility: float = 0.0
     track_spread: float = 0.1
     listener_spread: float = 0.1
+    # Real-data amendment (protocol section 10.1, owner-approved 2026-11-24):
+    # catalogue "synthetic" (default) or "fma" (EXP-004 second test).
+    catalogue: str = "synthetic"
+    # Synthetic catalogue only: cluster probabilities fitted on FMA; None = uniform.
+    cluster_weights: tuple[float, ...] | None = None
+    # FMA catalogue only: SHA-256 of data/processed/fma_catalogue_v1.npz.
+    fma_catalogue_sha256: str | None = None
 
     def validate(self) -> "SimConfig":
         errors: list[str] = []
@@ -105,6 +113,26 @@ class SimConfig:
             errors.append(f"update_rule must be one of {UPDATE_RULES}, got {self.update_rule!r}")
         if self.profile not in PROFILES:
             errors.append(f"profile must be one of {PROFILES}, got {self.profile!r}")
+        if self.catalogue not in CATALOGUES:
+            errors.append(f"catalogue must be one of {CATALOGUES}, got {self.catalogue!r}")
+        if self.cluster_weights is not None:
+            w = self.cluster_weights
+            if not isinstance(w, tuple) or not all(
+                isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x) and x >= 0 for x in w
+            ):
+                errors.append("cluster_weights must be a list of finite non-negative numbers")
+            elif len(w) != self.n_clusters:
+                errors.append(f"cluster_weights has {len(w)} entries, n_clusters is {self.n_clusters}")
+            elif abs(sum(w) - 1.0) > 1e-4:
+                errors.append(f"cluster_weights must sum to 1 within 1e-4, got {sum(w)}")
+            if self.catalogue == "fma":
+                errors.append("cluster_weights apply to the synthetic catalogue only")
+        sha = self.fma_catalogue_sha256
+        if self.catalogue == "fma":
+            if not isinstance(sha, str) or len(sha) != 64 or any(c not in "0123456789abcdef" for c in sha):
+                errors.append("catalogue 'fma' needs fma_catalogue_sha256 (64 lowercase hex characters)")
+        elif sha is not None:
+            errors.append("fma_catalogue_sha256 applies to catalogue 'fma' only")
         if not errors:
             if self.preference_model == "fixed" and self.eta != 0.0:
                 errors.append("preference_model 'fixed' requires eta == 0.0")
@@ -124,7 +152,15 @@ class SimConfig:
         return self
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        """JSON-ready dict. The three real-data fields are omitted at their
+        defaults, so configs and hashes from before the amendment are unchanged."""
+        d = asdict(self)
+        if d["cluster_weights"] is not None:
+            d["cluster_weights"] = list(d["cluster_weights"])
+        for key, default in (("catalogue", "synthetic"), ("cluster_weights", None), ("fma_catalogue_sha256", None)):
+            if d[key] == default:
+                del d[key]
+        return d
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "SimConfig":
@@ -136,10 +172,17 @@ class SimConfig:
             raise ConfigError(f"unknown configuration keys: {unknown}")
         if "seed" not in data:
             raise ConfigError("configuration needs a seed")
+        data = dict(data)
+        if isinstance(data.get("cluster_weights"), list):
+            data["cluster_weights"] = tuple(data["cluster_weights"])
         cfg = cls(**data)
         # Normalise ints given for float fields so hashes are stable.
         floats = {f.name for f in fields(cls) if f.type in ("float", float)}
         norm = {k: (float(v) if k in floats and isinstance(v, int) and not isinstance(v, bool) else v) for k, v in asdict(cfg).items()}
+        if norm["cluster_weights"] is not None and all(
+            isinstance(x, (int, float)) and not isinstance(x, bool) for x in norm["cluster_weights"]
+        ):
+            norm["cluster_weights"] = tuple(float(x) for x in norm["cluster_weights"])
         return cls(**norm).validate()
 
     def hash(self) -> str:

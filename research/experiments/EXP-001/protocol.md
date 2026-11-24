@@ -1,9 +1,9 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # EXP-001: Simulator verification and smoke matrix (exploratory)
 
-**Status:** planned (protocol draft, awaiting owner freeze).
+**Status:** frozen by the owner on 2026-11-24 (v1.0) as the record of an exploratory experiment; executed once before the freeze (J-0002). It never supports a confirmatory claim.
 **Type:** exploratory and verification. This experiment never supports a confirmatory claim.
-**Protocol version:** draft 0.1, 2026-11-24. **Hash:** none yet.
+**Protocol version:** 1.0, 2026-11-24 (draft 0.1 plus item 19). **Hash:** recorded in `research/freeze.json` and the registry.
 
 Section numbers follow master prompt 11.2.
 
@@ -35,6 +35,11 @@ Section numbers follow master prompt 11.2.
     - The candidate pool exhausted when T x k is close to N at smoke size (N = 100, T = 20, k = 10). The design check is T <= N - k.
 16. **Sensitivity.** None (verification).
 17. **Disconfirmation.** Any failed check V1 to V6 means the implementation does not operationalise the protocol.
-18. **Reproduction (planned commands; they do not exist yet).**
-    - `uv run python -m echo.cli smoke --out results/EXP-001/`
-    - `uv run pytest`
+18. **Reproduction.**
+    - `PYTHONPATH=src .venv/bin/python -m echo.cli smoke` (writes `results/exploratory/EXP-001/`)
+    - `.venv/bin/python -m pytest`
+19. **Additions recorded before the freeze (protocol section 10.2 item 5, owner-approved 2026-11-24).** The run of 2026-11-24 (J-0002, commit b2e9738) added two blocks to the matrix in items 9 and 10, for planning only:
+    - `timing`: 5 policies x fixed and adaptive preferences, seed 900012, full EXP-002 size (10 runs), to measure runtime per policy.
+    - `sensitivity_screen`: the 36 EXP-003 cells (3 rules x 3 eta x 2 profiles x RAND and SIM), seed 900012, to screen for saturation, frozen listeners and skip extremes.
+    - Total 86 runs, not 40. The SIM minus RAND values these blocks and the pilot showed are disclosed in `research/protocol.md` section 10.2 item 6 and in `research/freeze.json`.
+    - EXP-001 ran at the draft values (K = 10 uniform clusters, s = 1.0), before the FMA calibration.

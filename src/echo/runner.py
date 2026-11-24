@@ -24,6 +24,9 @@ Guards (fail closed):
 - A confirmatory config runs only if its protocol is frozen: the registry
   row has status containing "frozen" and a SHA-256 hash that equals the
   hash of the protocol file. Freezing is the owner's decision (G-FREEZE).
+  The config file must also be listed in the freeze record
+  (``research/freeze.json``, key ``configs``) with a ``file_sha256`` equal to
+  the SHA-256 of its bytes, so a changed config is refused.
 - An exploratory config may not use confirmatory seeds and writes only
   under ``results/exploratory/``.
 """
@@ -48,6 +51,7 @@ from .schema import build_result, dumps_result, validate_result
 from .simulate import Trace, simulate
 
 REGISTRY = REPO_ROOT / "research" / "experiment_registry.csv"
+FREEZE_RECORD = REPO_ROOT / "research" / "freeze.json"
 MAX_FAIL_FRACTION = 0.10
 
 
@@ -142,8 +146,39 @@ def protocol_frozen(experiment_id: str, protocol_path: Path, registry: Path = RE
     return True, "frozen"
 
 
-def check_permission(exp: dict[str, Any], runs: list[PlannedRun], out_dir: Path, registry: Path = REGISTRY) -> None:
+def config_frozen(config_path: Path, freeze_record: Path = FREEZE_RECORD) -> tuple[bool, str]:
+    """Return (frozen, reason): the config's bytes match the freeze record."""
+    if not Path(freeze_record).exists():
+        return False, f"no freeze record at {freeze_record}"
+    try:
+        record = json.loads(Path(freeze_record).read_text(encoding="utf-8"))
+        configs = record["configs"]
+    except (json.JSONDecodeError, KeyError, TypeError) as exc:
+        return False, f"freeze record unreadable ({exc})"
+    try:
+        rel = Path(config_path).resolve().relative_to(REPO_ROOT.resolve()).as_posix()
+    except ValueError:
+        return False, f"config {config_path} is outside the repository"
+    entry = configs.get(rel)
+    if not isinstance(entry, dict) or "file_sha256" not in entry:
+        return False, f"config {rel} is not in the freeze record"
+    actual = sha256_file(config_path)
+    if actual != entry["file_sha256"]:
+        return False, f"config {rel} hash {actual} differs from the frozen {entry['file_sha256']}"
+    return True, "frozen"
+
+
+def check_permission(exp: dict[str, Any], runs: list[PlannedRun], out_dir: Path, registry: Path = REGISTRY,
+                     config_path: Path | None = None, freeze_record: Path = FREEZE_RECORD) -> None:
     if exp["label"] == "confirmatory":
+        if config_path is None:
+            raise RefusedError(f"refusing confirmatory {exp['experiment_id']}: no config path to check")
+        ok, reason = config_frozen(config_path, freeze_record)
+        if not ok:
+            raise RefusedError(
+                f"refusing confirmatory {exp['experiment_id']}: config not frozen ({reason}). "
+                "Freezing is the owner's decision (G-FREEZE)."
+            )
         ok, reason = protocol_frozen(exp["experiment_id"], REPO_ROOT / exp["protocol_path"], registry)
         if not ok:
             raise RefusedError(
@@ -195,13 +230,13 @@ def execute(run: PlannedRun, experiment_id: str, label: str, record: bool = Fals
 
 def run_experiment(
     config_path: Path, out_dir: Path | None = None, record: bool | set[str] = False, trace_memory: bool = False,
-    registry: Path = REGISTRY, progress=None,
+    registry: Path = REGISTRY, progress=None, freeze_record: Path = FREEZE_RECORD,
 ) -> list[dict[str, Any]]:
     """Run every planned run, writing results/ and manifests/. Returns run summaries."""
     exp = load_experiment(config_path)
     runs = expand(exp)
     out = Path(out_dir) if out_dir is not None else default_out_dir(exp)
-    check_permission(exp, runs, out, registry)
+    check_permission(exp, runs, out, registry, config_path=Path(config_path), freeze_record=freeze_record)
     env = environment()
     git = git_state()
     planned_per_arm: dict[str, int] = {}

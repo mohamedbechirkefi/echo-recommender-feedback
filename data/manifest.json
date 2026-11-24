@@ -1,32 +1,19 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "updated": "2026-11-24",
-  "note": "No dataset has been downloaded. Primary data is synthetic and generated from seeds at run time. Licence statements below were read on 2026-11-24 from the URLs given.",
+  "note": "Synthetic data is generated from seeds at run time. FMA metadata (CC BY 4.0) was adopted on 2026-11-24 on the owner's approval (second round, 'Approve all'): it calibrates the synthetic catalogue and provides the EXP-004 real catalogue; listening stays simulated. Raw and processed FMA files are git-ignored and rebuilt by script. Licence statements were read on 2026-11-24 from the URLs given.",
   "synthetic": [
     {
       "id": "echo-synthetic-v0",
       "status": "implemented (M2)",
       "generator": "src/echo/catalogue.py (echo 0.1.0), parameters per run in each result file's config",
-      "parameters": "research/protocol.md section 3 (draft)",
+      "parameters": "research/protocol.md section 3, with K, cluster weights and Zipf s calibrated on FMA (section 10.1)",
       "seeds": "smoke 900000+, confirmatory 20261124-20261133",
       "license": "LicenseRef-ECHO-NC-Research-1.0 (generated output, see NOTICE.md)",
       "redistributable": true
     }
   ],
   "candidates": [
-    {
-      "id": "fma-metadata",
-      "name": "FMA: A Dataset For Music Analysis, fma_metadata.zip (342 MiB)",
-      "source": "https://github.com/mdeff/fma",
-      "citation": "arXiv:1612.01840",
-      "license_metadata": "CC BY 4.0 (repository README: 'The metadata is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0)')",
-      "license_code": "MIT",
-      "audio": "Not used; per-track licences set by artists; excluded",
-      "redistributable": "Metadata yes, with attribution",
-      "verified": "README licence lines read 2026-11-24",
-      "decision": "Optional exploratory extension only, pending owner approval; not downloaded",
-      "sha256": null
-    },
     {
       "id": "musicbrainz-core",
       "name": "MusicBrainz database core data",
@@ -61,6 +48,65 @@
       "id": "spotify-any",
       "name": "Any Spotify data or audio",
       "decision": "Excluded by the master prompt claims boundary (no Spotify scraping, no licensed audio)"
+    }
+  ],
+  "real": [
+    {
+      "id": "fma-metadata",
+      "name": "FMA: A Dataset For Music Analysis, fma_metadata.zip",
+      "citation": "Defferrard, Benzi, Vandergheynst, Bresson. FMA: A Dataset For Music Analysis. ISMIR 2017. arXiv:1612.01840",
+      "official_page": "https://github.com/mdeff/fma",
+      "licence_url": "https://creativecommons.org/licenses/by/4.0",
+      "licence": "CC BY 4.0 for the metadata. README text read 2026-11-24: 'The metadata is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0).' Also: 'The dataset is meant for research purposes.' Code MIT; audio under per-artist licences and never downloaded.",
+      "licence_checked": "2026-11-24; matches the owner's approval (owner-approvals-2026-11-24b.md section 1: 'FMA metadata, CC BY 4.0')",
+      "attribution": "Derived values credit FMA (Defferrard et al.) under CC BY 4.0; changes: aggregation, standardisation, PCA, L2 normalisation.",
+      "url": "https://os.unil.cloud.switch.ch/fma/fma_metadata.zip",
+      "accessed_utc": "2026-11-24T18:56:23Z",
+      "size_bytes": 358412441,
+      "sha256": "d9527a5297a65da31c5676484d5047c3e2b8a8060ce72a46e26158be736bf265",
+      "sha1": "f0df49ffe5f2a6008d7dc83c6915b31835dfe733",
+      "sha1_published": "f0df49ffe5f2a6008d7dc83c6915b31835dfe733 (FMA README); matches",
+      "download_script": "scripts/download_fma_metadata.py",
+      "committed": false,
+      "commit_rule": "Redistributable (CC BY 4.0) but 342 MiB, above the owner's 20 MB limit: data/raw/ is git-ignored",
+      "personal_data": "No listener data. Artist and title fields exist in tracks.csv but are never read into the processed data.",
+      "tables_read": [
+        "tracks.csv (set/split, track/genre_top, track/listens)",
+        "genres.csv",
+        "features.csv (518 librosa statistics)"
+      ],
+      "processed": {
+        "calibration": {
+          "path": "data/fma_calibration_v1.json",
+          "committed": true,
+          "content": "aggregate values and counts only, no rows"
+        },
+        "catalogue": {
+          "path": "data/processed/fma_catalogue_v1.npz",
+          "committed": false,
+          "sha256": "e5a0084a28a4afbcb8cc2f6b212c7de678ab21ebf3146e0066bef43172a8dd30",
+          "rows": 4951,
+          "split": "test",
+          "build_script": "scripts/build_fma_catalogue.py (pure functions in src/echo/fma.py)",
+          "tolerance": "byte-identical on rebuild on the freeze machine; other BLAS builds may differ in the last bits of the PCA, which changes the SHA-256 and makes EXP-004 refuse to run (fail closed)"
+        },
+        "transformations": "research/protocol.md section 10.1",
+        "missingness_and_exclusions": {
+          "genre_top_missing_test": 6312,
+          "genre_top_missing_training": 44410,
+          "genre_top_missing_validation": 6254,
+          "tracks_rows": 106574,
+          "eligible_test": 4951,
+          "eligible_training": 39943,
+          "excluded_test_genre_missing": 6312,
+          "excluded_training_genre_missing": 44410,
+          "features_zero_sd": 0
+        }
+      },
+      "uses": [
+        "calibration of K, cluster weights and Zipf s (training split)",
+        "EXP-004 real catalogue (test split)"
+      ]
     }
   ]
 }
