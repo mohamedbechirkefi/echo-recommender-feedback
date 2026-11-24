@@ -30,6 +30,13 @@ def test_record_fields():
     assert len(REC["frozen_revision"]) == 40
 
 
+def test_round3_ratification_recorded():
+    (rat,) = REC["ratifications"]
+    assert rat["id"] == "RAT-1" and rat["date"] == "2026-11-24"
+    assert "Approve all" in rat["owner_approval_quote"]
+    assert rat["effect_on_hashes"].startswith("none")
+
+
 def test_hashes_match_files():
     for rel, h in REC["protocols"].items():
         assert _sha(rel) == h, rel

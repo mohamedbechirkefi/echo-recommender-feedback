@@ -204,3 +204,30 @@ REFUSED: refusing confirmatory EXP-002: config not frozen (... outside the repos
 ### Next action
 
 M3 when scheduled: EXP-002, EXP-003, EXP-004 on a quiet machine, then the EXP-001 report.
+
+## 2026-11-24: Session 4 (third-round ratification; owner "Approve all", round 3)
+
+**Starting state:** clean tree on `main` at 99f8e8f. Authority: `labs/_shared/ROUND3-brief.md`, `labs/_shared/owner-approvals-2026-11-24c.md` section 4.
+
+### What was done
+
+1. Ratified the correction of the reproduction commands in the EXP-002 and EXP-003 protocols (DEC-009): DEC-011 in `research/decision_log.md`, quoting the owner's "Approve all" (2026-11-24, round 3).
+2. Added `ratifications` (RAT-1) to `research/freeze.json`. Checked that the frozen EXP-002 and EXP-003 protocols already contain the corrected commands (`grep -n "echo.cli"`), so no hash changes; `frozen_revision` and all hashes are unchanged.
+3. Added `test_round3_ratification_recorded` to `tests/test_freeze_record.py`.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras
+Audited 8 packages in 2ms
+$ .venv/bin/python -m pytest -q
+162 passed in 1.77s
+```
+
+### Not done
+
+- No confirmatory run, no push (as the brief requires).
+
+### Next action
+
+M3 when scheduled: EXP-002, EXP-003, EXP-004 on a quiet machine, then the EXP-001 report.

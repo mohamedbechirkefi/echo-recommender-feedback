@@ -86,3 +86,10 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 - **Registry:** EXP-002, EXP-003 and EXP-004 "frozen (owner-approved 2026-11-24), not yet run"; EXP-001 frozen as the exploratory record.
 - **Guard:** `echo.cli run` accepts the frozen confirmatory configs and refuses a changed one (exit code 2); tested in `tests/test_schema_runner.py` and `tests/test_freeze_record.py`. No confirmatory run was made.
 - **Consequence:** any later change to a hashed file is an amendment after freeze: dated, justified and kept separate.
+
+## DEC-011 (2026-11-24): Ratification of the reproduction-command correction (owner, third round)
+
+- **Decider:** the owner ("Approve all", 2026-11-24, round 3; `labs/_shared/owner-approvals-2026-11-24c.md` section 4: "ECHO: the correction of the reproduction commands in the EXP-002 and EXP-003 protocols (DEC-009).").
+- **Item ratified:** the editorial correction recorded in DEC-009, which replaced a CLI form that does not exist with the working commands (`PYTHONPATH=src .venv/bin/python -m echo.cli run --config experiments/EXP-00N/config.json`) in the EXP-002 and EXP-003 protocols. No design content changed.
+- **Effect on the freeze:** none. The frozen text at revision 17ac055 already contains the corrected commands, so no protocol, config or data hash changes. The ratification is listed in `research/freeze.json` under `ratifications` (RAT-1).
+- **Consequence:** no confirmatory run was made; the protocol stays at v1.0 with the hashes of DEC-010.

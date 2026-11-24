@@ -26,6 +26,18 @@
   "AM-7": "Real data (protocol 10.1): K = 16, genre weights and Zipf s = 1.3065 fitted on the FMA training split (J-0003), written into the EXP-002 and EXP-003 configs; second test EXP-004 on the FMA test split."
  },
  "not_applied": [],
+ "ratifications": [
+  {
+   "id": "RAT-1",
+   "date": "2026-11-24",
+   "round": "third round",
+   "approval_source": "labs/_shared/owner-approvals-2026-11-24c.md section 4 (shared folder outside this repository)",
+   "owner_approval_quote": "\"Approve all\"; item: \"ECHO: the correction of the reproduction commands in the EXP-002 and EXP-003 protocols (DEC-009).\"",
+   "item": "Editorial correction of the reproduction commands in the EXP-002 and EXP-003 protocols (DEC-009), applied before the freeze at revision 17ac055.",
+   "effect_on_hashes": "none: the frozen protocol text already contains the corrected commands, so no hashed file changed",
+   "decision_log": "DEC-011"
+  }
+ ],
  "c4_disclosure": [
   {
    "contrast": "EXP-002 primary (SIM minus RAND drift, adaptive, eta 0.05), pilot block",
