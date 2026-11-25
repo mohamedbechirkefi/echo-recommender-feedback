@@ -318,3 +318,45 @@ Write the four 11.3 reports in a session whose file tool permits it (owner-appro
 ## 2026-11-25: M3 done (coordinator)
 
 The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
+
+## 2026-11-25: Session 6 (M4, interpretation, evidence audit and manuscript)
+
+**Starting state:** clean tree on `main` at c23b5df. Authority: `labs/_shared/M4-brief.md`; owner, 2026-11-25, "Approve all recommendations, push then next" (the 2026-11-25b approvals have no ECHO-specific item). Milestone: M4. Next bounded task at start: confounder review from committed results.
+
+### Done
+
+1. **Confounder inspection (exploratory, J-0008).** `scripts/m4_exploratory_confounders.py`, no simulation, 1 process. Output `results/exploratory/M4-confounders/`. Findings: skips do not explain the SIM, MMR and EXPLORE contrasts but do explain POP on FMA (drift -0.0357 rad, per-accept +0.002818 rad per track); every seed shares the SIM sign in EXP-002 and EXP-004; no ceiling at pi/2 (4.2 % of EXP-002 RAND listener values above it); sharp geometry differences between the catalogues. No verdict changed.
+2. **Evidence audit.** SHA256SUMS all OK; provenance consistent (one revision, clean, 0 config-hash mismatches); analysis re-run in a scratch directory byte-identical (20 files). `scripts/build_artifact_manifest.py` writes `research/publication/artifact_manifest.json`. Findings F-1 to F-11 in `research/publication/claims_audit.md`; F-2 and F-3 raised to the owner.
+3. **Literature.** vargas2011 read in full; novelty and intra-list diversity formulas confirmed (M1 open item closed). Citation chaining not done (disclosed).
+4. **Claims register** restructured (result id, config SHA-256, figure or table, section); C-008 to C-013 and external X-001 to X-008 added; C-001, C-004, C-006, C-007 qualified.
+5. **Manuscript** `research/paper/manuscript.md` (5,607 words with tables) and `research/paper/supplementary.md`, structure of 11.4, including the expected-versus-observed table (Table 6) and the competing-explanations table (section 6).
+6. **Second review pass** `research/publication/review_pass_2.md` (R-1 to R-15); manuscript revised for R-2, R-3, R-5, R-6, R-9, R-11, R-12.
+7. **Records:** limitations items 13 (corrected) and 16 to 21; DEC-015; J-0008; registry statuses; EXP-002 report correction note; reproducibility and author-review notes; tests `tests/test_evidence_audit.py` (4 tests).
+
+### Commands and actual outputs
+
+```
+$ PYTHONPATH=src .venv/bin/python scripts/m4_exploratory_confounders.py
+wrote .../results/exploratory/M4-confounders/confounders.json and confounders.md      (0.289 s total)
+$ (cd results/EXP-00N && shasum -a 256 -c SHA256SUMS)    -> 0 non-OK lines (208, 727, 208 entries)
+$ echo.analysis on scratch copies of the runs; cmp with results/EXP-00N/analysis/*   -> 20 of 20 identical
+$ python3 scripts/build_artifact_manifest.py
+{"mapped_tokens": 1311, "unmatched_tokens": 0, "small_integer_tokens_not_mapped": 313}
+MISSING (not audited) research/report.md
+$ .venv/bin/python -m pytest -q
+178 passed in 2.31s
+```
+
+### Not done
+
+- `research/report.md`: the Write tool refused it ("Subagents should return findings as text, not write report files"); no workaround. Its text is returned to the coordinator. After it is written, rerun `python3 scripts/build_artifact_manifest.py` and pytest.
+- No push. No confirmatory rerun. No change to frozen files.
+
+### Risks
+
+- The number trace matches by value; exact checks cover the claim-bearing numbers only (tests).
+- Literature remains abstract-level for seven of eight sources.
+
+### Next action
+
+Coordinator: write `research/report.md`, rebuild the manifest, then mark M4 done. Owner: decide F-2 (t-interval CSV formatting) and F-3; review the manuscript and the AI-assistance disclosure. Then M5.

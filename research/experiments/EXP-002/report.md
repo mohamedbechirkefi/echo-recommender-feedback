@@ -143,6 +143,7 @@ SIM minus RAND: -0.000419 rad per accepted track, 95 % CI [-0.000605, -0.000263]
   - **Profile estimator, update rule and rate:** tested in EXP-003. There the contrast is reversed or vanishes under other rules and rates, and the interpretation is withdrawn.
   - **Catalogue geometry:** tested in EXP-004, where the sign reverses on real FMA tracks.
 - **Compression:** RAND drift is about 1.11 rad against a pi/2 ceiling for most listeners, so the contrasts may be compressed (protocol item 16).
+  - **Correction (M4, 2026-11-25, DEC-015):** pi/2 is not a ceiling. Drift ranges over [0, pi], and pi/2 is the typical angle between unrelated directions in R^16. In the exploratory listener-level inspection (J-0008, `results/exploratory/M4-confounders/confounders.md`), 4.2 % of RAND listener values exceed pi/2 and the maximum is 1.8046 rad. The compression concern is weaker than stated above. No number or verdict of this report changes.
 
 ## 10. Threats to validity
 

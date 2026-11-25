@@ -9,7 +9,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | M1 | Research and preregistration | M0 | P0 | 0.5 | gate passed (2026-11-24: protocol v1.0 frozen by the owner, `research/freeze.json`); two literature items still open (citation chaining, Vargas and Castells check), carried to M4 | none for M3 |
 | M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | done (2026-11-24; gate checked, see progress.md session 2) | none |
 | M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | gate holds (2026-11-25: complete planned matrix, 560/560 confirmatory runs ok, provenance captured); not closed: the four 11.3 experiment reports are not written | experiment reports (file tool refused them in the M3 session; DEC-013) |
-| M4 | Interpretation | M3 | P0 | 0.75 | not started | none |
+| M4 | Interpretation | M3 | P0 | 0.75 | gate holds for every audited document (2026-11-25: 1311 numbers mapped, 0 unmatched; external claims mapped to read sources); closes when `research/report.md` is on disk and the manifest is rebuilt | `research/report.md` (file tool refused; text returned to the coordinator) |
 | M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | not started | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
 
@@ -68,11 +68,11 @@ Target: five focused development days. The schedule is an estimate, never a reas
 
 **Gate:** every number maps to a result ID, a config and a figure, and every external claim maps to a verified source.
 
-- [ ] Confounders inspected.
-- [ ] Sensitivity analysis (EXP-003) interpreted with the pre-specified retain or withdraw rule.
-- [ ] Claims register and claims audit completed, including a second pass that challenges the preferred hypothesis.
-- [ ] Manuscript synthesis includes contradictory results (11.6).
-- [ ] `research/report.md` written.
+- [x] Confounders inspected (manuscript section 6 table; exploratory J-0008).
+- [x] Sensitivity analysis (EXP-003) interpreted with the pre-specified retain or withdraw rule (withdrawn as assumption-dependent).
+- [x] Claims register and claims audit completed, including a second pass that challenges the preferred hypothesis (`research/publication/claims_audit.md`, `review_pass_2.md`).
+- [x] Manuscript synthesis includes contradictory results (11.6).
+- [ ] `research/report.md` written (text composed in M4; the file tool refused it; the coordinator writes it, then reruns `python3 scripts/build_artifact_manifest.py`).
 
 ### M5: Interactive experience
 
