@@ -9,7 +9,7 @@ ECHO asks whether recommendation policies can change exposure and simulated tast
 
 ## Related work
 
-Prior simulations report homogenisation and popularity amplification under feedback loops (chaney2018, mansoury2020) and model preference amplification and degenerate loops (kalimeris2021, jiang2019); carroll2022 defines induced shift against a natural reference. These were read at abstract level only. The novelty and diversity metrics follow Vargas and Castells (vargas2011, full text read). See manuscript section 2 and `research/literature_review.md`.
+Prior simulations report homogenisation and popularity amplification under feedback loops (chaney2018, mansoury2020) and model preference amplification and degenerate loops (kalimeris2021, jiang2019); carroll2022 evaluates induced shift against a natural-shift reference operationalised as a random recommender, which ECHO's RAND follows. All eight cited sources were read in full (seven at M6, 2026-11-25). The novelty and diversity metrics follow Vargas and Castells (vargas2011). See manuscript section 2 and `research/literature_review.md`.
 
 ## Method
 

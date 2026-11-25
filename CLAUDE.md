@@ -33,12 +33,12 @@ Then run `git status` and inspect the existing files. Never overwrite owner chan
 
 ## 4. Scope
 
-- Work only inside this repository. Read-only use of the shared tools is allowed:
-  - `/Users/bechir/research/labs/.tools/py/bin/` (uv, python with typst, pypdf, pillow)
-  - `/Users/bechir/research/labs/.tools/pandoc`
-  - `/Users/bechir/research/helix/.tools/node/bin` (read-only; never modify that folder)
+- Work only inside this repository. Read-only use of the shared tools is allowed (paths relative to this repository):
+  - `../.tools/py/bin/` (uv, python with typst, pypdf, pillow)
+  - `../.tools/pandoc`
+  - `../../helix/.tools/node/bin` (read-only; never modify that folder)
   - `/usr/local/bin/python3`, git.
-- Do not touch any other folder under `/Users/bechir/research`.
+- Do not touch any other folder under the parent research folder (`../..`).
 - Never kill processes you did not start. Never delete anything you did not create in the current session.
 
 ## 5. Truthfulness

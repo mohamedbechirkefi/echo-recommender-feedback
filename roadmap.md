@@ -11,7 +11,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | gate holds (2026-11-25: complete planned matrix, 560/560 confirmatory runs ok, provenance captured); not closed: the four 11.3 experiment reports are not written | experiment reports (file tool refused them in the M3 session; DEC-013) |
 | M4 | Interpretation | M3 | P0 | 0.75 | gate holds for every audited document (2026-11-25: 1311 numbers mapped, 0 unmatched; external claims mapped to read sources); closes when `research/report.md` is on disk and the manifest is rebuilt | `research/report.md` (file tool refused; text returned to the coordinator) |
 | M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | done (2026-11-25; gate checked: A11Y-CHECK PASS offline, 360 px, keyboard, contrast, reduced motion, no foreign request; numbers verbatim from the manuscript; DEC-018) | none |
-| M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
+| M6 | Release candidate | M4, M5 | P0 | 0.5 | release candidate prepared, awaiting owner review and G-PUBLIC (2026-11-25, 0.1.0-rc1; DEC-019) | owner sign-off of `research/publication/author_review.md`; owner approval for any publication (G-PUBLIC) |
 
 ## Acceptance criteria
 
@@ -86,12 +86,12 @@ Target: five focused development days. The schedule is an estimate, never a reas
 
 **Gate:** only verified facts are reported, and the owner approves any publication.
 
-- [ ] Clean-clone install from `uv.lock`, tests, smoke reproduction and demo build, with actual outputs recorded.
-- [ ] Manuscript and report PDFs compiled and visually inspected (11.6).
-- [ ] References, links, equations and metadata verified.
-- [ ] Secret, personal-data and licence scan.
-- [ ] Owner review checklist completed.
-- [ ] Nothing pushed without approval.
+- [x] Clean-clone install from `uv.lock`, tests, smoke reproduction and demo build, with actual outputs recorded (`research/publication/reproducibility_report.md`).
+- [x] Manuscript and report PDFs compiled and visually inspected (11.6): `scripts/build_publication_pdfs.py`, DEC-019.
+- [x] References, links, equations and metadata verified: all 8 sources read in full (`claims_audit.md`, M6 table); `scripts/check_links.py`; PDF metadata checked with pypdf.
+- [x] Secret, personal-data and licence scan (`release_checklist.md`; `dependency_licences.md`).
+- [ ] Owner review checklist completed: prepared for the owner (`author_review.md`, M6 section); open until the owner signs it off.
+- [ ] Nothing pushed without approval: nothing was pushed, tagged or released in M6; stays open until the owner's publication decision.
 
 ## Cut order if the five-day target is threatened
 

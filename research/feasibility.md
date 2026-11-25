@@ -10,7 +10,7 @@ All values below come from commands run in this session. The exact outputs are i
 | CPU | `sysctl -n machdep.cpu.brand_string hw.ncpu` | Apple M1 Pro, 10 cores |
 | Memory | `sysctl -n hw.memsize` | 17179869184 bytes (16 GiB) |
 | OS | `sw_vers` | macOS 15.3.1 (24D70) |
-| Free disk | `df -h /Users/bechir/research/labs` | 128 GiB available (brief stated about 127 GB; consistent) |
+| Free disk | `df -h ..` (the shared labs folder) | 128 GiB available (brief stated about 127 GB; consistent) |
 | GPU | not used | CPU-only plan |
 
 ## 2. Tools
@@ -18,11 +18,11 @@ All values below come from commands run in this session. The exact outputs are i
 | Tool | Location | Observed version |
 |---|---|---|
 | Python | `/usr/local/bin/python3` | 3.12.1 |
-| uv | `/Users/bechir/research/labs/.tools/py/bin/uv` | 0.9.5 |
+| uv | `../.tools/py/bin/uv` | 0.9.5 |
 | typst (Python package) | same environment | 0.15.0 |
 | pypdf, pillow | same environment | 6.20.0, 11.3.0 |
-| pandoc | `/Users/bechir/research/labs/.tools/pandoc` | 3.6.3 |
-| Node | `/Users/bechir/research/helix/.tools/node/bin` (read-only) | v22.23.3 |
+| pandoc | `../.tools/pandoc` | 3.6.3 |
+| Node | `../../helix/.tools/node/bin` (read-only) | v22.23.3 |
 | git | system | 2.42.1 |
 | TeX (tex, pdflatex, xelatex) | none | not installed |
 | typst CLI | none | not on PATH (Python package used instead) |

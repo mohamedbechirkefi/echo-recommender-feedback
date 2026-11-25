@@ -70,3 +70,10 @@ PYTHONPATH=src .venv/bin/python scripts/m5_exploratory_engine_traces.py   # expl
 PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py               # demo/public/data/results.json from committed results
 cd demo && npm ci && npm test && npm run build && node tools/a11y_check.mjs dist
 ```
+
+### M6 publication commands (added 2026-11-25)
+
+```
+.venv/bin/python scripts/build_publication_pdfs.py --png-dir <scratch>/png   # manuscript, supplementary and report PDFs, manuscript.tex; optional page PNGs
+.venv/bin/python scripts/check_links.py                                       # relative Markdown links, anchors and inline-code paths
+```

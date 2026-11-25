@@ -46,3 +46,24 @@ Scope: master prompt 11.5 and the M4 brief. Audited documents: `research/paper/m
 | Policies change exposure (C-009) | Descriptive secondaries | Strong but largely by construction | Both catalogues |
 | Skip rate does not explain the SIM contrasts; it explains POP on FMA (C-011, C-007) | Exploratory side-by-side of committed outputs | Moderate | Both catalogues |
 | Geometry differs between catalogues (C-012) | Exploratory, inputs only | Descriptive; causal role not tested | Ten confirmatory seeds |
+
+## M6 reference table (2026-11-25)
+
+There is no `references.bib`: the manuscript cites eight keys in square brackets and lists them in its References section. Check: every key cited in `research/paper/manuscript.md` is listed, and every listed entry is cited (8 of 8 both ways). All eight are now read in full. The seven sources that were at abstract level were opened from free, legal copies on 2026-11-25 (arXiv PDFs; for kalimeris2021, the PDF linked from the Meta Research publication page). No paid access, login or shadow library was used. The PDFs are not committed; SHA-256 values are in `research/claims_register.csv`.
+
+| Key | Reading status | Statement in the manuscript | Where it is supported | Outcome |
+|---|---|---|---|---|
+| chaney2018 | full text (9 pages) | Simulation; algorithmic confounding homogenises user behaviour without raising utility | Abstract p. 1; section 1 p. 2; section 5 pp. 4-5; fixed preferences, assumption 3 p. 3 | Holds; fixed preferences added |
+| mansoury2020 | full text (5 pages) | Offline simulation of popularity-bias amplification, reduced aggregate diversity, taste-representation shift | Abstract p. 1; sections 4.3.1 to 4.3.3 pp. 3-4 | Holds; the shift is in the system's representation, not intrinsic preferences (4.3.2), added |
+| jiang2019 | full text (10 pages) | Degenerate feedback loops in user-interest dynamics; echo chamber versus filter bubble | Abstract p. 1 ("disentangling the echo chamber from the filter bubble effect"); "System Design Role - Filter Bubble" p. 3; "Echo Chamber & Filter Bubble Effect" p. 5 | Holds |
+| kalimeris2021 | full text (11 pages) | Preference amplification; users drift toward recommended content | Abstract and section 1 p. 1 (matrix-factorisation recommender) | Holds; DOI 10.1145/3447548.3467298 is printed in the paper (not opened) |
+| carroll2022 | full text with appendices (23 pages) | Induced shift against a natural-shift reference | Section 1 p. 2 and section 5 p. 5: natural preference shifts are operationalised as the preferences under a random recommender | Corrected: the M4 text said RAND "is not the same construct as their natural shift"; it is the same operationalisation (finding F-12, DEC-019) |
+| ie2019 | full text (23 pages) | RecSim is a configurable user-state simulator | Abstract p. 1 (configurable user latent state and its dynamics); user transition model p. 4 | Holds; wording made precise |
+| vargas2011 | full text (8 pages, M4) | Equations 5 and 16 match ECHO's novelty and intra-list diversity | Equations 5 and 16 | Holds (M4, F-8) |
+| defferrard2017 | full text (8 pages) and repository README | Metadata, genres, audio features and play counts; metadata CC BY 4.0 | Abstract p. 1; 16 top-level genres p. 4; librosa features, section 2.5 p. 4; listen counts, table p. 2. The paper does not state the metadata licence (it states that the audio is Creative Commons licensed); CC BY 4.0 rests on the README | Holds; licence source made explicit in X-008 |
+
+| ID | Finding | Severity | Resolution |
+|---|---|---|---|
+| F-12 | carroll2022 full text: natural preference shifts are defined as the preferences under a random recommender, so ECHO's RAND follows their operationalisation; the M4 manuscript said the opposite. No number or verdict depends on this sentence. | medium (misstatement of a source) | Corrected in manuscript section 2 and `research/report.md`; X-005 reworded; DEC-019. |
+| F-13 | The introduction said each simulation study read "assumes a particular mechanism of preference change". In full text, chaney2018 holds intrinsic preferences fixed and mansoury2020 measures the system's representation of taste. | low (overgeneralisation) | Introduction reworded to distinguish the two pairs of studies. |
+| F-8 (update) | All eight sources are now read in full. | closed | Limitations item 21 and manuscript section 7 updated. |

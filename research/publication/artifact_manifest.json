@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "generated_by": "scripts/build_artifact_manifest.py",
- "repository_revision_at_generation": "3dddf754381d1ea55f060b30794f6b60bbbb18a8",
+ "repository_revision_at_generation": "6fa5f616fefb9f0262fd7b54523f3fceb32b8a69",
  "scope": [
   "research/paper/manuscript.md",
   "research/paper/supplementary.md",
@@ -113,7 +113,7 @@
  "counts": {
   "mapped_tokens": 1441,
   "unmatched_tokens": 0,
-  "small_integer_tokens_not_mapped": 329
+  "small_integer_tokens_not_mapped": 337
  },
  "unmatched": [],
  "entries": [
@@ -18894,7 +18894,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18910,7 +18910,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "95 %",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18926,7 +18926,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "-0.0535",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18942,7 +18942,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "-0.0200",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18958,7 +18958,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "0.1652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18974,7 +18974,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "0.1560",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18990,7 +18990,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 27,
+   "line": 26,
    "token": "0.1735",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",

@@ -6,7 +6,7 @@
 ## S1. Complete experimental matrix
 
 | Experiment | Type | Factors | Seeds | Runs planned | Runs ok | Report |
-|---|---|---|---|---|---|---|
+|----|-----|--------|----|---|---|-------|
 | EXP-001 | exploratory, verification | smoke 5 policies x fixed/adaptive x 2 seeds (N 100, U 20, T 20); variance pilot SIM, RAND x 10 seeds; timing block; one-seed screen of the 36 EXP-003 cells | 900000 to 900012 | 86 (two executions) | 86 and 86 | `research/experiments/EXP-001/report.md` |
 | EXP-001 FMA-path smoke | exploratory | smoke block on the FMA catalogue | 900000, 900001 | 20 | 20 | same |
 | EXP-002 | confirmatory, primary | 5 policies x {fixed, adaptive eta 0.05} | 20261124 to 20261133 | 100 | 100 | `research/experiments/EXP-002/report.md` |
@@ -112,7 +112,7 @@ The FMA genre centres are fixed (calibration split), hence the zero range. The s
 ## S7. Configurations and hashes
 
 | Item | SHA-256 |
-|---|---|
+|----|------|
 | `research/protocol.md` v1.0 | a81ed32c5e21f06e68d61e00250119762d1a56cdf4230a05ac3d89ff48c8f5dc |
 | EXP-001 protocol | 5d869d0f418956cdac48cb94a97a8a890aa96ba81193bb4a898664704830cff4 |
 | EXP-002 protocol | 3852ad1950f73740378c6f19339d912da57c69daab82d218c3b8efb33af192b2 |

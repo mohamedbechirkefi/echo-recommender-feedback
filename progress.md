@@ -450,3 +450,76 @@ The first checker run failed the keyboard check (20 of 29 reached): a radio grou
 ### Next action
 
 M6 (release candidate): clean clone, PDFs, references and links, secret and licence scan, owner review checklist.
+
+## 2026-11-25: M6 release candidate
+
+Authority: owner, 2026-11-25, "Next" (second) (`labs/_shared/owner-approvals-2026-11-25e.md`); applied under `labs/_shared/M6-brief.md`. Decision record: DEC-019. Status: release candidate 0.1.0-rc1 prepared, awaiting the owner's review and G-PUBLIC. Nothing was pushed, tagged or released.
+
+### Clean clone (revision 6fa5f61, local clone in a scratch directory, deleted afterwards)
+
+```
+$ git clone -q <repository> <scratch>/clone                       -> HEAD 6fa5f61
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras       -> 8 packages installed (re-run: Audited 8 packages)
+$ .venv/bin/python -m pytest -q                                     -> 183 passed in 29.45s
+$ PYTHONPATH=src .venv/bin/python -m echo.cli smoke --out <scratch>/smoke
+REFUSED or STOPPED: exploratory output must live under .../results/exploratory   (rc 2; intended guard)
+$ PYTHONPATH=src .venv/bin/python -m echo.cli smoke                 -> [86/86] ... ok; V1 to V6 PASS; ALL CHECKS PASS; real 112.07 s
+$ git status --short | wc -l                                        -> 86, all results/exploratory/EXP-001/manifests/*.manifest.json
+  (runs/*.json and checks.json byte-identical; manifests differ in started/finished_utc, runtime_s, process_max_rss_bytes, git.revision, and the data_sha256 block added by the M3 manifest writer)
+$ git checkout -q -- results; PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py   -> wrote demo/public/data/results.json (197849 bytes); git status clean
+$ PYTHONPATH=src .venv/bin/python -m echo.analysis results/EXP-002 --planned 100 --kind policy   -> rc 0; git status clean
+$ (demo) npm ci --prefer-offline                                    -> added 53 packages in 814ms
+$ (demo) npm test                                                   -> Test Files 2 passed (2); Tests 29 passed (29)
+$ (demo) npm run build                                              -> index 253.15 kB, worker 10.65 kB, CSS 7.68 kB; built in 652ms
+$ (demo) node tools/a11y_check.mjs dist                             -> 9 PASS lines; A11Y-CHECK PASS
+$ (demo) checker on a copy of dist with results.json "schema" corrupted   -> FAIL results render: 0 experiment panels; A11Y-CHECK FAIL (2)
+```
+
+### PDFs
+
+`scripts/build_publication_pdfs.py` (new). Commands and outputs of the final build:
+
+```
+$ .venv/bin/python scripts/build_publication_pdfs.py --typ-dir <scratch>/typ --png-dir <scratch>/png
+OK research/paper/manuscript.pdf 193670 bytes           (14 pages)
+OK research/paper/supplementary.pdf 152318 bytes        (7 pages)
+OK research/experiments/EXP-001/report.pdf 88758 bytes  (4 pages)
+OK research/experiments/EXP-002/report.pdf 135170 bytes (6 pages)
+OK research/experiments/EXP-003/report.pdf 146822 bytes (7 pages)
+OK research/experiments/EXP-004/report.pdf 122376 bytes (5 pages)
+OK research/paper/manuscript.tex
+$ pypdf metadata: every PDF has /Title set (the document's first heading), no /Author, no e-mail address and no local path in text or metadata
+```
+
+Inspected with the Read tool at 60 ppi (two pages per image): all 14 manuscript pages and all 7 supplementary pages of the final build; report pages 1 to 4 of EXP-001, 1 to 4 of EXP-002, 1 to 6 of EXP-003 and 1 to 4 of EXP-004 (first pages and every page with a table; the reports embed no figures). Defects found and fixed in the builder or table separators: raw SPDX comment and title text on page 1; table captions split from tables; overflowing paths and hashes in supplementary Tables S1 and S7; colliding cells in the wide report tables (DEC-019).
+
+### References, links, numbers, manifests
+
+- No `references.bib` exists; 8 keys cited and 8 listed in the manuscript, matching both ways.
+- Full texts read on 2026-11-25 for chaney2018, mansoury2020, jiang2019, kalimeris2021, carroll2022, ie2019, defferrard2017 (vargas2011 at M4): 8 read in full, 0 abstract only, 0 unverified. Correction F-12 (carroll2022, RAND is their natural-shift operationalisation); F-13 (introduction narrowed).
+- `.venv/bin/python scripts/check_links.py` -> 6 relative links checked, 0 broken; 237 inline-code paths checked, 0 missing.
+- `.venv/bin/python scripts/build_artifact_manifest.py` -> {"mapped_tokens": 1441, "unmatched_tokens": 0, "small_integer_tokens_not_mapped": 337}; README and articles are in its scope (DEC-018), demo by `tests/test_demo_export.py`.
+- `data/manifest.json`: the FMA archive (d9527a52...) and processed catalogue (e5a0084a...) SHA-256 recomputed, both match. `research/freeze.json`: 11 of 11 protocol, config and data hashes match. `artifact_manifest.json`: 23 distinct file paths, 0 missing.
+
+### Scans
+
+- `git ls-files` (1663 files): 0 e-mail addresses; 0 private-key headers or token patterns; 0 `.env` files; absolute home-directory paths in 3 files (CLAUDE.md 4, research/feasibility.md 4, progress.md 2). The first two were replaced by relative paths. **Note on this file:** the two absolute paths in the M0 entry of this file (the `df -h` and `node --version` commands) are left as written because this file is append-only; they name the shared tools location only.
+- Dependency licences: `research/publication/dependency_licences.md` (8 Python, 84 npm lock entries, 53 installed): no flags.
+- SPDX: 98 text files added since M0; 3 without a header at the start (demo/.npmrc and manuscript.tex fixed; results/exploratory/EXP-001/report/summary.typ, a generated result artifact, left unchanged).
+
+### Working-repository checks before the commit
+
+```
+$ .venv/bin/python -m pytest -q                         -> 190 passed in 12.64s
+$ PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py --check   -> OK demo/public/data/results.json
+$ (demo) npm test                                       -> Tests 29 passed (29)
+$ (demo) npm run build; node tools/a11y_check.mjs dist  -> A11Y-CHECK PASS
+```
+
+### Owner items
+
+See `research/publication/author_review.md`, "Prepared for the owner (M6, 2026-11-25)": sign-off, publication decision, repository and demo URLs, manuscript title (not among the approved titles, so `CITATION.cff` keeps its own title), version 0.1.0-rc1 and `date-released`, the carroll2022 correction, the repository address in the licence files, citation chaining, and the manuscript status line.
+
+### Next action
+
+Owner review of `author_review.md`; then, only on the owner's approval, the publication step (G-PUBLIC).

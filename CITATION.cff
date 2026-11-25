@@ -22,8 +22,7 @@ references:
         given-names: Xavier
     url: "https://github.com/mdeff/fma"
     license: CC-BY-4.0
-version: 0.0.1
-date-released: "2026-11-24"
+version: "0.1.0-rc1"
 abstract: "A pre-registered, seeded simulation of whether recommendation policies change exposure and simulated taste rather than simply reflect it. A similarity policy produced less simulated preference drift than uniform-random exposure on a calibrated synthetic catalogue (EXP-002: -0.0355 rad, 95 % CI [-0.0535, -0.0200]); the pre-registered sensitivity test withdrew this interpretation as assumption-dependent (EXP-003), and a second test on real FMA tracks reversed the sign (EXP-004: +0.1652 rad, CI [0.1560, 0.1735]; does not replicate). Simulated preference change is not evidence of human persuasion."
 keywords:
   - recommender systems

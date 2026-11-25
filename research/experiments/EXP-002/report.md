@@ -31,7 +31,7 @@
 ## 3. Rationale
 
 - If simulated preferences move toward consumed items, a policy that controls exposure controls the direction of that movement.
-- Prior simulation and modelling work motivates both narrowing and amplification mechanisms: kalimeris2021, jiang2019, chaney2018, mansoury2020 and carroll2022, verified from their abstracts. See `research/literature_review.md`.
+- Prior simulation and modelling work motivates both narrowing and amplification mechanisms: kalimeris2021, jiang2019, chaney2018, mansoury2020 and carroll2022, verified from their abstracts (full texts read at M6, 2026-11-25; `research/claims_register.csv` X-001 to X-006). See `research/literature_review.md`.
 - The gap addressed is a pre-registered, seed-paired comparison of policies against a non-personalised reference, under fixed and adaptive preferences, with the update-rule sensitivity tested separately in EXP-003.
 
 ## 4. Hypotheses and operational definitions

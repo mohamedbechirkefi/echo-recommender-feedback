@@ -38,3 +38,12 @@ No novelty is claimed. A broader search (citation chaining from kalimeris2021 an
 
 - The Vargas and Castells check (an M1 item carried to M4) is closed: see the vargas2011 row.
 - Citation chaining from kalimeris2021 and carroll2022 (the other carried item) was not done in M4. The manuscript discloses that the review is targeted and non-systematic and that seven of eight sources were read at abstract level only.
+
+## 5. M6 update (2026-11-25)
+
+The full texts of the seven sources that had been read at abstract level were opened from free, legal copies (arXiv PDFs; for kalimeris2021, the PDF linked from the Meta Research publication page) and checked against the statements made about them. The PDFs were not committed; their SHA-256 values and the supporting page or section for each statement are in `research/claims_register.csv` (X-001 to X-008) and `research/publication/claims_audit.md` (M6 reference table). The "What was read" column of section 1 records the M0 state and is superseded by this section.
+
+- chaney2018, mansoury2020, jiang2019, kalimeris2021, ie2019: the statements in manuscript section 2 hold against the full text. Added precision: chaney2018 holds intrinsic preferences fixed (assumption 3), and mansoury2020 states that the taste shift it reports is in the system's representation of preferences, not in intrinsic preferences (section 4.3.2).
+- carroll2022: correction. Section 5 operationalises "natural preference shifts" as the preferences a user would have when interacting with a random recommender. The M4 manuscript said that ECHO's RAND "is not the same construct as their natural shift"; it is the same operationalisation, and the manuscript was corrected (DEC-019).
+- defferrard2017: the paper describes the metadata, the 16 top-level genres, the librosa features, the listen counts and the proposed split. It states that the audio is Creative Commons licensed and does not state the metadata licence; the CC BY 4.0 metadata licence rests on the repository README.
+- Citation chaining remains not done.
