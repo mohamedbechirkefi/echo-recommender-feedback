@@ -314,3 +314,7 @@ See the commit for this session; the full suite was run before committing.
 ### Next action
 
 Write the four 11.3 reports in a session whose file tool permits it (owner-approved, DEC-014), from the committed results only. Then mark M3 done and start M4.
+
+## 2026-11-25: M3 done (coordinator)
+
+The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 4 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
