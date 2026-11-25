@@ -360,3 +360,7 @@ $ .venv/bin/python -m pytest -q
 ### Next action
 
 Coordinator: write `research/report.md`, rebuild the manifest, then mark M4 done. Owner: decide F-2 (t-interval CSV formatting) and F-3; review the manuscript and the AI-assistance disclosure. Then M5.
+
+## 2026-11-25: M4 done (coordinator)
+
+`research/report.md` (the short report of master prompt section 8) was composed by the M4 session from committed results and written by the coordinator, because subagents may not write report files. The coordinator checked that every decimal number in it appears in a committed file, then rebuilt the artifact manifest and ran the suite. With the manuscript, evidence audit and second pass committed in 07da95d, the M4 gate holds. M4 is **done**. Open for the owner: F-2 (`np.float64(...)` text in the t-interval columns of `contrasts.csv`) and F-3 (an unused per-accept label in the wrong unit).

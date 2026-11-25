@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "generated_by": "scripts/build_artifact_manifest.py",
- "repository_revision_at_generation": "c23b5dfef32bae645f688869c70c87a2003c213f",
+ "repository_revision_at_generation": "07da95d24c74adab2debe02ca0c40910705f7b63",
  "scope": [
   "research/paper/manuscript.md",
   "research/paper/supplementary.md",
@@ -104,13 +104,11 @@
    "code_revision": "b2e9738 (first run), 04bc350 (re-run)"
   }
  },
- "missing_documents": [
-  "research/report.md"
- ],
+ "missing_documents": [],
  "counts": {
-  "mapped_tokens": 1311,
+  "mapped_tokens": 1357,
   "unmatched_tokens": 0,
-  "small_integer_tokens_not_mapped": 313
+  "small_integer_tokens_not_mapped": 318
  },
  "unmatched": [],
  "entries": [
@@ -8798,6 +8796,663 @@
    "result_path": null,
    "json_path": null,
    "metric": "100 + 360 + 100 confirmatory runs (integrity.planned_runs of EXP-002, EXP-003, EXP-004)",
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "-0.0355",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-004",
+   "n_matches": 9,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/primary/mean_diff",
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/mean_diff",
+    "results/EXP-003/analysis/analysis.json#/cells/consumed/eta=0.05/estimated/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "95 %",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/POP-RAND/holm/level",
+   "metric": "level",
+   "context_experiment": "EXP-004",
+   "n_matches": 23,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/arms/6/exposure_gini/ci95/0",
+    "results/EXP-004/analysis/analysis.json#/arms/6/exposure_gini/mean",
+    "results/EXP-002/analysis/analysis.json#/drift_family/SIM-RAND/holm/level"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "-0.0535",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/0",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/0",
+   "context_experiment": "EXP-004",
+   "n_matches": 7,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/drift_family/SIM-RAND/holm/ci/0",
+    "results/EXP-002/analysis/analysis.json#/primary/boot_ci95/0",
+    "results/EXP-002/analysis/analysis.json#/primary/holm/ci/0"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "-0.0200",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/1",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/1",
+   "context_experiment": "EXP-004",
+   "n_matches": 7,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/drift_family/SIM-RAND/holm/ci/1",
+    "results/EXP-002/analysis/analysis.json#/primary/boot_ci95/1",
+    "results/EXP-002/analysis/analysis.json#/primary/holm/ci/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "0.1652",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-004",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/mean_diff",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-004/SIM-RAND/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "0.1560",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/0",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/0",
+   "context_experiment": "EXP-004",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/boot_ci95/0",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/ci95/0",
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/MMR-RAND/relevance_initial/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 8,
+   "token": "0.1735",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/1",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/1",
+   "context_experiment": "EXP-004",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/boot_ci95/1",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/ci95/1",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-004/SIM-RAND/drift_ci95/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "200",
+   "experiment_id": "parameter",
+   "result_path": null,
+   "json_path": null,
+   "metric": "U = 200 listeners per seed, research/protocol.md section 3",
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "100",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-002",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/integrity/result_files",
+    "results/EXP-004/analysis/analysis.json#/integrity/planned_runs",
+    "results/EXP-004/analysis/analysis.json#/integrity/result_files"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "95 %",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/holm/level",
+   "metric": "level",
+   "context_experiment": "EXP-002",
+   "n_matches": 23,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/primary/holm/level",
+    "results/EXP-002/analysis/analysis.json#/arms/1/exposure_gini/ci95/0",
+    "results/EXP-002/analysis/analysis.json#/arms/1/exposure_gini/ci95/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "0.05",
+   "experiment_id": "parameter",
+   "result_path": null,
+   "json_path": null,
+   "metric": "SESOI and eta, research/protocol.md sections 2 and 3",
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "360",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-002",
+   "n_matches": 3,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/integrity/result_files",
+    "results/exploratory/EXP-001/report/summary.json#/timing/projection/EXP-003/runs"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "4,951",
+   "experiment_id": "data",
+   "result_path": "data/fma_calibration_v1.json",
+   "json_path": "/catalogue/n_tracks",
+   "metric": "n_tracks",
+   "context_experiment": "EXP-002",
+   "n_matches": 4,
+   "other_matches": [
+    "data/fma_calibration_v1.json#/counts/eligible_test",
+    "data/manifest.json#/real/0/processed/catalogue/rows",
+    "data/manifest.json#/real/0/processed/missingness_and_exclusions/eligible_test"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 16,
+   "token": "100",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-002",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/integrity/result_files",
+    "results/EXP-004/analysis/analysis.json#/integrity/planned_runs",
+    "results/EXP-004/analysis/analysis.json#/integrity/result_files"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-0.0355",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-002",
+   "n_matches": 9,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/primary/mean_diff",
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/mean_diff",
+    "results/EXP-003/analysis/analysis.json#/cells/consumed/eta=0.05/estimated/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-0.0535",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/0",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/0",
+   "context_experiment": "EXP-002",
+   "n_matches": 7,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/drift_family/SIM-RAND/holm/ci/0",
+    "results/EXP-002/analysis/analysis.json#/primary/boot_ci95/0",
+    "results/EXP-002/analysis/analysis.json#/primary/holm/ci/0"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-0.0200",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/1",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/1",
+   "context_experiment": "EXP-002",
+   "n_matches": 7,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/drift_family/SIM-RAND/holm/ci/1",
+    "results/EXP-002/analysis/analysis.json#/primary/boot_ci95/1",
+    "results/EXP-002/analysis/analysis.json#/primary/holm/ci/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-1.24",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/d_z",
+   "metric": "d_z",
+   "context_experiment": "EXP-002",
+   "n_matches": 3,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/primary/d_z",
+    "results/EXP-003/analysis/analysis.json#/cells/consumed/eta=0.05/estimated/d_z"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "0.1630",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/POP-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-002",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/POP-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-002/POP-RAND/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/B_listener_drift/EXP-002/POP/share_above_pi_over_2"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-0.1162",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/MMR-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-002",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/MMR-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-002/MMR-RAND/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-002/MMR-RAND/drift_mean_diff_rad"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "-0.0381",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/drift_family/EXPLORE-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-002",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/EXPLORE-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-002/EXPLORE-RAND/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-002/EXPLORE-RAND/drift_mean_diff_rad"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 20,
+   "token": "50",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/integrity/negative_control/fixed_runs_checked",
+   "metric": "fixed_runs_checked",
+   "context_experiment": "EXP-002",
+   "n_matches": 2,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/integrity/negative_control/fixed_runs_checked"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.05",
+   "experiment_id": "parameter",
+   "result_path": null,
+   "json_path": null,
+   "metric": "SESOI and eta, research/protocol.md sections 2 and 3",
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.0069",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/estimated/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-003",
+   "n_matches": 6,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/oracle_vs_estimated_sign_check/1/estimated_mean",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-003/bounded/eta=0.05/estimated/mean_diff",
+    "results/EXP-002/analysis/analysis.json#/arms/8/skip_rate/mean"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "-0.0130",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/estimated/boot_ci95/0",
+   "metric": "/cells/bounded/eta=0.05/estimated/boot_ci95/0",
+   "context_experiment": "EXP-003",
+   "n_matches": 2,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/cells/bounded/eta=0.05/estimated/holm/ci/0"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.0303",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/estimated/boot_ci95/1",
+   "metric": "/cells/bounded/eta=0.05/estimated/boot_ci95/1",
+   "context_experiment": "EXP-003",
+   "n_matches": 2,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/cells/bounded/eta=0.05/estimated/holm/ci/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.1883",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/oracle/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-003",
+   "n_matches": 3,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/oracle_vs_estimated_sign_check/1/oracle_mean",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-003/bounded/eta=0.05/oracle/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.1598",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/oracle/boot_ci95/0",
+   "metric": "/cells/bounded/eta=0.05/oracle/boot_ci95/0",
+   "context_experiment": "EXP-003",
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 21,
+   "token": "0.2196",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/cells/bounded/eta=0.05/oracle/boot_ci95/1",
+   "metric": "/cells/bounded/eta=0.05/oracle/boot_ci95/1",
+   "context_experiment": "EXP-003",
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "0.1652",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-004",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/mean_diff",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-004/SIM-RAND/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "0.1560",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/0",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/0",
+   "context_experiment": "EXP-004",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/boot_ci95/0",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/ci95/0",
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/MMR-RAND/relevance_initial/mean_diff"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "0.1735",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/SIM-RAND/boot_ci95/1",
+   "metric": "/drift_family/SIM-RAND/boot_ci95/1",
+   "context_experiment": "EXP-004",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/primary/boot_ci95/1",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/SIM-RAND/drift_rad/ci95/1",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-004/SIM-RAND/drift_ci95/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "-0.0357",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/POP-RAND/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": "EXP-004",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/POP-RAND/drift_rad/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/A_sign_consistency/EXP-004/POP-RAND/mean_diff",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-004/POP-RAND/drift_mean_diff_rad"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "-0.0723",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/POP-RAND/boot_ci95/0",
+   "metric": "/drift_family/POP-RAND/boot_ci95/0",
+   "context_experiment": "EXP-004",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/drift_family/POP-RAND/holm/ci/0",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/POP-RAND/drift_rad/ci95/0",
+    "results/exploratory/M4-confounders/confounders.json#/C_skip_confounder/EXP-004/POP-RAND/drift_ci95/0"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "0.0005",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/drift_family/POP-RAND/boot_ci95/1",
+   "metric": "/drift_family/POP-RAND/boot_ci95/1",
+   "context_experiment": "EXP-004",
+   "n_matches": 12,
+   "other_matches": [
+    "results/EXP-004/analysis/analysis.json#/drift_family/POP-RAND/holm/ci/1",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/MMR-RAND/drift_per_accept_rad/mean_diff",
+    "results/EXP-004/analysis/analysis.json#/secondary_vs_rand_descriptive/adaptive/POP-RAND/drift_rad/ci95/1"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 22,
+   "token": "0.325",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/arms/1/skip_rate/mean",
+   "metric": "mean",
+   "context_experiment": "EXP-004",
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.5118",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.4883",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/0",
+   "metric": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/0",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.5336",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/1",
+   "metric": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/1",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.6796",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/mean_diff",
+   "metric": "mean_diff",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.6652",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/0",
+   "metric": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/0",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 23,
+   "token": "0.6925",
+   "experiment_id": "EXP-004",
+   "result_path": "results/EXP-004/analysis/analysis.json",
+   "json_path": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/1",
+   "metric": "/secondary_vs_rand_descriptive/adaptive/SIM-RAND/exposure_gini/ci95/1",
+   "context_experiment": null,
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 27,
+   "token": "560",
+   "experiment_id": "derived",
+   "result_path": null,
+   "json_path": null,
+   "metric": "100 + 360 + 100 confirmatory runs (integrity.planned_runs of EXP-002, EXP-003, EXP-004)",
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 31,
+   "token": "0.4138",
+   "experiment_id": "M4-exploratory",
+   "result_path": "results/exploratory/M4-confounders/confounders.json",
+   "json_path": "/D_geometry/synthetic_calibrated (EXP-002 config)/summary/track_resultant_length/mean",
+   "metric": "mean",
+   "context_experiment": "EXP-004",
+   "n_matches": 4,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/secondary_vs_rand_descriptive/fixed/EXPLORE-RAND/exposure_gini/ci95/1",
+    "results/EXP-003/analysis/analysis.json#/arms/4/relevance_initial/ci95/0",
+    "results/EXP-003/analysis/analysis.json#/arms/6/relevance_initial/ci95/0"
+   ]
+  },
+  {
+   "document": "research/report.md",
+   "line": 31,
+   "token": "0.0777",
+   "experiment_id": "M4-exploratory",
+   "result_path": "results/exploratory/M4-confounders/confounders.json",
+   "json_path": "/D_geometry/fma (EXP-004 config)/summary/track_resultant_length/mean",
+   "metric": "mean",
+   "context_experiment": "EXP-004",
+   "n_matches": 1,
+   "other_matches": []
+  },
+  {
+   "document": "research/report.md",
+   "line": 35,
+   "token": "0.05",
+   "experiment_id": "parameter",
+   "result_path": null,
+   "json_path": null,
+   "metric": "SESOI and eta, research/protocol.md sections 2 and 3",
    "other_matches": []
   },
   {
