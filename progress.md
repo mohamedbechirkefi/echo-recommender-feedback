@@ -398,3 +398,55 @@ $ .venv/bin/python -m pytest -q   -> 179 passed in 2.34s
 ### Next action
 
 M5 (demo, paper, reports and articles from identical verified results).
+
+## 2026-11-25: M5 interactive experience
+
+Authority: owner, 2026-11-25, "Next" (`labs/_shared/owner-approvals-2026-11-25d.md`); stack: the master prompt's default (TypeScript, React, Vite) from the shared template. Applied under `labs/_shared/M5-brief.md`. Decision record: DEC-018.
+
+### Done
+
+- `demo/`: the shared template, adapted. Sections: overview with status label and plain-language findings, published results (forest plot of all 20 SIM minus RAND contrasts with the SESOI band, per-policy drift for EXP-002 and EXP-004, a panel per registered experiment with status, frozen verdict, estimates and intervals, claim ids), the taste map (exploratory illustration from the Python engine), assumptions, method and limitations (manuscript sections 4 and 7 verbatim), and the sandbox. Four labels: measured result, exploratory illustration, sandbox output, assumption. DEC-012's two readings of "practically equivalent" are stated where they decide a verdict.
+- `scripts/export_demo_data.py` writes `demo/public/data/results.json` from committed files; `tests/test_demo_export.py` (4 tests) checks byte-identical regeneration, verbatim manuscript strings (documented exception: nine EXP-003 oracle cells, verbatim in supplementary Table S2), the experiment list and the regeneration of the exploratory traces.
+- `scripts/m5_exploratory_engine_traces.py` (journal J-0009): port fixture (seed 950000) and taste-map trace (seed 950001), exploratory.
+- Sandbox: `demo/src/engine.ts`, a port of the session loop, run in a Web Worker with seed, policy, update rule, eta, EXPLORE epsilon, run, cancel, reset and a JSON download of the run on screen. It reproduces the Python engine on the fixture (slates and choices exact; preferences, drift and metrics within 1e-9); its random-number generator and scale differ and the page says so.
+- `demo/tools/a11y_check.mjs`: keyboard identity by full DOM path (stricter; DEC-018).
+- Text consistency: README (findings, navigation table, demo quick start, screenshot `docs/demo.png`, 58,740 bytes, with alt text), `CITATION.cff` (stale "no results" status replaced), `demo/README.md`, `articles/README.md`, new drafts `articles/medium.md` and `articles/linkedin.md`. These five public texts joined the artifact-manifest scope.
+- `research/publication/author_review.md`: three agent-ticked boxes unticked (the owner decisions they recorded are kept as text); an M5 review item added.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras   -> Audited 8 packages
+$ (demo) npm ci --prefer-offline   -> added 53 packages
+$ PYTHONPATH=src .venv/bin/python scripts/m5_exploratory_engine_traces.py   -> wrote demo/src/fixtures/engine_fixture.json (142647 bytes), results/exploratory/M5-taste-map/trace.json (61699 bytes); 8.9 s
+$ ... --check   -> OK (both files)
+$ .venv/bin/python scripts/build_artifact_manifest.py   -> {"mapped_tokens": 1441, "unmatched_tokens": 0, "small_integer_tokens_not_mapped": 329}
+$ .venv/bin/python scripts/export_demo_data.py --check   -> OK demo/public/data/results.json
+$ .venv/bin/python -m pytest -q   -> 183 passed in 11.64s
+$ (demo) npm test   -> Test Files 2 passed (2); Tests 29 passed (29)
+$ (demo) npm run build   -> built (index 253.15 kB JS, worker 10.65 kB, CSS 7.68 kB)
+$ (demo) node tools/a11y_check.mjs dist --screenshots <scratch>/echo/shots
+PASS results render (no fail-closed panel): 4 experiment panels
+PASS text contrast, light scheme (WCAG AA)
+PASS text contrast, dark scheme (WCAG AA)
+PASS keyboard reaches every focusable element: 29 reached of 29
+PASS visible focus indicator
+PASS no horizontal page scroll at 360 px: overflow 0px
+PASS reduced motion: no running animations: 0 running
+PASS no request leaves the local origin
+PASS offline after first load: results stay, sandbox runs: Sandbox output (seed 1, SIM, consumed rule, eta 0.05): mean drift 1.023 rad; RAN
+A11Y-CHECK PASS
+$ (negative check) same checker on a copy of dist with taste_map.label changed   -> A11Y-CHECK FAIL (2) (fail-closed panel shown)
+$ grep -rn REPLACE demo/ --exclude-dir=node_modules   -> 0 lines
+```
+
+The first checker run failed the keyboard check (20 of 29 reached): a radio group is reached by Tab only once, and the checker merged controls with the same index in different labels. The radios became toggle buttons and the checker's identity became the DOM path; then 29 of 29. Screenshots (desktop light and dark, mobile, and a sandbox run) were inspected: the forest plot's decision column was clipped and was widened; the drift-curve end labels were clipped and the curves now scale with their column; a duplicated phrase in the taste-map text was removed. On 360 px the forest plot and drift curves scroll sideways inside labelled, keyboard-focusable regions (with a hint); the page itself has no horizontal scroll.
+
+### Owner placeholders that remain
+
+- Public repository URL (manuscript section 10, README, CITATION.cff message, articles) and public demo URL: placeholders, not published.
+- Publication decision (G-PUBLIC) and the owner's full-text review of the manuscript, reports, articles and page (M6; `author_review.md`).
+
+### Next action
+
+M6 (release candidate): clean clone, PDFs, references and links, secret and licence scan, owner review checklist.

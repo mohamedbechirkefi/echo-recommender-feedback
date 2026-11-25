@@ -57,6 +57,12 @@ DOCUMENTS = [
     "research/experiments/EXP-004/report.md",
     "research/claims_register.csv",
     "research/limitations.md",
+    # M5 (DEC-018): public-facing texts use the same verified numbers.
+    "README.md",
+    "CITATION.cff",
+    "articles/medium.md",
+    "articles/linkedin.md",
+    "demo/README.md",
 ]
 
 # Values that are design parameters, unit conversions or simple derivations.
@@ -78,6 +84,11 @@ DERIVED = {
     "0.9875": ("derived", "Holm level 1 - 0.05 / 4"),
     "0.9972": ("derived", "Holm level 1 - 0.05 / 18"),
     "1e-12": ("parameter", "unit-norm tolerance, EXP-001 check V4"),
+    "950001": ("parameter", "exploratory taste-map seed, scripts/m5_exploratory_engine_traces.py (M5, DEC-018)"),
+    "1e-9": ("parameter", "engine-port tolerance, demo/src/engine.test.ts (M5, DEC-018)"),
+    "300": ("parameter", "sandbox catalogue size, demo/src/sandbox.worker.ts SANDBOX_PARAMS (M5)"),
+    "60": ("parameter", "sandbox session length, demo/src/sandbox.worker.ts SANDBOX_PARAMS (M5)"),
+    "22": ("parameter", "Node major version used for the demo build (progress.md, M5)"),
     "1.0": ("parameter", "draft Zipf exponent s = 1.0, research/protocol.md section 3"),
     "15.3.1": ("environment", "macOS version in the run manifests"),
     "3.12.1": ("environment", "Python version in the run manifests"),

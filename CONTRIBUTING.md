@@ -62,3 +62,11 @@ python3 scripts/download_fma_metadata.py                                  # data
 PYTHONPATH=src .venv/bin/python scripts/build_fma_catalogue.py            # data/fma_calibration_v1.json and data/processed/ (git-ignored)
 python3 tests/fixtures/make_fma_fixture.py                                # regenerates the synthetic FMA-schema test fixture
 ```
+
+### M5 demo commands (added 2026-11-25)
+
+```
+PYTHONPATH=src .venv/bin/python scripts/m5_exploratory_engine_traces.py   # exploratory fixture and taste map (about 9 s)
+PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py               # demo/public/data/results.json from committed results
+cd demo && npm ci && npm test && npm run build && node tools/a11y_check.mjs dist
+```

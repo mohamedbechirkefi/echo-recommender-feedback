@@ -10,7 +10,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 | M2 | Core implementation | M1 drafts (the freeze is not needed to implement) | P0 | 1.5 | done (2026-11-24; gate checked, see progress.md session 2) | none |
 | M3 | Experiments | M2; M1 freeze for confirmatory runs | P0 | 0.5 | gate holds (2026-11-25: complete planned matrix, 560/560 confirmatory runs ok, provenance captured); not closed: the four 11.3 experiment reports are not written | experiment reports (file tool refused them in the M3 session; DEC-013) |
 | M4 | Interpretation | M3 | P0 | 0.75 | gate holds for every audited document (2026-11-25: 1311 numbers mapped, 0 unmatched; external claims mapped to read sources); closes when `research/report.md` is on disk and the manifest is rebuilt | `research/report.md` (file tool refused; text returned to the coordinator) |
-| M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | not started | none |
+| M5 | Interactive experience | M3 results (precomputed) | P1 | 0.75 | done (2026-11-25; gate checked: A11Y-CHECK PASS offline, 360 px, keyboard, contrast, reduced motion, no foreign request; numbers verbatim from the manuscript; DEC-018) | none |
 | M6 | Release candidate | M4, M5 | P0 | 0.5 | not started | owner approval for any publication (G-PUBLIC) |
 
 ## Acceptance criteria
@@ -78,9 +78,9 @@ Target: five focused development days. The schedule is an estimate, never a reas
 
 **Gate:** offline after initial load, responsive, usable keyboard controls, no fabricated data, no runtime service.
 
-- [ ] Static taste map with recommendation trajectory and exploration controls.
-- [ ] Published results are kept separate from visitor sandbox runs.
-- [ ] Demo, paper, reports and articles use identical verified results (11.6).
+- [x] Static taste map with recommendation trajectory and exploration controls (exploratory taste map from the Python engine; sandbox with seed, policy, update rule, eta, EXPLORE epsilon, run, cancel and reset).
+- [x] Published results are kept separate from visitor sandbox runs (four distinct labels: measured, exploratory, sandbox, assumption).
+- [x] Demo, paper, reports and articles use identical verified results (11.6): `tests/test_demo_export.py`; README, CITATION.cff, articles and demo README in the artifact-manifest scope (0 unmatched).
 
 ### M6: Release candidate
 
