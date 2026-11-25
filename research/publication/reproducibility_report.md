@@ -39,3 +39,18 @@ No failure needed a fix. The full checks were not repeated after the M6 PDF buil
 - `echo.analysis` re-run on copies of the committed EXP-002, EXP-003 and EXP-004 runs and manifests, in a scratch directory outside the repository, with the committed commands: all 20 analysis files byte-identical to the committed ones.
 - `shasum -a 256 -c SHA256SUMS` in each `results/EXP-00N/`: every entry OK.
 - Simulation runs were not repeated (no confirmatory reruns in M4).
+
+## M6 second fresh clone (2026-11-25, revision cb74186, after the M6 changes)
+
+| Step | Actual output |
+|---|---|
+| `uv sync --frozen --all-groups --all-extras` | 8 packages installed |
+| `.venv/bin/python -m pytest -q` | 190 passed in 14.17 s |
+| `PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py` | wrote 197851 bytes; `git status` clean |
+| `.venv/bin/python scripts/check_links.py` | 6 relative links, 0 broken; 238 inline-code paths, 0 missing |
+| `scripts/build_publication_pdfs.py` (default) | "SKIPPED: pandoc or the typst interpreter not found" (the builder looks for the shared tools next to the repository; a clone elsewhere needs `ECHO_TOOLS`) |
+| `ECHO_TOOLS=<labs>/.tools .venv/bin/python scripts/build_publication_pdfs.py` | 6 PDFs and `manuscript.tex`; `manuscript.tex` byte-identical; each PDF the same size as the committed one, differing only in the creation and modification timestamps, the XMP timestamps and the document /ID |
+| Demo `npm ci`, `npm test`, `npm run build`, `node tools/a11y_check.mjs dist` | added 53 packages; Tests 29 passed (29); built; `A11Y-CHECK PASS` |
+| `git status --short` after the demo steps | 0 lines |
+
+The smoke simulation was not repeated in this second clone: the M6 commit changed no file under `src/` or `experiments/`. The clone was deleted afterwards.

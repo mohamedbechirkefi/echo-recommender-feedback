@@ -523,3 +523,17 @@ See `research/publication/author_review.md`, "Prepared for the owner (M6, 2026-1
 ### Next action
 
 Owner review of `author_review.md`; then, only on the owner's approval, the publication step (G-PUBLIC).
+
+### Second fresh clone after the M6 commit (revision cb74186)
+
+```
+$ uv sync --frozen --all-groups --all-extras; .venv/bin/python -m pytest -q   -> 190 passed in 14.17s
+$ PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py               -> wrote 197851 bytes; git status clean
+$ .venv/bin/python scripts/check_links.py                                   -> 6 relative links checked, 0 broken; 238 inline-code paths checked, 0 missing
+$ .venv/bin/python scripts/build_publication_pdfs.py                        -> SKIPPED: pandoc or the typst interpreter not found (clone outside labs/; needs ECHO_TOOLS)
+$ ECHO_TOOLS=<labs>/.tools ... build_publication_pdfs.py                    -> manuscript.tex identical; PDFs same size, differ only in timestamps and /ID
+$ (demo) npm ci; npm test; npm run build; node tools/a11y_check.mjs dist    -> added 53 packages; Tests 29 passed (29); built; A11Y-CHECK PASS
+$ git status --short | wc -l                                                -> 0
+```
+
+Clone deleted. Final state: M6 release candidate prepared, awaiting owner review and G-PUBLIC.
