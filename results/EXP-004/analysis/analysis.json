@@ -1108,9 +1108,7 @@
    0.0016638449779873385
   ],
   "ci_excludes_zero": true,
-  "ci_inside_sesoi_band": true,
   "d_z": 10.614551467399407,
-  "decision": "statistically detectable, practically negligible",
   "diffs": [
    0.0016539520523080357,
    0.0015944856190701524,

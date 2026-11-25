@@ -364,3 +364,37 @@ Coordinator: write `research/report.md`, rebuild the manifest, then mark M4 done
 ## 2026-11-25: M4 done (coordinator)
 
 `research/report.md` (the short report of master prompt section 8) was composed by the M4 session from committed results and written by the coordinator, because subagents may not write report files. The coordinator checked that every decimal number in it appears in a committed file, then rebuilt the artifact manifest and ran the suite. With the manuscript, evidence audit and second pass committed in 07da95d, the M4 gate holds. M4 is **done**. Open for the owner: F-2 (`np.float64(...)` text in the t-interval columns of `contrasts.csv`) and F-3 (an unused per-accept label in the wrong unit).
+
+## 2026-11-25: Post-M4 owner decisions (items 2 and 6)
+
+Authority: owner, 2026-11-25, "Approve all" (post-M4) (`labs/_shared/owner-approvals-2026-11-25c.md`), applied under `labs/_shared/POST-M4-brief.md`.
+
+### Done
+
+- **Item 2, statements (DEC-017).** The funding, competing-interest and AI-assistance wording of manuscript section 11 is recorded as owner-approved. No wording changed. `research/publication/author_review.md` item ticked.
+- **Item 6, F-2 and F-3 (DEC-016).** `src/echo/analysis.py`: t-interval stored as plain floats (F-2); SESOI `decision` label and `ci_inside_sesoi_band` flag removed from the per-accepted-item contrast (F-3). New test in `tests/test_analysis.py`. Analyses regenerated from the committed runs (no simulation); `SHA256SUMS` updated with old hashes kept in DEC-016; `research/freeze.json` lists DEC-016 under `post_freeze_decisions` (frozen hashes unchanged); claims audit, supplementary S4 note, author review and manuscript section 10 updated; artifact manifest rebuilt.
+
+### Commands and actual outputs
+
+```
+$ PYTHONPATH=src .venv/bin/python -m echo.analysis results/EXP-002 --planned 100 --kind policy   (then EXP-003 sensitivity, EXP-004 replication, reference EXP-002)  -> rc 0
+$ compare old vs new contrasts.csv after stripping np.float64(...)   -> identical (4, 18, 4 rows); no "np." left
+$ cmp analysis.md, arms.csv, per_seed.csv, fig-contrasts.svg (old vs new)   -> no differences
+$ git diff results/EXP-00{2,4}/analysis/analysis.json   -> only "ci_inside_sesoi_band" and "decision" removed from the per-accept contrast
+$ (cd results/EXP-00N && shasum -a 256 -c SHA256SUMS | grep -vc ': OK$')   -> 0, 0, 0
+$ .venv/bin/python scripts/build_artifact_manifest.py   -> {"mapped_tokens": 1357, "unmatched_tokens": 0, "small_integer_tokens_not_mapped": 318}
+$ .venv/bin/python -m pytest -q   -> 179 passed in 2.34s
+```
+
+### Owner placeholders for M5
+
+- Manuscript section 10: public repository URL, currently "[placeholder, not published; publication requires the owner's approval]". Needs the owner's publication decision and URL.
+- No other placeholder needing an owner-only fact was found (repository-wide search for "placeholder", "TBD" and "[owner").
+
+### Not done
+
+- `manuscript.tex` and the PDF were not regenerated: the repository has no generation script yet (M6).
+
+### Next action
+
+M5 (demo, paper, reports and articles from identical verified results).

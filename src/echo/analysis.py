@@ -113,7 +113,7 @@ def contrast(treat: list[float], ref: list[float], seeds: list[int]) -> dict[str
     return {
         "n_seeds": len(diffs), "seeds": list(seeds), "treat": list(treat), "ref": list(ref), "diffs": diffs,
         "mean_diff": statistics.fmean(diffs), "sd_diff": statistics.stdev(diffs),
-        "boot_ci95": list(ci), "t_ci95": list(paired_t_ci(diffs)), "d_z": dz,
+        "boot_ci95": list(ci), "t_ci95": [float(x) for x in paired_t_ci(diffs)], "d_z": dz,
         "p_boot": boot_p_value(means), "decision": decide(ci, SESOI),
         "ci_inside_sesoi_band": -SESOI <= ci[0] and ci[1] <= SESOI,
         "ci_excludes_zero": ci[0] > 0 or ci[1] < 0,
@@ -204,6 +204,11 @@ def analyse_policy_matrix(runs, planned: int) -> dict[str, Any]:
     holm_intervals(family)
     seeds, t, r = paired_values(runs, "drift_per_accept_rad", "SIM", where=adaptive)
     per_accept = contrast(t, r, seeds) if len(seeds) >= 2 else None
+    if per_accept is not None:
+        # The SESOI band is in rad; this contrast is in rad per accepted track, so no SESOI label applies
+        # (evidence-audit finding F-3, fixed under DEC-016).
+        for k in ("decision", "ci_inside_sesoi_band"):
+            per_accept.pop(k)
     secondary_vs_rand = {}
     for pref in ("fixed", "adaptive"):
         for pol in DRIFT_FAMILY:

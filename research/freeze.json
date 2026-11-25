@@ -122,6 +122,13 @@
    "item": "M3 execution: no deviation from the protocol; an exploratory FMA-path smoke was added; the experiment reports were not written in the run session.",
    "owner_decision": "reports approved, owner-approvals-2026-11-25.md item 4 (DEC-014)",
    "effect_on_hashes": "none"
+  },
+  {
+   "id": "DEC-016",
+   "date": "2026-11-25",
+   "item": "Evidence-audit findings F-2 and F-3 fixed: the paired t-interval columns of contrasts.csv are written as plain floats, and the SESOI decision label and band flag are removed from the per-accepted-item contrast in analysis.json. The analysis was regenerated from the committed runs; no value changed.",
+   "owner_decision": "owner, 2026-11-25, \"Approve all\" (post-M4), owner-approvals-2026-11-25c.md item 6: \"ECHO F-2 and F-3 (table formatting, unused label).\"",
+   "effect_on_hashes": "none on the frozen set (protocols, configs, data); results SHA256SUMS updated, old hashes recorded in DEC-016"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "generated_by": "scripts/build_artifact_manifest.py",
- "repository_revision_at_generation": "07da95d24c74adab2debe02ca0c40910705f7b63",
+ "repository_revision_at_generation": "9b566c0361f2540b30ccdf24b29b44c9152690d8",
  "scope": [
   "research/paper/manuscript.md",
   "research/paper/supplementary.md",

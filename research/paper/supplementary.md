@@ -72,7 +72,7 @@ Seed-paired differences versus RAND, adaptive. The SIM rows are the pre-specifie
 | EXP-004 MMR-RAND | 0.0570 | 0.000499 | [0.000435, 0.000569] | -0.0100 | yes |
 | EXP-004 EXPLORE-RAND | 0.1631 | 0.001560 | [0.001467, 0.001650] | -0.0101 | yes |
 
-Note: the analysis code also attaches a decision label to the per-accept contrast using the 0.05 rad SESOI band, whose unit (rad) differs from the per-accept unit (rad per track). That label is not meaningful and is not used anywhere (evidence-audit finding F-3).
+Note: the analysis code also attaches a decision label to the per-accept contrast using the 0.05 rad SESOI band, whose unit (rad) differs from the per-accept unit (rad per track). That label is not meaningful and is not used anywhere (evidence-audit finding F-3). Correction, 2026-11-25: with the owner's approval the label and the band flag were removed from the analysis output (DEC-016); no number changed.
 
 ## S5. Exploratory: listener-level drift distribution (J-0008)
 

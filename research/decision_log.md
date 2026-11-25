@@ -129,3 +129,23 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 - **Manuscript:** synthesised to master prompt 11.4 with all contradicting results, then revised after the second review pass (`research/publication/review_pass_2.md`, R-1 to R-15).
 - **Literature:** vargas2011 read in full; metric formulas confirmed. Citation chaining not done; disclosed.
 - **Write refusal:** the file tool refused `research/report.md`; its text was returned to the coordinator, with no shell workaround.
+
+## DEC-016 (2026-11-25): Evidence-audit findings F-2 and F-3 fixed (owner-approved)
+
+- **Decider:** the owner, 2026-11-25, "Approve all" (post-M4) (`labs/_shared/owner-approvals-2026-11-25c.md`, outside this repository), item 6, quoted: "ECHO F-2 and F-3 (table formatting, unused label)." Applied by the AI under `labs/_shared/POST-M4-brief.md`.
+- **F-2 (table formatting).** `contrast()` in `src/echo/analysis.py` now stores the paired t interval as plain Python floats, so `write_tables` no longer writes `np.float64(...)` strings into the `t_ci_lo` and `t_ci_hi` columns of `contrasts.csv`.
+- **F-3 (unused label).** The per-accepted-item contrast (`drift_per_accept_SIM-RAND` in `analysis.json`) no longer carries the `decision` label or the `ci_inside_sesoi_band` flag. Both applied the 0.05 rad SESOI band to a metric in rad per accepted track, and no report, the manuscript or the supplementary used them. `ci_excludes_zero`, which needs no SESOI, is kept.
+- **Regeneration, not a run.** The three analyses were re-run on the committed confirmatory runs with the commands in `scripts/build_artifact_manifest.py`; no simulation ran. Each new `contrasts.csv` equals the old one after removing the `np.float64(...)` wrapper (4, 18 and 4 rows); `analysis.md`, `arms.csv`, `per_seed.csv` and the figures are byte-identical; `analysis.json` lost exactly the two per-accept keys in EXP-002 and EXP-004 (EXP-003 has no such contrast). No number in any report, the manuscript or the claims register changed. Test `test_tables_have_plain_floats_and_per_accept_has_no_sesoi_label` added.
+- **Hashes kept on record (old -> new), updated in `results/EXP-00N/SHA256SUMS`:**
+  - EXP-002 `analysis/analysis.json`: 5c308c47a41dd9871ed8d92b23424e6608adc5ead7e0e7e9722128325ab2d2ed -> da434d997aef4bce961c5f5a31cb92a2bdb1d31dc0ec3e2ae32ba0ce46c07dcd
+  - EXP-002 `analysis/contrasts.csv`: ac0fe56e168e3dafbfb2bb7f0770416d01e7fed2219e258868be3c2f540e8e88 -> c51883274087f833851ae61f6522146c99fe30041c71d0c508a389f583e43745
+  - EXP-003 `analysis/contrasts.csv`: e27dd09b8431b28295d0f91e9e9292349e91cd788d5006afefd64ee1362fe0ad -> 4ffc464319665a3596e4c6328c134058618eea229dc6750d1009a6a151c535b5
+  - EXP-004 `analysis/analysis.json`: fd32807b24a9d7654ad7f6afe437fd5a0f2ed6ad4fbf6dd8d478bfe1e123097e -> 71a55072a10eece232c2c5b7bfc9e512b16e22c6e603ac4fe7c9398c515fd00c
+  - EXP-004 `analysis/contrasts.csv`: 005160b5e77f5270ed7be3d0f6aea029bb6d9f401e7e909e5676d7d2573416a5 -> 9147d7d036da8de37b07d4c6f54f8166ee21305023635372f02e4b37523221ce
+- **Frozen set:** no protocol, config, seed, data file or raw run changed; the hashes in `research/freeze.json` are unchanged. DEC-016 is listed there under `post_freeze_decisions`.
+
+## DEC-017 (2026-11-25): Funding, competing-interest and AI-use statements owner-approved
+
+- **Decider:** the owner, 2026-11-25, "Approve all" (post-M4) (`labs/_shared/owner-approvals-2026-11-25c.md`), item 2, quoted: "The wording drafted in each manuscript is approved." and "Where a draft still has a placeholder that needs a fact only the owner knows, it stays a placeholder."
+- **Scope:** manuscript section 11 (funding, competing interests, AI assistance) and the AI-assistance sentence in the author metadata, as they stand at revision 9b566c0. No wording was changed.
+- **Placeholders remaining:** none in section 11. One placeholder elsewhere needs a fact only the owner can supply: the public repository URL in manuscript section 10. It is listed in `progress.md` under "Owner placeholders for M5".

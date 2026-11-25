@@ -154,3 +154,14 @@ def test_analysis_refuses_exploratory_results():
 
     with pytest.raises(ValueError):
         A.run_analysis(REPO_ROOT / "results" / "exploratory" / "EXP-001", planned=86, kind="policy")
+
+
+def test_tables_have_plain_floats_and_per_accept_has_no_sesoi_label(tmp_path):
+    """Evidence-audit findings F-2 and F-3 (DEC-016)."""
+    a = A.analyse_policy_matrix(_matrix(), planned=100)
+    assert all(type(x) is float for c in a["drift_family"].values() for x in c["t_ci95"])
+    pa = a["drift_per_accept_SIM-RAND"]
+    assert "decision" not in pa and "ci_inside_sesoi_band" not in pa and "ci_excludes_zero" in pa
+    A.write_tables(a, tmp_path)
+    for name in ("arms.csv", "contrasts.csv", "per_seed.csv"):
+        assert "np." not in (tmp_path / name).read_text(encoding="utf-8")

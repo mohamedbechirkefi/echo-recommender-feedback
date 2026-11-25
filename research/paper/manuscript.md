@@ -229,7 +229,7 @@ Future work, each as a new registered experiment: locate the update-rate thresho
 - Protocols and freeze record: `research/protocol.md`, `research/experiments/EXP-00N/protocol.md`, `research/freeze.json`.
 - Experiment reports: `research/experiments/EXP-00N/report.md`.
 - Raw results: `results/EXP-00N/runs/` (schema `echo.result.v1`), manifests, `provenance.csv`, `SHA256SUMS`.
-- Analysis: `PYTHONPATH=src .venv/bin/python -m echo.analysis results/EXP-00N --planned N --kind {policy|sensitivity|replication}`; re-running it on the committed runs reproduced every analysis file byte for byte on 2026-11-25 (evidence audit).
+- Analysis: `PYTHONPATH=src .venv/bin/python -m echo.analysis results/EXP-00N --planned N --kind {policy|sensitivity|replication}`; re-running it on the committed runs reproduced every analysis file byte for byte on 2026-11-25 (evidence audit). After the owner-approved formatting fix of DEC-016, the regenerated tables hold the same values.
 - Exploratory confounder inspection: `PYTHONPATH=src .venv/bin/python scripts/m4_exploratory_confounders.py`.
 - Data: `scripts/download_fma_metadata.py` and `scripts/build_fma_catalogue.py` rebuild the git-ignored FMA files; the processed catalogue's SHA-256 is checked at run time. Only aggregate calibration values are committed.
 - Evidence trail: `research/claims_register.csv`, `research/publication/artifact_manifest.json`, `research/publication/claims_audit.md`.
