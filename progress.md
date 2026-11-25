@@ -292,3 +292,25 @@ $ .venv/bin/python -m pytest -q
 ### Next action
 
 The four experiment reports (M3 closure), then M4. Owner: ratify DEC-012; note the contradicting results (C-004, C-006).
+
+## 2026-11-25: Session 5b (M3 close, owner decisions of 2026-11-25)
+
+**Authority:** `labs/_shared/M3-close-brief.md`; `labs/_shared/owner-approvals-2026-11-25.md` items 4 and 11 (owner, 2026-11-25, "approve all recommendations, RIGGED A").
+
+### Done
+
+- DEC-014 in `research/decision_log.md`: DEC-012 ratified (item 11), missing reports approved (item 4), owner quoted.
+- `research/freeze.json`: new key `post_freeze_decisions` (DEC-012, DEC-013); no hashed file changed. Limitations item 14 and claims C-002 and C-004 updated to say that DEC-012 is ratified.
+
+### Not done (stopped as the brief requires)
+
+- The experiment reports. The Write tool again refused `research/experiments/EXP-001/report.md` ("Subagents should return findings as text, not write report files"). The brief says to stop and report if Write is still refused, with no shell or other workaround, so no report was written and none of EXP-002 to EXP-004 was attempted. The repository does not use `reproduction.md`.
+- M3 is **not marked done**. The matrix is complete (560/560 ok), but the reports are missing.
+
+### Test run
+
+See the commit for this session; the full suite was run before committing.
+
+### Next action
+
+Write the four 11.3 reports in a session whose file tool permits it (owner-approved, DEC-014), from the committed results only. Then mark M3 done and start M4.

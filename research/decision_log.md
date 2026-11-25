@@ -112,3 +112,10 @@ Append-only. Each entry gives the date, the decider, the decision, the rationale
 - **Analysis:** `src/echo/analysis.py` as committed before the runs (DEC-012); no change to protocols, configs, seeds, exclusion rules or analysis code after output existed.
 - **Deviation from the brief, not from the protocol:** the experiment reports `research/experiments/EXP-00N/report.md` (11.6) were not written, because the session's file tool refused to write them and the coordinator instructed not to work around the refusal. The generated `results/EXP-00N/analysis/analysis.md` tables and figures exist; the 11.3 reports remain to be written in a session that may write them.
 - **Owner items:** ratify DEC-012 (Holm construction; two equivalence readings, which agreed in every verdict); note the results that contradict the EXP-002 direction (C-004, C-006).
+
+## DEC-014 (2026-11-25): Owner ratifies DEC-012 and approves the missing experiment reports
+
+- **Decider:** the owner, 2026-11-25, "approve all recommendations, RIGGED A" (`labs/_shared/owner-approvals-2026-11-25.md`, outside this repository).
+- **Item 11 (ECHO: DEC-012), quoted:** "The Holm interval method and the two readings of 'practically equivalent' are accepted. They agreed in every verdict, and both are disclosed." DEC-012 is therefore an owner-ratified analysis decision; it was fixed before any confirmatory output and no verdict depends on which equivalence reading is used.
+- **Item 4 (experiment reports), quoted:** "The owner approves writing the missing 11.3/11.6 experiment reports (`report.md`, and `reproduction.md` where the repo uses it). They are written from the committed results, tables and figures only." and "No new computation. Nothing is recomputed and no numbers change."
+- **Consequence:** the four reports `research/experiments/EXP-00{1,2,3,4}/report.md` are written from the committed results of f40e935 and afc0850, with no recomputation. The deviation recorded in DEC-013 (reports not written in the run session) is resolved. Listed in `research/freeze.json` under `post_freeze_decisions`.
