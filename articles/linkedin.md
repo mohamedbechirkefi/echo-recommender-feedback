@@ -11,6 +11,8 @@ One defensible finding: the direction of the effect was not a property of the po
 
 Caveat: these are synthetic listeners with assumed update rules. Simulated preference change is not evidence of human persuasion, and nothing here describes any commercial service.
 
-Repository: [placeholder, not published]. Interactive page: [placeholder, not published].
+Repository: https://github.com/mohamedbechirkefi/echo-recommender-feedback. Interactive page: https://echo-recommender-feedback.kefimohamedbechir.workers.dev.
+
+Mohamed Bechir Kefi, independent researcher.
 
 An AI system (Claude, Anthropic) assisted with code, runs and drafting as a disclosed assistant; it is not an author.

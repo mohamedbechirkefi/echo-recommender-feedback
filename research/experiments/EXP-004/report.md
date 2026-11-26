@@ -14,7 +14,7 @@
   - Analysis code: 04bc350.
   - Results: f40e935.
 - **Status:** complete, 100 of 100 runs ok.
-- **Authorship:** Mohamed Bechir Kefi (owner-approved, C3); the AI assisted. Written on the owner's approval of 2026-11-25 (DEC-014) from committed results only.
+- **Authorship:** Mohamed Bechir Kefi, independent researcher (owner-approved, C3; owner, 2026-11-26, decision sheet); the AI assisted. Written on the owner's approval of 2026-11-25 (DEC-014) from committed results only.
 
 ## 2. Executive summary
 

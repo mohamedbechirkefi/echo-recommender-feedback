@@ -1,7 +1,9 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # Does a recommender discover your taste or shape it? In a pre-registered simulation, the answer depended on the assumptions
 
-*Draft for Medium, not published. Status: independent research, preprint draft, not peer-reviewed. Simulation only. Every number below is identical to the manuscript (`research/paper/manuscript.md`). Article title drafted at M5; the owner's full-text review is pending (M6).*
+*Draft for Medium, not published. Status: independent research, preprint draft, not peer-reviewed. Simulation only. Every number below is identical to the manuscript (`research/paper/manuscript.md`). Article title drafted at M5; the owner's full-text review is pending.*
+
+*By Mohamed Bechir Kefi, independent researcher.*
 
 ## The question
 
@@ -41,6 +43,6 @@ Limitations are real. The listeners are synthetic agents with assumed update rul
 
 ## Reproduce it
 
-Protocols, frozen configs, raw runs, analyses, a claims register and an evidence audit are in the repository: [repository link placeholder, not published; publication requires the owner's approval]. The interactive page (published results with intervals, the taste map and an in-browser sandbox) is in `demo/`: [demo link placeholder]. The manuscript and four experiment reports are in `research/`.
+Protocols, frozen configs, raw runs, analyses, a claims register and an evidence audit are in the repository: https://github.com/mohamedbechirkefi/echo-recommender-feedback. The interactive page (published results with intervals, the taste map and an in-browser sandbox) is in `demo/` and online at https://echo-recommender-feedback.kefimohamedbechir.workers.dev. The manuscript and four experiment reports are in `research/`.
 
 *AI assistance: an AI system (Claude, Anthropic) wrote the simulation and analysis code, ran the experiments under the owner-frozen protocol and drafted the reports, the manuscript and this article. The owner set the question, approved the protocol freeze and retains authority over claims and publication.*

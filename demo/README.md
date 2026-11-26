@@ -22,4 +22,4 @@ node tools/a11y_check.mjs dist --screenshots <dir>   # offline, keyboard, contra
 
 To refresh the data after a change to committed results: `PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py` from the repository root (and `scripts/m5_exploratory_engine_traces.py` for the fixture and taste map). `tests/test_demo_export.py` fails if `results.json` differs from a fresh export or if any displayed number is not printed in the manuscript.
 
-Public demo URL: [placeholder, not published; publication requires the owner's approval].
+Public demo: https://echo-recommender-feedback.kefimohamedbechir.workers.dev. The built page (`demo/dist/`) is hosted as Cloudflare Workers static assets on the free plan, with no Worker script (`demo/wrangler.jsonc`). It is deployed by the coordinator, not by any script of this repository.

@@ -54,3 +54,7 @@ No failure needed a fix. The full checks were not repeated after the M6 PDF buil
 | `git status --short` after the demo steps | 0 lines |
 
 The smoke simulation was not repeated in this second clone: the M6 commit changed no file under `src/` or `experiments/`. The clone was deleted afterwards.
+
+## Home paths and public status (2026-11-26, owner answers B9 and A1)
+
+The repository is public since 2026-11-25 (https://github.com/mohamedbechirkefi/echo-recommender-feedback). A search of the tracked files for absolute home-directory paths (the macOS users folder) on 2026-11-26 finds 2 occurrences, both in `progress.md`, the M0 `df -h` and `node --version` commands. They stay because `progress.md` is append-only; they name the shared tools location only. No editable file, frozen protocol, checksummed result file or licence file contains one. The results of the full checks of this round are in `progress.md` (2026-11-26).

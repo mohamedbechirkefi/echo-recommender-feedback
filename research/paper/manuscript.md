@@ -1,11 +1,11 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # Does a similarity recommender shape simulated taste? A pre-registered simulation with an assumption-sensitivity test and a real-catalogue second test
 
-**Status: independent research manuscript / preprint draft, not peer-reviewed.** Version M4 draft, 2026-11-25. All findings are simulation results; simulated preference change is not evidence of human persuasion.
+**Status: independent research manuscript / preprint draft, not peer-reviewed.** Release candidate 0.1.0-rc1, 2026-11-26. All findings are simulation results; simulated preference change is not evidence of human persuasion.
 
 ## Author and affiliation metadata
 
-Mohamed Bechir Kefi (no affiliation; owner-approved, C3). An AI system (Claude, Anthropic) assisted with research engineering, analysis code and drafting as a disclosed research and development assistant. It is not an author. See section 11.
+Mohamed Bechir Kefi, independent researcher (owner-approved; owner, 2026-11-26, decision sheet). An AI system (Claude, Anthropic) assisted with research engineering, analysis code and drafting as a disclosed research and development assistant. It is not an author. See section 11.
 
 Data: FMA metadata (Defferrard et al., arXiv:1612.01840), CC BY 4.0. No audio was downloaded and no listener data exists in this study.
 
@@ -209,7 +209,7 @@ The pre-freeze pilot (draft parameters) had shown SIM below RAND by -0.15881 rad
 - **Pre-freeze exposure.** The pilot SIM minus RAND value at draft parameters was seen before the freeze and disclosed; the calibrated parameters were fitted on FMA metadata without any simulation. The statement that the SIM minus RAND values of the exploratory FMA-path smoke were not inspected before the confirmatory runs rests on the session record and cannot be verified independently; the smoke used smoke-size parameters and exploratory seeds.
 - **Construct overlap.** With eta 0.05 the initial taste is almost forgotten after 100 updates, so drift largely reflects recent consumption (section 6).
 - **Runtime figures** come from a shared, loaded machine and are upper bounds.
-- **Literature.** Eight sources, all read in full; non-systematic search; citation chaining incomplete.
+- **Literature.** Eight sources, all read in full; non-systematic search; citation chaining from kalimeris2021 and carroll2022 was not done, so closely related models may have been missed.
 
 The full list is `research/limitations.md`.
 
@@ -219,13 +219,14 @@ The study uses public FMA metadata under CC BY 4.0, with attribution; no audio i
 
 ## 9. Conclusion and future work
 
-Within a pre-registered simulation, a similarity recommender changed exposure relative to uniform-random recommendation on both a calibrated synthetic and a real music catalogue (descriptive outcomes, largely expected by construction). Its effect on the amount of simulated taste change was statistically detectable in the primary experiment, of unresolved practical size, and its direction was not robust: the frozen sensitivity rule withdrew it, and the real-catalogue second test reversed it. The bounded answer to the working title is that, in this model, whether a recommender "shapes" taste more or less than random exposure depends on how simulated listeners update and on the catalogue, not on the policy alone.
+Within a pre-registered simulation, a similarity recommender changed exposure relative to uniform-random recommendation on both a calibrated synthetic and a real music catalogue (descriptive outcomes, largely expected by construction). Its effect on the amount of simulated taste change was statistically detectable in the primary experiment, of unresolved practical size, and its direction was not robust: the frozen sensitivity rule withdrew it, and the real-catalogue second test reversed it. The bounded answer to the title question is that, in this model, whether a recommender "shapes" taste more or less than random exposure depends on how simulated listeners update and on the catalogue, not on the policy alone.
 
 Future work, each as a new registered experiment: locate the update-rate threshold at which the SIM minus RAND sign changes for each rule; separate embedding, genre balance and popularity tail on the real catalogue (for example by re-embedding FMA tracks or reweighting genres); add a directional outcome (movement toward or away from the home cluster); complete citation chaining and full-text reading of the closest prior models.
 
 ## 10. Data, code and artifact availability
 
-- Repository: this repository (public URL: [placeholder, not published; publication requires the owner's approval]).
+- Repository: https://github.com/mohamedbechirkefi/echo-recommender-feedback.
+- Interactive page: https://echo-recommender-feedback.kefimohamedbechir.workers.dev.
 - Protocols and freeze record: `research/protocol.md`, `research/experiments/EXP-00N/protocol.md`, `research/freeze.json`.
 - Experiment reports: `research/experiments/EXP-00N/report.md`.
 - Raw results: `results/EXP-00N/runs/` (schema `echo.result.v1`), manifests, `provenance.csv`, `SHA256SUMS`.
@@ -236,8 +237,8 @@ Future work, each as a new registered experiment: locate the update-rate thresho
 
 ## 11. Funding, competing interests and AI assistance
 
-- **Funding:** none. The only expense was the owner's existing AI coding subscription.
-- **Competing interests:** none declared by the owner.
+- **Funding:** No funding was received. The only expense was the owner's existing AI coding subscription.
+- **Competing interests:** The author declares no competing interests.
 - **AI assistance:** an AI system (Claude, Anthropic) wrote the simulation and analysis code, ran the experiments under the owner-frozen protocol and drafted the reports and this manuscript. The owner set the question, approved the protocol freeze, the real-data use and every post-freeze decision (DEC-010, DEC-014), and retains authority over claims and publication. AI review of the manuscript (`research/publication/review_pass_2.md`) is internal quality control, not peer review. Every number was checked mechanically against committed result files (section 10).
 
 ## References

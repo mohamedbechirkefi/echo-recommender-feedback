@@ -1,7 +1,9 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # Supplementary material: Does a similarity recommender shape simulated taste?
 
-**Status: independent research manuscript / preprint draft, not peer-reviewed.** Companion to `research/paper/manuscript.md`, M4 draft, 2026-11-25. Simulation results only.
+**Status: independent research manuscript / preprint draft, not peer-reviewed.** Companion to `research/paper/manuscript.md`, release candidate 0.1.0-rc1, 2026-11-26. Simulation results only.
+
+Mohamed Bechir Kefi, independent researcher.
 
 ## S1. Complete experimental matrix
 

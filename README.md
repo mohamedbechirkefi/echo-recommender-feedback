@@ -3,7 +3,9 @@
 
 **Question.** Can recommendation policies change exposure and simulated taste rather than simply reflect it?
 
-**Status: independent research manuscript / preprint draft, not peer-reviewed. Simulation only.** Protocol v1.0 was frozen by the owner on 2026-11-24 (`research/freeze.json`); all 560 confirmatory runs completed at revision afc0850. The owner approved the title, the authorship line and the funding, competing-interest and AI-assistance statements; the owner's full-text review of the manuscript is pending (M6). Nothing has been published.
+**Status: independent research manuscript / preprint draft, not peer-reviewed. Simulation only.** Protocol v1.0 was frozen by the owner on 2026-11-24 (`research/freeze.json`); all 560 confirmatory runs completed at revision afc0850. The owner approved the title, the authorship line and the funding, competing-interest and AI-assistance statements; the owner's full-text review of the manuscript is pending. The repository is public on GitHub; no release, tag, DOI or preprint exists yet.
+
+Author: Mohamed Bechir Kefi, independent researcher.
 
 ![ECHO interactive page: the taste map, showing catalogue tracks in a 2-D projection and one simulated listener's preference path under SIM and RAND, next to mean drift curves for the five policies.](docs/demo.png)
 
@@ -31,7 +33,7 @@ Within this model, the direction of simulated taste change is not a property of 
 | EXP-003 | Drift-assumption sensitivity and adaptation ablation | confirmatory, 360 of 360 runs; withdrawn as assumption-dependent | `research/experiments/EXP-003/report.md` |
 | EXP-004 | Policy contrast on a real music catalogue (FMA), second test | confirmatory, 100 of 100 runs; does not replicate | `research/experiments/EXP-004/report.md` |
 
-- Manuscript: `research/paper/manuscript.md` (supplementary appendix `research/paper/supplementary.md`). The PDF is not yet generated (M6).
+- Manuscript: `research/paper/manuscript.md` (supplementary appendix `research/paper/supplementary.md`). PDFs: `research/paper/manuscript.pdf` and `research/paper/supplementary.pdf`, built by `scripts/build_publication_pdfs.py`.
 - Short report: `research/report.md`.
 - Evidence trail: `research/claims_register.csv`, `research/publication/artifact_manifest.json`, `research/publication/claims_audit.md`, `research/publication/review_pass_2.md`.
 - Decisions: `research/decision_log.md`. Limitations: `research/limitations.md`.
@@ -45,7 +47,7 @@ A static page in `demo/` shows the published results with their intervals, the a
 cd demo && npm ci && npm run build && npm run preview
 ```
 
-Then open the address `vite preview` prints. The page reads `demo/public/data/results.json`, written by `scripts/export_demo_data.py` from committed results only; it fails closed (shows no numbers) if that file is missing or malformed. Public demo URL: [placeholder, not published; publication requires the owner's approval].
+Then open the address `vite preview` prints. The page reads `demo/public/data/results.json`, written by `scripts/export_demo_data.py` from committed results only; it fails closed (shows no numbers) if that file is missing or malformed. Public demo: https://echo-recommender-feedback.kefimohamedbechir.workers.dev (static files only, hosted as Cloudflare Workers static assets; see `demo/README.md`).
 
 ## Quick start and reproduction
 
@@ -77,4 +79,4 @@ The ECHO Source-Available Non-Commercial Research License v1.0 (`LICENSE`, SPDX 
 
 ## Citation
 
-See `CITATION.cff`. Repository URL: [placeholder, not published; publication requires the owner's approval].
+See `CITATION.cff`. Repository: https://github.com/mohamedbechirkefi/echo-recommender-feedback.

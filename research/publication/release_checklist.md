@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # Release checklist (owner-controlled; nothing is published without owner approval)
 
-Status, 2026-11-25 (M6): release candidate 0.1.0-rc1 prepared; awaiting the owner's review (`author_review.md`) and G-PUBLIC. Ticks below were verified in the M6 session of 2026-11-25; the evidence follows each item.
+Status, 2026-11-25 (M6): release candidate 0.1.0-rc1 prepared; awaiting the owner's review (`author_review.md`) and G-PUBLIC. Update, 2026-11-26: the repository was pushed on 2026-11-25 on the owner's approval and is public at https://github.com/mohamedbechirkefi/echo-recommender-feedback; the demo is hosted at https://echo-recommender-feedback.kefimohamedbechir.workers.dev (deployed by the coordinator). No tag, release, DOI or preprint exists. The owner's answers of 2026-11-26 are applied (DEC-020). Ticks below were verified in the M6 session of 2026-11-25; the evidence follows each item.
 
 - [x] Owner has frozen all confirmatory protocols (hash recorded in the registry). Evidence: `research/freeze.json` (DEC-010); SHA-256 of the 5 protocols, 4 configs and 2 data files recomputed: 11 of 11 match.
 - [x] Every registered experiment has a truthful standalone report (11.3). Evidence: `research/experiment_registry.csv` lists EXP-001 to EXP-004; `research/experiments/EXP-00N/report.md` exists for all 4 and compiles to PDF.
@@ -15,3 +15,13 @@ Status, 2026-11-25 (M6): release candidate 0.1.0-rc1 prepared; awaiting the owne
 - [x] Licence files unchanged; SPDX headers present. Evidence: `LICENSE`, `NOTICE.md`, `LICENSE_HISTORY.md`, `CLA.md`, `.github/` last changed in bc5bb42 (the owner's repository rename, 2026-11-24) and untouched since; SPDX header on every text file added since M0, except the committed generated `results/exploratory/EXP-001/report/summary.typ` (a result artifact, left unchanged).
 - [ ] author_review.md signed off by the owner
 - [ ] Owner explicitly approves any push, release or publication
+
+## Version and date at the release (owner, 2026-11-26, decision sheet, B8)
+
+`CITATION.cff` keeps `version: "0.1.0-rc1"` and no `date-released` until the release. At the release, `version` becomes `0.1.0` and `date-released` is set to the release day. `pyproject.toml` stays at its current `version = "0.0.1"` (changing it would change the lockfile and the recorded environments).
+
+## Release notes (draft)
+
+- Figures: the manuscript, supplementary and reports embed no figures, so no figure with small or clipped labels is kept.
+- External build and check tools are used but not redistributed by this repository: pandoc (GPL-2.0-or-later), Google Chrome (accessibility check), the GCC runtime library bundled in the numpy wheel (GPL-3.0 with the GCC Runtime Library Exception), and MPL-2.0 lightningcss and hypothesis, as listed in `research/publication/dependency_licences.md`.
+- Source labels: all eight cited sources were read in full (owner acceptance of source-level labels recorded, B14).

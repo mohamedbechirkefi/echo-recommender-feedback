@@ -91,7 +91,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 - [x] References, links, equations and metadata verified: all 8 sources read in full (`claims_audit.md`, M6 table); `scripts/check_links.py`; PDF metadata checked with pypdf.
 - [x] Secret, personal-data and licence scan (`release_checklist.md`; `dependency_licences.md`).
 - [ ] Owner review checklist completed: prepared for the owner (`author_review.md`, M6 section); open until the owner signs it off.
-- [ ] Nothing pushed without approval: nothing was pushed, tagged or released in M6; stays open until the owner's publication decision.
+- [ ] Nothing pushed without approval: nothing was pushed, tagged or released in M6. The coordinator pushed the repository on the owner's approval on 2026-11-25 (it is public); no tag or release exists, so the item stays open until the owner's release decision.
 
 ## Cut order if the five-day target is threatened
 

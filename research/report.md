@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
 # ECHO research report (summary of the manuscript)
 
-**Status: independent research report, not peer-reviewed. Simulation results only.** M4 draft, 2026-11-25. The canonical, complete text is `research/paper/manuscript.md`; this report is the short form required by master prompt section 8. Every number here also appears in the manuscript and is mapped in `research/publication/artifact_manifest.json`.
+**Status: independent research report, not peer-reviewed. Simulation results only.** Release candidate 0.1.0-rc1, 2026-11-26. Mohamed Bechir Kefi, independent researcher. The canonical, complete text is `research/paper/manuscript.md`; this report is the short form required by master prompt section 8. Every number here also appears in the manuscript and is mapped in `research/publication/artifact_manifest.json`.
 
 ## Abstract
 

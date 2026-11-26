@@ -407,8 +407,7 @@ def build() -> dict:
         "taste_map": taste_map(),
         "owner_pending": [
             "Full-text review of the manuscript, the reports and the articles (M6).",
-            "Public repository and demo URL: placeholder, not published; publication requires the owner's approval.",
-            "Decision whether, where and when to publish (G-PUBLIC).",
+            "Release, tag and any DOI or preprint (the owner's decision).",
         ],
     }
 

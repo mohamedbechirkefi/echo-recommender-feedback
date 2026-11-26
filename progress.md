@@ -537,3 +537,33 @@ $ git status --short | wc -l                                                -> 0
 ```
 
 Clone deleted. Final state: M6 release candidate prepared, awaiting owner review and G-PUBLIC.
+
+## 2026-11-26: owner answers of 2026-11-26 applied (DEC-020)
+
+Source: owner, 2026-11-26, decision sheet. Wording and configuration only: no result, analysis, figure, config, seed, frozen protocol, protocol hash or checksummed output changed. No push, no deploy, no box ticked.
+
+Changed files: `CITATION.cff` (title = manuscript title, `affiliation`, `repository-code`, message URL), `README.md`, `demo/README.md`, `demo/wrangler.jsonc` (new; assets `./dist`), `demo/src/App.tsx` (footer: author line and repository URL), `scripts/export_demo_data.py` (owner-pending list), `demo/public/data/results.json` (regenerated), `research/paper/manuscript.md` (status line, author line, limitation on citation chaining, section 10 URLs, section 11 statements), `research/paper/supplementary.md`, `research/report.md`, `research/experiments/EXP-00N/report.md` (author line in section 1 only), `research/limitations.md` item 21, `articles/` (URLs, author line), `roadmap.md`, `research/publication/author_review.md` (new section "Owner answers recorded (2026-11-26)"), `release_checklist.md` (status update, B8 release step, release notes draft), `reproducibility_report.md` (home paths), `research/publication/artifact_manifest.json` (regenerated), `research/decision_log.md` (DEC-020), PDFs and `manuscript.tex`.
+
+```
+$ PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py              -> wrote demo/public/data/results.json (197833 bytes)
+$ .venv/bin/python scripts/build_artifact_manifest.py                      -> {"mapped_tokens": 1441, "unmatched_tokens": 0, "small_integer_tokens_not_mapped": 337}
+$ .venv/bin/python scripts/check_links.py                                  -> first: 2 missing (shared-folder paths written as inline code in author_review.md; changed to plain text); then 6 relative links checked, 0 broken; 249 inline-code paths checked, 0 missing
+$ .venv/bin/python scripts/build_publication_pdfs.py --typ-dir <scratch>/typ --png-dir <scratch>/png
+OK research/paper/manuscript.pdf 194056 bytes          (14 pages)
+OK research/paper/supplementary.pdf 152727 bytes       (7 pages)
+OK research/experiments/EXP-001/report.pdf 88796 bytes
+OK research/experiments/EXP-002/report.pdf 135130 bytes
+OK research/experiments/EXP-003/report.pdf 146702 bytes
+OK research/experiments/EXP-004/report.pdf 123595 bytes (6 pages; was 5, the longer author line moves two bullets to page 6)
+OK research/paper/manuscript.tex
+$ .venv/bin/python -m pytest -q                                            -> first run: 1 failed, 189 passed (test_committed_export_is_reproduced_exactly: results.json was exported before the artifact manifest, one of its hashed sources, was regenerated); after re-export: 190 passed in 12.22s
+$ PYTHONPATH=src .venv/bin/python scripts/export_demo_data.py --check     -> OK after the re-export
+$ (demo) npm test                                                          -> Test Files 2 passed (2); Tests 29 passed (29)
+$ (demo) npm run build; node tools/a11y_check.mjs dist                     -> built; 9 PASS lines incl. "no request leaves the local origin"; A11Y-CHECK PASS
+```
+
+Every source of a PDF changed, so no PDF was restored. Inspected as PNG (60 ppi): manuscript pages 1 (status line, author line), 12 (limitation, section 10 URLs) and 13 (section 11 statements); supplementary page 1; EXP-004 report pages 1 and 6. No defect found. pypdf text search: "independent researcher" on manuscript page 1, supplementary page 1 and EXP-004 page 1; "No funding" and "no competing" on manuscript page 13.
+
+Scans: absolute home paths in tracked files: 2, both in this file's M0 entry (append-only). Owner placeholders remaining: none. The built page loads nothing that is not same-origin (CSP `default-src 'self'`, a11y check).
+
+Open for the owner: B15 articles, B16 full-text review and sign-off, B18 release. Next action: the coordinator's push and Cloudflare deploy; then the owner's review.

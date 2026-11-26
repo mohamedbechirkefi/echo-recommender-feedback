@@ -12,7 +12,7 @@
   - The analysis code was committed in 04bc350, before any confirmatory output existed.
   - The results were committed in f40e935.
 - **Status:** complete, 100 of 100 runs ok.
-- **Authorship:** Mohamed Bechir Kefi (owner-approved, C3). The AI assisted as a research and development assistant. Written on the owner's approval of 2026-11-25 (DEC-014) from committed results only.
+- **Authorship:** Mohamed Bechir Kefi, independent researcher (owner-approved, C3; owner, 2026-11-26, decision sheet). The AI assisted as a research and development assistant. Written on the owner's approval of 2026-11-25 (DEC-014) from committed results only.
 
 ## 2. Executive summary
 

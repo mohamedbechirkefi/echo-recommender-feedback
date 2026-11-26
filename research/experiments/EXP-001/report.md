@@ -11,7 +11,7 @@
   - Re-run 2026-11-25 (M3 smoke before the confirmatory runs, revision 04bc350, journal J-0004). The re-run outputs were committed in afc0850.
 - **Protocol:** `research/experiments/EXP-001/protocol.md`, v1.0, SHA-256 `5d869d0f418956cdac48cb94a97a8a890aa96ba81193bb4a898664704830cff4`. The owner froze it on 2026-11-24 as the record of an exploratory experiment.
 - **Status:** executed twice; all six verification checks pass in both runs.
-- **Authorship:** Mohamed Bechir Kefi (owner-approved, C3). The AI assisted as a research and development assistant.
+- **Authorship:** Mohamed Bechir Kefi, independent researcher (owner-approved, C3; owner, 2026-11-26, decision sheet). The AI assisted as a research and development assistant.
 - **Report provenance:** written on the owner's approval of 2026-11-25 (DEC-014), from committed results only. Nothing was recomputed.
 
 ## 2. Executive summary

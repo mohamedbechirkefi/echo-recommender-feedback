@@ -50,8 +50,8 @@ export function App() {
         <div className="wrap">
           <p>
             Runs offline after the first load. No data about visitors is collected, stored or sent anywhere. Simulated
-            preference change is not evidence of human persuasion. Source: this repository (public URL: placeholder, not
-            published; publication requires the owner's approval).
+            preference change is not evidence of human persuasion. Mohamed Bechir Kefi, independent researcher. Source:
+            https://github.com/mohamedbechirkefi/echo-recommender-feedback.
           </p>
         </div>
       </footer>

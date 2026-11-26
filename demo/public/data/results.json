@@ -40,15 +40,15 @@
   },
   {
    "path": "research/publication/artifact_manifest.json",
-   "sha256": "f031ebc18587c179e474a022eea41d50b4f2858c124df28437a92a5de74ee95c"
+   "sha256": "2d609d60ba54f5858576e84eebd9bb32fbe6d293c466b9f72dd26e1c197f76eb"
   },
   {
    "path": "research/paper/manuscript.md",
-   "sha256": "591e3fb70411fb98603877032950a7be0436c308d81f01fbdf25ffb966327e66"
+   "sha256": "b316d681ba3ace621a23f45f00246e425aef4bea56cf5a4655d032bb57408ee9"
   },
   {
    "path": "research/paper/supplementary.md",
-   "sha256": "a77bd1648cf2048237d2adb8627b5fb829b5fbb0a5e0a546297300f6a27bea6f"
+   "sha256": "c4e1adacb8491b4abffbc1c327e77d5945dd114b5be462873a6c0bc22caa2eae"
   },
   {
    "path": "results/exploratory/M5-taste-map/trace.json",
@@ -740,7 +740,7 @@
   "Pre-freeze exposure. The pilot SIM minus RAND value at draft parameters was seen before the freeze and disclosed; the calibrated parameters were fitted on FMA metadata without any simulation. The statement that the SIM minus RAND values of the exploratory FMA-path smoke were not inspected before the confirmatory runs rests on the session record and cannot be verified independently; the smoke used smoke-size parameters and exploratory seeds.",
   "Construct overlap. With eta 0.05 the initial taste is almost forgotten after 100 updates, so drift largely reflects recent consumption (section 6).",
   "Runtime figures come from a shared, loaded machine and are upper bounds.",
-  "Literature. Eight sources, all read in full; non-systematic search; citation chaining incomplete."
+  "Literature. Eight sources, all read in full; non-systematic search; citation chaining from kalimeris2021 and carroll2022 was not done, so closely related models may have been missed."
  ],
  "method": [
   "Design. EXP-001 (exploratory): simulator verification and smoke matrix (checks V1 to V6: determinism, zero drift under fixed preferences, candidate exclusion, unit norms, metric bounds, schema). EXP-002 (confirmatory, primary): 5 policies x {fixed, adaptive eta 0.05} x 10 seeds = 100 runs. EXP-003 (confirmatory sensitivity): RAND and SIM x 3 update rules x eta in {0.01, 0.05, 0.2} x {estimated, oracle} profile x 10 seeds = 360 runs. EXP-004 (confirmatory secondary, second test): the EXP-002 matrix on the FMA catalogue, 100 runs.",
@@ -14494,7 +14494,6 @@
  },
  "owner_pending": [
   "Full-text review of the manuscript, the reports and the articles (M6).",
-  "Public repository and demo URL: placeholder, not published; publication requires the owner's approval.",
-  "Decision whether, where and when to publish (G-PUBLIC)."
+  "Release, tag and any DOI or preprint (the owner's decision)."
  ]
 }

@@ -2,12 +2,13 @@
 # Licence: ECHO Source-Available Non-Commercial Research License v1.0 (custom; see LICENSE).
 # No SPDX "license" field is given because the licence is not on the SPDX list.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: independent research manuscript / preprint draft, not peer-reviewed; simulation only. Protocol v1.0 frozen by the owner (2026-11-24); confirmatory runs complete. Repository URL: placeholder, not published. An AI system assisted as a disclosed research and development assistant; it is not an author."
-title: "ECHO: music recommendation feedback"
+message: "If you use this work, please cite it as below. Status: independent research manuscript / preprint draft, not peer-reviewed; simulation only. Protocol v1.0 frozen by the owner (2026-11-24); confirmatory runs complete. Repository: https://github.com/mohamedbechirkefi/echo-recommender-feedback. An AI system assisted as a disclosed research and development assistant; it is not an author."
+title: "Does a similarity recommender shape simulated taste? A pre-registered simulation with an assumption-sensitivity test and a real-catalogue second test"
 type: software
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
+    affiliation: "Independent researcher"
 references:
   - type: dataset
     title: "FMA: A Dataset For Music Analysis (metadata)"
@@ -22,6 +23,7 @@ references:
         given-names: Xavier
     url: "https://github.com/mdeff/fma"
     license: CC-BY-4.0
+repository-code: "https://github.com/mohamedbechirkefi/echo-recommender-feedback"
 version: "0.1.0-rc1"
 abstract: "A pre-registered, seeded simulation of whether recommendation policies change exposure and simulated taste rather than simply reflect it. A similarity policy produced less simulated preference drift than uniform-random exposure on a calibrated synthetic catalogue (EXP-002: -0.0355 rad, 95 % CI [-0.0535, -0.0200]); the pre-registered sensitivity test withdrew this interpretation as assumption-dependent (EXP-003), and a second test on real FMA tracks reversed the sign (EXP-004: +0.1652 rad, CI [0.1560, 0.1735]; does not replicate). Simulated preference change is not evidence of human persuasion."
 keywords:

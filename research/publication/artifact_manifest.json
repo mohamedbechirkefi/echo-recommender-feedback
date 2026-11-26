@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0",
  "generated_by": "scripts/build_artifact_manifest.py",
- "repository_revision_at_generation": "6fa5f616fefb9f0262fd7b54523f3fceb32b8a69",
+ "repository_revision_at_generation": "10953c1873409322a733cf841cacd2aa02ca3ef8",
  "scope": [
   "research/paper/manuscript.md",
   "research/paper/supplementary.md",
@@ -4644,7 +4644,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 10,
+   "line": 12,
    "token": "100",
    "experiment_id": "EXP-001",
    "result_path": "results/exploratory/EXP-001/report/summary.json",
@@ -4660,7 +4660,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 10,
+   "line": 12,
    "token": "36",
    "experiment_id": "derived",
    "result_path": null,
@@ -4670,35 +4670,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 10,
-   "token": "86",
-   "experiment_id": "EXP-001",
-   "result_path": "results/exploratory/EXP-001/report/summary.json",
-   "json_path": "/n_runs",
-   "metric": "n_runs",
-   "context_experiment": "EXP-001",
-   "n_matches": 2,
-   "other_matches": [
-    "results/exploratory/EXP-001-m3-smoke/checks.json#/V6_schema/files_validated"
-   ]
-  },
-  {
-   "document": "research/paper/supplementary.md",
-   "line": 10,
-   "token": "86",
-   "experiment_id": "EXP-001",
-   "result_path": "results/exploratory/EXP-001/report/summary.json",
-   "json_path": "/n_runs",
-   "metric": "n_runs",
-   "context_experiment": "EXP-001",
-   "n_matches": 2,
-   "other_matches": [
-    "results/exploratory/EXP-001-m3-smoke/checks.json#/V6_schema/files_validated"
-   ]
-  },
-  {
-   "document": "research/paper/supplementary.md",
-   "line": 10,
+   "line": 12,
    "token": "86",
    "experiment_id": "EXP-001",
    "result_path": "results/exploratory/EXP-001/report/summary.json",
@@ -4713,6 +4685,34 @@
   {
    "document": "research/paper/supplementary.md",
    "line": 12,
+   "token": "86",
+   "experiment_id": "EXP-001",
+   "result_path": "results/exploratory/EXP-001/report/summary.json",
+   "json_path": "/n_runs",
+   "metric": "n_runs",
+   "context_experiment": "EXP-001",
+   "n_matches": 2,
+   "other_matches": [
+    "results/exploratory/EXP-001-m3-smoke/checks.json#/V6_schema/files_validated"
+   ]
+  },
+  {
+   "document": "research/paper/supplementary.md",
+   "line": 12,
+   "token": "86",
+   "experiment_id": "EXP-001",
+   "result_path": "results/exploratory/EXP-001/report/summary.json",
+   "json_path": "/n_runs",
+   "metric": "n_runs",
+   "context_experiment": "EXP-001",
+   "n_matches": 2,
+   "other_matches": [
+    "results/exploratory/EXP-001-m3-smoke/checks.json#/V6_schema/files_validated"
+   ]
+  },
+  {
+   "document": "research/paper/supplementary.md",
+   "line": 14,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4722,7 +4722,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 12,
+   "line": 14,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -4738,7 +4738,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 12,
+   "line": 14,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -4754,7 +4754,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 13,
+   "line": 15,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4764,7 +4764,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 13,
+   "line": 15,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4774,7 +4774,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 13,
+   "line": 15,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4784,7 +4784,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 13,
+   "line": 15,
    "token": "360",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4799,7 +4799,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 13,
+   "line": 15,
    "token": "360",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4814,7 +4814,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 14,
+   "line": 16,
    "token": "100",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -4830,7 +4830,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 14,
+   "line": 16,
    "token": "100",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -4846,7 +4846,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 17,
+   "line": 19,
    "token": "560",
    "experiment_id": "derived",
    "result_path": null,
@@ -4856,7 +4856,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 17,
+   "line": 19,
    "token": "560",
    "experiment_id": "derived",
    "result_path": null,
@@ -4866,7 +4866,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 23,
+   "line": 25,
    "token": "95 %",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4882,7 +4882,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4892,7 +4892,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.0363",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4908,7 +4908,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.0275",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4924,7 +4924,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.0466",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4939,7 +4939,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.0237",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4951,7 +4951,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "0.0525",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4963,7 +4963,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 25,
+   "line": 27,
    "token": "2.23",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -4977,7 +4977,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -4987,7 +4987,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.0794",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5002,7 +5002,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.0669",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5014,7 +5014,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.0930",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5026,7 +5026,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.0620",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5040,7 +5040,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "0.1005",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5052,7 +5052,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 26,
+   "line": 28,
    "token": "3.52",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5064,7 +5064,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5074,7 +5074,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "0.0069",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5090,7 +5090,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "-0.0130",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5104,7 +5104,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "0.0303",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5118,7 +5118,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "-0.0130",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5132,7 +5132,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "0.0303",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5146,7 +5146,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 27,
+   "line": 29,
    "token": "0.19",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5162,7 +5162,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5172,7 +5172,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.1883",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5187,7 +5187,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.1598",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5199,7 +5199,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.2196",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5211,7 +5211,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.1478",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5223,7 +5223,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "0.2362",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5235,7 +5235,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 28,
+   "line": 30,
    "token": "3.72",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5247,7 +5247,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5257,7 +5257,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-0.1012",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5272,7 +5272,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-0.1318",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5284,7 +5284,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-0.0617",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5296,7 +5296,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-0.1390",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5308,7 +5308,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-0.0405",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5322,7 +5322,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 29,
+   "line": 31,
    "token": "-1.69",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5334,7 +5334,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5344,7 +5344,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.1564",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5360,7 +5360,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.1037",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5372,7 +5372,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.2145",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5384,7 +5384,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.0823",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5396,7 +5396,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "0.2417",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5408,7 +5408,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 30,
+   "line": 32,
    "token": "1.66",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5420,7 +5420,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5430,7 +5430,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.1364",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5446,7 +5446,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.1234",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5461,7 +5461,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.1484",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5475,7 +5475,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.1170",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5487,7 +5487,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "0.1535",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5499,7 +5499,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 31,
+   "line": 33,
    "token": "6.45",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5511,7 +5511,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5521,7 +5521,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.0254",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5537,7 +5537,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.0197",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5551,7 +5551,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.0313",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5563,7 +5563,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.0174",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5575,7 +5575,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "0.0343",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5587,7 +5587,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 32,
+   "line": 34,
    "token": "2.58",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5599,7 +5599,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5609,7 +5609,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-0.0355",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5625,7 +5625,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-0.0535",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5641,7 +5641,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-0.0200",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5657,7 +5657,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-0.0621",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5669,7 +5669,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-0.0149",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5683,7 +5683,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 33,
+   "line": 35,
    "token": "-1.24",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5698,7 +5698,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5708,7 +5708,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-0.0607",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5723,7 +5723,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-0.0761",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5737,7 +5737,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-0.0466",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5749,7 +5749,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-0.0825",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5761,7 +5761,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-0.0424",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5773,7 +5773,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 34,
+   "line": 36,
    "token": "-2.41",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5785,7 +5785,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5795,7 +5795,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-0.0978",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5811,7 +5811,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-0.1186",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5825,7 +5825,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-0.0770",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5837,7 +5837,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-0.1265",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5849,7 +5849,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-0.0688",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5861,7 +5861,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 35,
+   "line": 37,
    "token": "-2.77",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5873,7 +5873,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5883,7 +5883,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-0.0710",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5898,7 +5898,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-0.0908",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5910,7 +5910,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-0.0517",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5924,7 +5924,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-0.0983",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5938,7 +5938,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-0.0453",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5950,7 +5950,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 36,
+   "line": 38,
    "token": "-2.14",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5962,7 +5962,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 37,
+   "line": 39,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -5972,7 +5972,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 37,
+   "line": 39,
    "token": "0.1710",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5987,7 +5987,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 37,
+   "line": 39,
    "token": "0.1421",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -5999,7 +5999,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 37,
+   "line": 39,
    "token": "0.1303",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6011,7 +6011,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 37,
+   "line": 39,
    "token": "3.55",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6023,7 +6023,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6033,7 +6033,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.0517",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6048,7 +6048,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.0310",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6062,7 +6062,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.0742",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6074,7 +6074,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.0244",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6086,7 +6086,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "0.0830",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6098,7 +6098,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 38,
+   "line": 40,
    "token": "1.40",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6110,7 +6110,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6120,7 +6120,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "-0.1510",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6135,7 +6135,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "-0.1838",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6147,7 +6147,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "-0.1257",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6159,7 +6159,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "-0.1213",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6171,7 +6171,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 39,
+   "line": 41,
    "token": "-3.04",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6183,7 +6183,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 40,
+   "line": 42,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6193,7 +6193,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 40,
+   "line": 42,
    "token": "-0.1674",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6208,7 +6208,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 40,
+   "line": 42,
    "token": "-0.1472",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6220,7 +6220,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 40,
+   "line": 42,
    "token": "-0.1438",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6232,7 +6232,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 40,
+   "line": 42,
    "token": "-4.37",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6244,7 +6244,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6254,7 +6254,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-0.2688",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6269,7 +6269,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-0.3046",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6281,7 +6281,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-0.2354",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6293,7 +6293,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-0.3119",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6305,7 +6305,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-0.2286",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6317,7 +6317,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 41,
+   "line": 43,
    "token": "-4.53",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6329,7 +6329,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6339,7 +6339,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "-0.2238",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6354,7 +6354,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "-0.2554",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6366,7 +6366,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "-0.2589",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6378,7 +6378,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "-0.1895",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6390,7 +6390,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 42,
+   "line": 44,
    "token": "-4.20",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6402,7 +6402,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 44,
+   "line": 46,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6412,7 +6412,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 44,
+   "line": 46,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6422,7 +6422,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 44,
+   "line": 46,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6432,7 +6432,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 50,
+   "line": 52,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6442,7 +6442,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 50,
+   "line": 52,
    "token": "0.0363",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6458,7 +6458,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 50,
+   "line": 52,
    "token": "0.0794",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6473,7 +6473,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 51,
+   "line": 53,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6483,7 +6483,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 51,
+   "line": 53,
    "token": "0.0069",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6499,7 +6499,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 51,
+   "line": 53,
    "token": "0.1883",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6514,7 +6514,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 52,
+   "line": 54,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6524,7 +6524,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 52,
+   "line": 54,
    "token": "-0.1012",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6539,7 +6539,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 52,
+   "line": 54,
    "token": "0.1564",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6555,7 +6555,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 53,
+   "line": 55,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6565,7 +6565,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 53,
+   "line": 55,
    "token": "0.1364",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6581,7 +6581,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 53,
+   "line": 55,
    "token": "0.0254",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6597,7 +6597,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 54,
+   "line": 56,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6607,7 +6607,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 54,
+   "line": 56,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6623,7 +6623,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 54,
+   "line": 56,
    "token": "-0.0607",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6638,7 +6638,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 55,
+   "line": 57,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6648,7 +6648,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 55,
+   "line": 57,
    "token": "-0.0978",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6664,7 +6664,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 55,
+   "line": 57,
    "token": "-0.0710",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6679,7 +6679,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 56,
+   "line": 58,
    "token": "0.01",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6689,7 +6689,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 56,
+   "line": 58,
    "token": "0.1710",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6704,7 +6704,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 56,
+   "line": 58,
    "token": "0.0517",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6719,7 +6719,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 57,
+   "line": 59,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6729,7 +6729,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 57,
+   "line": 59,
    "token": "-0.1510",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6744,7 +6744,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 57,
+   "line": 59,
    "token": "-0.1674",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6759,7 +6759,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 58,
+   "line": 60,
    "token": "0.2",
    "experiment_id": "parameter",
    "result_path": null,
@@ -6769,7 +6769,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 58,
+   "line": 60,
    "token": "-0.2688",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6784,7 +6784,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 58,
+   "line": 60,
    "token": "-0.2238",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -6799,7 +6799,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 64,
+   "line": 66,
    "token": "95 %",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6815,7 +6815,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 66,
+   "line": 68,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6831,7 +6831,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 66,
+   "line": 68,
    "token": "-0.000419",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6846,7 +6846,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 66,
+   "line": 68,
    "token": "-0.000605",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6861,7 +6861,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 66,
+   "line": 68,
    "token": "-0.000263",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6876,7 +6876,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 66,
+   "line": 68,
    "token": "-0.0050",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6892,7 +6892,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 67,
+   "line": 69,
    "token": "0.1630",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6908,7 +6908,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 67,
+   "line": 69,
    "token": "0.002363",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6922,7 +6922,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 67,
+   "line": 69,
    "token": "0.002036",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6936,7 +6936,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 67,
+   "line": 69,
    "token": "0.002722",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6950,7 +6950,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 67,
+   "line": 69,
    "token": "0.0452",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6964,7 +6964,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 68,
+   "line": 70,
    "token": "-0.1162",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6980,7 +6980,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 68,
+   "line": 70,
    "token": "-0.001226",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -6994,7 +6994,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 68,
+   "line": 70,
    "token": "-0.001403",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7008,7 +7008,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 68,
+   "line": 70,
    "token": "-0.001074",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7022,7 +7022,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 68,
+   "line": 70,
    "token": "-0.0048",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7036,7 +7036,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 69,
+   "line": 71,
    "token": "-0.0381",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7052,7 +7052,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 69,
+   "line": 71,
    "token": "-0.000445",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7066,7 +7066,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 69,
+   "line": 71,
    "token": "-0.000641",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7080,7 +7080,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 69,
+   "line": 71,
    "token": "-0.000282",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7094,7 +7094,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 69,
+   "line": 71,
    "token": "-0.0050",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7110,7 +7110,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 70,
+   "line": 72,
    "token": "0.1652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7126,7 +7126,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 70,
+   "line": 72,
    "token": "0.001581",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7141,7 +7141,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 70,
+   "line": 72,
    "token": "0.001489",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7156,7 +7156,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 70,
+   "line": 72,
    "token": "0.001664",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7171,7 +7171,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 70,
+   "line": 72,
    "token": "-0.0101",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7187,7 +7187,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 71,
+   "line": 73,
    "token": "-0.0357",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7203,7 +7203,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 71,
+   "line": 73,
    "token": "0.002818",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7217,7 +7217,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 71,
+   "line": 73,
    "token": "0.002458",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7231,7 +7231,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 71,
+   "line": 73,
    "token": "0.003111",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7245,7 +7245,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 71,
+   "line": 73,
    "token": "0.3142",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7260,7 +7260,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 72,
+   "line": 74,
    "token": "0.0570",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7276,7 +7276,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 72,
+   "line": 74,
    "token": "0.000499",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7290,7 +7290,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 72,
+   "line": 74,
    "token": "0.000435",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7304,7 +7304,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 72,
+   "line": 74,
    "token": "0.000569",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7318,7 +7318,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 72,
+   "line": 74,
    "token": "-0.0100",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7332,7 +7332,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 73,
+   "line": 75,
    "token": "0.1631",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7348,7 +7348,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 73,
+   "line": 75,
    "token": "0.001560",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7362,7 +7362,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 73,
+   "line": 75,
    "token": "0.001467",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7376,7 +7376,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 73,
+   "line": 75,
    "token": "0.001650",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7391,7 +7391,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 73,
+   "line": 75,
    "token": "-0.0101",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7407,7 +7407,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 75,
+   "line": 77,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -7417,7 +7417,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 79,
+   "line": 81,
    "token": "200",
    "experiment_id": "parameter",
    "result_path": null,
@@ -7427,7 +7427,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 83,
+   "line": 85,
    "token": "0.3919",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7439,7 +7439,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 83,
+   "line": 85,
    "token": "1.2292",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7451,7 +7451,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 83,
+   "line": 85,
    "token": "1.4912",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7463,7 +7463,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 83,
+   "line": 85,
    "token": "1.8046",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7475,7 +7475,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 83,
+   "line": 85,
    "token": "0.042",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7491,7 +7491,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 84,
+   "line": 86,
    "token": "0.8860",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7503,7 +7503,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 84,
+   "line": 86,
    "token": "1.2978",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7515,7 +7515,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 84,
+   "line": 86,
    "token": "1.6367",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7527,7 +7527,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 84,
+   "line": 86,
    "token": "1.9125",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7539,7 +7539,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 84,
+   "line": 86,
    "token": "0.163",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7555,7 +7555,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 85,
+   "line": 87,
    "token": "0.3714",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7567,7 +7567,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 85,
+   "line": 87,
    "token": "1.5015",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7579,7 +7579,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 85,
+   "line": 87,
    "token": "2.2116",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7591,7 +7591,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 85,
+   "line": 87,
    "token": "0.059",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -7607,7 +7607,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 86,
+   "line": 88,
    "token": "0.3674",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7619,7 +7619,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 86,
+   "line": 88,
    "token": "1.0916",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7631,7 +7631,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 86,
+   "line": 88,
    "token": "1.3880",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7643,7 +7643,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 86,
+   "line": 88,
    "token": "1.8373",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7655,7 +7655,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 86,
+   "line": 88,
    "token": "0.019",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -7671,7 +7671,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 87,
+   "line": 89,
    "token": "0.3688",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7683,7 +7683,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 87,
+   "line": 89,
    "token": "1.1858",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7695,7 +7695,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 87,
+   "line": 89,
    "token": "1.4961",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7707,7 +7707,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 87,
+   "line": 89,
    "token": "2.2282",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7719,7 +7719,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 87,
+   "line": 89,
    "token": "0.059",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -7735,7 +7735,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 88,
+   "line": 90,
    "token": "0.4924",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7747,7 +7747,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 88,
+   "line": 90,
    "token": "0.6579",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7759,7 +7759,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 88,
+   "line": 90,
    "token": "0.9761",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7771,7 +7771,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 88,
+   "line": 90,
    "token": "1.5441",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7783,7 +7783,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 88,
+   "line": 90,
    "token": "0.000",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7799,7 +7799,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 89,
+   "line": 91,
    "token": "0.4543",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7811,7 +7811,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 89,
+   "line": 91,
    "token": "0.6232",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7823,7 +7823,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 89,
+   "line": 91,
    "token": "0.9076",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7838,7 +7838,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 89,
+   "line": 91,
    "token": "1.3076",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7850,7 +7850,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 89,
+   "line": 91,
    "token": "0.000",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7866,7 +7866,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 90,
+   "line": 92,
    "token": "0.5981",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7880,7 +7880,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 90,
+   "line": 92,
    "token": "0.8025",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7892,7 +7892,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 90,
+   "line": 92,
    "token": "1.2379",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7904,7 +7904,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 90,
+   "line": 92,
    "token": "1.8302",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7916,7 +7916,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 90,
+   "line": 92,
    "token": "0.018",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -7932,7 +7932,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 91,
+   "line": 93,
    "token": "0.5394",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7944,7 +7944,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 91,
+   "line": 93,
    "token": "0.7082",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7956,7 +7956,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 91,
+   "line": 93,
    "token": "1.0765",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7968,7 +7968,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 91,
+   "line": 93,
    "token": "1.4677",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -7980,7 +7980,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 91,
+   "line": 93,
    "token": "0.000",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -7996,7 +7996,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 92,
+   "line": 94,
    "token": "0.5877",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8008,7 +8008,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 92,
+   "line": 94,
    "token": "0.7987",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8020,7 +8020,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 92,
+   "line": 94,
    "token": "1.2465",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8032,7 +8032,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 92,
+   "line": 94,
    "token": "1.7869",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8044,7 +8044,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 92,
+   "line": 94,
    "token": "0.019",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8060,7 +8060,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "0.0082",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8076,7 +8076,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "-0.0233",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8091,7 +8091,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "0.0366",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8105,7 +8105,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "0.1692",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8121,7 +8121,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "0.1692",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8137,7 +8137,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 100,
+   "line": 102,
    "token": "0.1692",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8153,7 +8153,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 101,
+   "line": 103,
    "token": "0.1721",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8167,7 +8167,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 101,
+   "line": 103,
    "token": "0.1192",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8181,7 +8181,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 101,
+   "line": 103,
    "token": "0.0052",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8197,7 +8197,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 101,
+   "line": 103,
    "token": "0.0024",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8213,7 +8213,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 101,
+   "line": 103,
    "token": "0.0092",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8227,7 +8227,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.4138",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8243,7 +8243,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.3466",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8257,7 +8257,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.4513",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8273,7 +8273,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.0777",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8285,7 +8285,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.0582",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8299,7 +8299,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 102,
+   "line": 104,
    "token": "0.1008",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8313,7 +8313,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.9313",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8327,7 +8327,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.9304",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8341,7 +8341,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.9321",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8355,7 +8355,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.3327",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8367,7 +8367,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.3226",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8381,7 +8381,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 103,
+   "line": 105,
    "token": "0.3454",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8395,7 +8395,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.9509",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8407,7 +8407,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.9502",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8422,7 +8422,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.9517",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8436,7 +8436,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.8263",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8448,7 +8448,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.8212",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8462,7 +8462,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 104,
+   "line": 106,
    "token": "0.8297",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8476,7 +8476,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.2819",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8488,7 +8488,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.2530",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8502,7 +8502,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.3100",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8516,7 +8516,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.2946",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8528,7 +8528,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.2680",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8542,7 +8542,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 105,
+   "line": 107,
    "token": "0.3280",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8556,7 +8556,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.9014",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8572,7 +8572,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.9014",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8588,7 +8588,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.9014",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8604,7 +8604,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.6705",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8616,7 +8616,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.6587",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8630,7 +8630,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 106,
+   "line": 108,
    "token": "0.6934",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8644,7 +8644,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 107,
+   "line": 109,
    "token": "0.0618",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8656,7 +8656,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 107,
+   "line": 109,
    "token": "0.0342",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8670,7 +8670,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 107,
+   "line": 109,
    "token": "0.0858",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8684,7 +8684,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 107,
+   "line": 109,
    "token": "0.1208",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8698,7 +8698,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 107,
+   "line": 109,
    "token": "0.2462",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8712,7 +8712,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "0.0674",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8724,7 +8724,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "0.0257",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8738,7 +8738,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "0.1215",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8752,7 +8752,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "-0.0061",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8764,7 +8764,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "-0.0122",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8779,7 +8779,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 108,
+   "line": 110,
    "token": "0.0064",
    "experiment_id": "M4-exploratory",
    "result_path": "results/exploratory/M4-confounders/confounders.json",
@@ -8795,7 +8795,7 @@
   },
   {
    "document": "research/paper/supplementary.md",
-   "line": 129,
+   "line": 131,
    "token": "560",
    "experiment_id": "derived",
    "result_path": null,
@@ -18436,7 +18436,7 @@
   },
   {
    "document": "README.md",
-   "line": 16,
+   "line": 18,
    "token": "95 %",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18452,7 +18452,7 @@
   },
   {
    "document": "README.md",
-   "line": 18,
+   "line": 20,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18468,7 +18468,7 @@
   },
   {
    "document": "README.md",
-   "line": 18,
+   "line": 20,
    "token": "-0.0535",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18484,7 +18484,7 @@
   },
   {
    "document": "README.md",
-   "line": 18,
+   "line": 20,
    "token": "-0.0200",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18500,7 +18500,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "360",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18515,7 +18515,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -18525,7 +18525,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.0069",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18541,7 +18541,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "-0.0130",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18555,7 +18555,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.0303",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18569,7 +18569,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.1883",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18584,7 +18584,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.1598",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18596,7 +18596,7 @@
   },
   {
    "document": "README.md",
-   "line": 19,
+   "line": 21,
    "token": "0.2196",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -18608,7 +18608,7 @@
   },
   {
    "document": "README.md",
-   "line": 20,
+   "line": 22,
    "token": "4,951",
    "experiment_id": "data",
    "result_path": "data/fma_calibration_v1.json",
@@ -18624,7 +18624,7 @@
   },
   {
    "document": "README.md",
-   "line": 20,
+   "line": 22,
    "token": "0.1652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18640,7 +18640,7 @@
   },
   {
    "document": "README.md",
-   "line": 20,
+   "line": 22,
    "token": "0.1560",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18656,7 +18656,7 @@
   },
   {
    "document": "README.md",
-   "line": 20,
+   "line": 22,
    "token": "0.1735",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18672,7 +18672,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.5118",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18684,7 +18684,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.4883",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18696,7 +18696,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.5336",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18708,7 +18708,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.6796",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18720,7 +18720,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.6652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18732,7 +18732,7 @@
   },
   {
    "document": "README.md",
-   "line": 21,
+   "line": 23,
    "token": "0.6925",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18744,7 +18744,7 @@
   },
   {
    "document": "README.md",
-   "line": 30,
+   "line": 32,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18756,57 +18756,57 @@
     "results/EXP-002/analysis/analysis.json#/integrity/result_files",
     "results/EXP-004/analysis/analysis.json#/integrity/planned_runs",
     "results/EXP-004/analysis/analysis.json#/integrity/result_files"
-   ]
-  },
-  {
-   "document": "README.md",
-   "line": 30,
-   "token": "100",
-   "experiment_id": "EXP-002",
-   "result_path": "results/EXP-002/analysis/analysis.json",
-   "json_path": "/integrity/planned_runs",
-   "metric": "planned_runs",
-   "context_experiment": "EXP-002",
-   "n_matches": 5,
-   "other_matches": [
-    "results/EXP-002/analysis/analysis.json#/integrity/result_files",
-    "results/EXP-004/analysis/analysis.json#/integrity/planned_runs",
-    "results/EXP-004/analysis/analysis.json#/integrity/result_files"
-   ]
-  },
-  {
-   "document": "README.md",
-   "line": 31,
-   "token": "360",
-   "experiment_id": "EXP-003",
-   "result_path": "results/EXP-003/analysis/analysis.json",
-   "json_path": "/integrity/planned_runs",
-   "metric": "planned_runs",
-   "context_experiment": "EXP-003",
-   "n_matches": 3,
-   "other_matches": [
-    "results/EXP-003/analysis/analysis.json#/integrity/result_files",
-    "results/exploratory/EXP-001/report/summary.json#/timing/projection/EXP-003/runs"
-   ]
-  },
-  {
-   "document": "README.md",
-   "line": 31,
-   "token": "360",
-   "experiment_id": "EXP-003",
-   "result_path": "results/EXP-003/analysis/analysis.json",
-   "json_path": "/integrity/planned_runs",
-   "metric": "planned_runs",
-   "context_experiment": "EXP-003",
-   "n_matches": 3,
-   "other_matches": [
-    "results/EXP-003/analysis/analysis.json#/integrity/result_files",
-    "results/exploratory/EXP-001/report/summary.json#/timing/projection/EXP-003/runs"
    ]
   },
   {
    "document": "README.md",
    "line": 32,
+   "token": "100",
+   "experiment_id": "EXP-002",
+   "result_path": "results/EXP-002/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-002",
+   "n_matches": 5,
+   "other_matches": [
+    "results/EXP-002/analysis/analysis.json#/integrity/result_files",
+    "results/EXP-004/analysis/analysis.json#/integrity/planned_runs",
+    "results/EXP-004/analysis/analysis.json#/integrity/result_files"
+   ]
+  },
+  {
+   "document": "README.md",
+   "line": 33,
+   "token": "360",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-003",
+   "n_matches": 3,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/integrity/result_files",
+    "results/exploratory/EXP-001/report/summary.json#/timing/projection/EXP-003/runs"
+   ]
+  },
+  {
+   "document": "README.md",
+   "line": 33,
+   "token": "360",
+   "experiment_id": "EXP-003",
+   "result_path": "results/EXP-003/analysis/analysis.json",
+   "json_path": "/integrity/planned_runs",
+   "metric": "planned_runs",
+   "context_experiment": "EXP-003",
+   "n_matches": 3,
+   "other_matches": [
+    "results/EXP-003/analysis/analysis.json#/integrity/result_files",
+    "results/exploratory/EXP-001/report/summary.json#/timing/projection/EXP-003/runs"
+   ]
+  },
+  {
+   "document": "README.md",
+   "line": 34,
    "token": "100",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18822,7 +18822,7 @@
   },
   {
    "document": "README.md",
-   "line": 32,
+   "line": 34,
    "token": "100",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18838,7 +18838,7 @@
   },
   {
    "document": "README.md",
-   "line": 56,
+   "line": 58,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18854,7 +18854,7 @@
   },
   {
    "document": "README.md",
-   "line": 68,
+   "line": 70,
    "token": "4.0",
    "experiment_id": "licence",
    "result_path": null,
@@ -18864,7 +18864,7 @@
   },
   {
    "document": "README.md",
-   "line": 72,
+   "line": 74,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -18884,7 +18884,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 24,
+   "line": 25,
    "token": "4.0",
    "experiment_id": "licence",
    "result_path": null,
@@ -18894,7 +18894,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18910,7 +18910,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "95 %",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18926,7 +18926,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "-0.0535",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18942,7 +18942,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "-0.0200",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -18958,7 +18958,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "0.1652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18974,7 +18974,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "0.1560",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -18990,7 +18990,7 @@
   },
   {
    "document": "CITATION.cff",
-   "line": 26,
+   "line": 28,
    "token": "0.1735",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19006,7 +19006,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 14,
+   "line": 16,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19022,7 +19022,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 14,
+   "line": 16,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -19032,7 +19032,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 22,
+   "line": 24,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -19042,7 +19042,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 22,
+   "line": 24,
    "token": "4,951",
    "experiment_id": "data",
    "result_path": "data/fma_calibration_v1.json",
@@ -19058,7 +19058,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 26,
+   "line": 28,
    "token": "-0.0355",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19074,7 +19074,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 26,
+   "line": 28,
    "token": "95 %",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19090,7 +19090,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 26,
+   "line": 28,
    "token": "-0.0535",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19106,7 +19106,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 26,
+   "line": 28,
    "token": "-0.0200",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19122,7 +19122,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "0.0069",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19138,7 +19138,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "-0.0130",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19152,7 +19152,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "0.0303",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19166,7 +19166,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "0.1883",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19181,7 +19181,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "0.1598",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19193,7 +19193,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 28,
+   "line": 30,
    "token": "0.2196",
    "experiment_id": "EXP-003",
    "result_path": "results/EXP-003/analysis/analysis.json",
@@ -19205,7 +19205,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 30,
+   "line": 32,
    "token": "0.1652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19221,7 +19221,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 30,
+   "line": 32,
    "token": "0.1560",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19237,7 +19237,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 30,
+   "line": 32,
    "token": "0.1735",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19253,7 +19253,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.5118",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19265,7 +19265,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.4883",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19277,7 +19277,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.5336",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19289,7 +19289,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.6796",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19301,7 +19301,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.6652",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19313,7 +19313,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 32,
+   "line": 34,
    "token": "0.6925",
    "experiment_id": "EXP-004",
    "result_path": "results/EXP-004/analysis/analysis.json",
@@ -19325,7 +19325,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 34,
+   "line": 36,
    "token": "1.1119",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
@@ -19340,7 +19340,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 40,
+   "line": 42,
    "token": "0.05",
    "experiment_id": "parameter",
    "result_path": null,
@@ -19350,7 +19350,7 @@
   },
   {
    "document": "articles/medium.md",
-   "line": 40,
+   "line": 42,
    "token": "100",
    "experiment_id": "EXP-002",
    "result_path": "results/EXP-002/analysis/analysis.json",
