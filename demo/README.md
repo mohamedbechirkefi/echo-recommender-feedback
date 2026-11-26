@@ -12,14 +12,14 @@ A static research page for ECHO: overview and status, the published results with
 
 ## Identity and motion
 
-The page has its own brand: a record sleeve and liner notes (plan and review in `DESIGN.md`). The hero illustration (a disc sliding out of its sleeve and a tonearm swinging in, once, under 2.5 s) is labelled "Illustration, not study data" and shows no number. The key-result figure draws each policy's published mean drift as a literal angle on a quarter record, with its 95 % interval along the policy's own groove; its needles swing to the published angles once when scrolled into view. With reduced motion, everything renders in its final state. Brand files (mark, lockups, favicon, Open Graph image) are in `public/brand/`; the Open Graph image is rendered from `tools/og/og.html` with Chrome headless. No audio is played; the record imagery is a visual metaphor.
+The page has its own brand: a record sleeve and liner notes (plan and review in `DESIGN.md`). The hero illustration (a disc sliding out of its sleeve and a tonearm swinging in, once, in under three seconds) is labelled "Illustration, not study data" and shows no number. The key-result figure draws each policy's published mean drift as a literal angle on a quarter record, with its 95 % interval along the policy's own groove; its needles swing to the published angles once when scrolled into view. With reduced motion, everything renders in its final state. Brand files (mark, lockups, favicon, Open Graph image) are in `public/brand/`; the Open Graph image is rendered from `tools/og/og.html` with Chrome headless. No audio is played; the record imagery is a visual metaphor.
 
 ## Third-party notes
 
 | Component | Version | Licence | Use |
 |---|---|---|---|
-| Gloock (Duarte Pinto), via `@fontsource/gloock` | 5.3.0 | SIL Open Font License 1.1 | display type, its single weight 400, Latin subset, imported in `src/main.tsx`, self-hosted; also used by `tools/og/og.html` |
-| Source Serif 4 (Frank Grießhammer, Adobe), via `@fontsource/source-serif-4` | 5.3.1 | SIL Open Font License 1.1 | body text, tables and charts, weights 400 and 600, Latin subset, self-hosted |
+| Gloock (Duarte Pinto), via `@fontsource/gloock` | 5.3.0 | SIL Open Font License 1.1 | display type, its single regular weight, Latin subset, imported in `src/main.tsx`, self-hosted; also used by `tools/og/og.html` |
+| Source Serif 4 (Frank Grießhammer, Adobe), via `@fontsource/source-serif-4` | 5.3.1 | SIL Open Font License 1.1 | body text, tables and charts, regular and semibold weights, Latin subset, self-hosted |
 
 ## Commands
 
