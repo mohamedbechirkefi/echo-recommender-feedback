@@ -2,15 +2,8 @@
 /* ECHO identity: record sleeve and liner notes. Lilac-white inner-sleeve paper,
    a plum sleeve band, vinyl objects and a rose label. Plan: demo/DESIGN.md.
    Fonts are self-hosted (nothing is fetched). */
-/* Bodoni Moda (OFL 1.1), Fontsource variable package, Latin subset only, weight and optical-size axes. */
-@font-face {
-  font-family: 'Bodoni Moda Variable';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400 900;
-  src: url(../node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-opsz-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}:root {
+/* Gloock (OFL 1.1) comes from the Fontsource package, Latin subset, its single weight 400 (imported in main.tsx). */
+:root {
   --paper: #f4f1f7; --card: #fbfafc; --ink: #24182c; --muted: #55495e; --line: #d8cfe0; --line-strong: #8d7f99;
   --plum: #4a2259; --plum-lift: #5e2d70; --vinyl: #1e1a22; --vinyl-lift: #2b2433; --rose: #f29cb7; --lilac: #c9b8d6;
   --link: #6b2f7d; --focus: #6b2f7d;
@@ -18,7 +11,7 @@
   --pol-RAND: #5a5650; --pol-POP: #8a5a00; --pol-SIM: #b3261e; --pol-MMR: #1f5f8b; --pol-EXPLORE: #2e7d4f;
   --measured: #12406b; --explor: #6a3d00; --sandbox: #7a1f5c; --assume: #3d4f2a;
   --error-bg: #fdecec; --error-fg: #8a1111;
-  --display: "Bodoni Moda Variable", "Didot", "Bodoni 72", Georgia, serif;
+  --display: "Gloock", "Didot", "Bodoni 72", Georgia, serif;
   --text: "Source Serif 4", "Iowan Old Style", Georgia, serif;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   color-scheme: light;
@@ -28,8 +21,7 @@ html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 18px/1.62 var(--text); font-variant-numeric: tabular-nums; overflow-wrap: break-word; }
 .wrap { max-width: 70rem; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 48rem) { .wrap { padding: 0 32px; } }
-h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.12; color: inherit; }
-h3 { font-weight: 700; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; font-synthesis: none; line-height: 1.14; color: inherit; }
 p, li, dd, figcaption { max-width: 66ch; }
 a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
@@ -54,7 +46,7 @@ nav::-webkit-scrollbar { display: none; }
 .hero { background: var(--plum); color: #f4f1f7; overflow: hidden; }
 .hero-grid { display: grid; gap: 1.5rem; padding-top: 2.5rem; padding-bottom: 2.5rem; align-items: center; }
 @media (min-width: 60rem) { .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 3rem; padding-top: 4rem; padding-bottom: 4rem; } }
-.hero h1 { font-size: clamp(2rem, 4.2vw, 3.15rem); line-height: 1.06; margin: 0 0 1.25rem; max-width: 22ch; letter-spacing: -0.005em; }
+.hero h1 { font-size: clamp(1.9rem, 3.9vw, 2.95rem); line-height: 1.1; margin: 0 0 1.25rem; max-width: 22ch; letter-spacing: 0.004em; }
 .hero .answer { font-size: clamp(1.15rem, 1.9vw, 1.4rem); line-height: 1.5; margin: 0 0 1.25rem; max-width: 40ch; color: #eee6f3; }
 .hero .byline { color: var(--lilac); font-size: 0.98rem; margin: 0; max-width: 52ch; }
 .hero-art { margin: 0; }
@@ -81,8 +73,8 @@ nav::-webkit-scrollbar { display: none; }
 
 /* Sections. */
 .wrap > section:not(.sandbox) { padding: 3rem 0 1.5rem; border-bottom: 1px solid var(--line); }
-section h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); margin: 0.4rem 0 0.9rem; }
-h3.sub { margin-top: 2.25rem; font-size: 1.35rem; }
+section h2 { font-size: clamp(1.7rem, 3.2vw, 2.35rem); letter-spacing: 0.004em; margin: 0.4rem 0 0.9rem; }
+h3.sub { margin-top: 2.25rem; font-size: 1.3rem; }
 .lede { font-size: 1.12rem; }
 .status-label { color: var(--muted); border-left: 3px solid var(--plum); padding-left: 0.9rem; }
 .note, .meta { color: var(--muted); }
@@ -110,7 +102,7 @@ ul.label-legend li { margin: 0.55rem 0; }
 @media (min-width: 52rem) { .dials { grid-template-columns: 1fr 1fr; } }
 .dial-card { margin: 0; background: var(--vinyl); color: var(--lilac); border-radius: 10px; padding: 1.1rem 1.1rem 1rem;
   --pol-RAND: #d4cfc6; --pol-POP: #e8b04a; --pol-SIM: #ff8a7e; --pol-MMR: #8cc6f2; --pol-EXPLORE: #86d8a6; }
-.dial-title { font: 700 1.2rem/1.2 var(--display); color: #f4f1f7; margin: 0 0 0.5rem; }
+.dial-title { font: 400 1.15rem/1.25 var(--display); letter-spacing: 0.01em; color: #f4f1f7; margin: 0 0 0.5rem; }
 .dial svg { display: block; width: 100%; height: auto; max-width: 30rem; margin: 0 auto; overflow: visible; }
 .dial .disc-q { fill: var(--vinyl-lift); }
 .dial .groove { fill: none; stroke: #3c3446; stroke-width: 1; }
@@ -122,7 +114,7 @@ ul.label-legend li { margin: 0.55rem 0; }
 .dial.pending .groove-pol { opacity: 0; }
 .dial .needle { transform-box: view-box; transform-origin: 30px 296px; transition: transform 900ms var(--ease-out); }
 .dial .needle line { stroke: var(--c); stroke-width: 2; stroke-linecap: round; }
-.dial .needle-label { fill: var(--c); font: 700 13px var(--display); }
+.dial .needle-label { fill: var(--c); font: 400 13px var(--display); font-variant-numeric: tabular-nums; letter-spacing: 0.03em; }
 .dial .hub { fill: var(--rose); }
 ul.dial-legend { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 0.2rem 1rem; font-size: 0.92rem; }
 ul.dial-legend li { display: flex; align-items: center; gap: 0.45rem; color: #ece3f2; }
@@ -131,7 +123,7 @@ ul.dial-legend .num { color: var(--lilac); }
 /* Tables. */
 .table-scroll { overflow-x: auto; max-width: 100%; }
 table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
-caption { text-align: left; font: 700 1.1rem/1.3 var(--display); padding: 0.4rem 0; }
+caption { text-align: left; font: 400 1.08rem/1.3 var(--display); padding: 0.4rem 0; }
 th, td { text-align: left; padding: 0.45rem 0.65rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 thead th { border-bottom: 1.5px solid var(--ink); font-weight: 600; }
 td { white-space: nowrap; }
@@ -153,7 +145,7 @@ figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem; }
 .chart text { fill: var(--ink); font-family: var(--text); font-size: 12px; }
 .chart .tick-label, .chart .decision { fill: var(--muted); font-size: 11px; }
 .chart .axis-title { font-size: 12.5px; font-weight: 600; }
-.chart .group { font-weight: 700; font-size: 13px; font-family: var(--display); }
+.chart .group { font-weight: 400; font-size: 13px; font-family: var(--display); }
 .chart .band { fill: var(--band); }
 .chart .zero, .chart .tick { stroke: var(--muted); stroke-width: 1; }
 .chart .grid { stroke: var(--line); stroke-width: 1; }
@@ -178,7 +170,7 @@ figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem; }
 
 /* Controls. */
 .controls { display: flex; flex-wrap: wrap; gap: 0.9rem 1.5rem; align-items: end; border: 0; padding: 0; margin: 1.25rem 0; }
-.controls legend { font: 700 1.15rem/1.2 var(--display); padding: 0; margin-bottom: 0.4rem; }
+.controls legend { font: 400 1.12rem/1.25 var(--display); padding: 0; margin-bottom: 0.4rem; }
 fieldset.controls > legend { width: 100%; }
 .controls label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.95rem; font-weight: 600; }
 fieldset.radios { border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem 0.8rem; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
@@ -220,7 +212,7 @@ footer.site :focus-visible { outline-color: var(--rose); }
 .foot-brand img { display: block; height: 42px; width: auto; margin-bottom: 0.75rem; }
 .foot-brand p { margin: 0; }
 .foot-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.1rem; align-content: start; }
-.foot-links a { display: inline-flex; align-items: center; min-height: 44px; font: 700 1.15rem/1 var(--display); }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; font: 400 1.12rem/1 var(--display); }
 .foot-notes p { margin: 0 0 0.9rem; break-inside: avoid; }
 
 @media (prefers-reduced-motion: reduce) {

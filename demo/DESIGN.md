@@ -28,12 +28,18 @@ Links on paper are plum `#6B2F7D`.
 
 ## Type
 
-- **Bodoni Moda** (OFL 1.1), weights 500 and 700: headlines and the needle labels. A didone, the face of classical
-  record sleeves and printed programmes; its hairlines echo the needle.
+- **Gloock** (OFL 1.1), its single weight 400: headlines, captions, the needle labels (tabular figures). A
+  high-contrast serif with sharp, bracketed serifs, in the line of record-sleeve and concert-programme
+  titling, so the didone register of the brand stays; it is sturdier than a pure didone at small sizes, so the
+  needle labels and captions hold up on the plum band. Chosen on 2026-11-26 so that no two lab demos share a
+  family (it replaces Bodoni Moda, which another demo now uses). There is one weight, so hierarchy comes from size
+  and colour, and faux bold is disabled (`font-synthesis: none`).
 - **Source Serif 4** (OFL 1.1), weights 400 and 600: liner-notes body, tables and charts, with tabular figures. A
   book face, clearly distinct from the high-contrast display.
 
-Scale (1.25 on an 18 px body): 14.4, 18, 22.5, 28, 35, 44, 55 px. Body 66ch maximum.
+Scale (about 1.25 on an 18 px body): 14.4, 18, 20.7, 23.4, 37.6 (h2), 47.2 px (hero h1). Gloock is wider and has a
+taller x-height than Bodoni Moda and is set tight, so the h1 and h2 were cut by about 6 percent, given slightly open tracking and a
+little more line-height. Body 66ch maximum.
 
 ## Layout
 
@@ -41,7 +47,7 @@ Scale (1.25 on an 18 px body): 14.4, 18, 22.5, 28, 35, 44, 55 px. Body 66ch maxi
 +---------------------------------------------------------------------------+
 | (o) ECHO   Overview  Key result  Results  Taste map  Assumptions  ...      |  sticky, compact
 +=========================== sleeve plum band ===============================+
-| Question (Bodoni 55, pale)             |  [ sleeve ]( disc slides out )   |
+| Question (Gloock 47, pale)             |  [ sleeve ]( disc slides out )   |
 | Answer sentence (Source Serif 22)      |        tonearm swings in         |
 | author line                            |  "Illustration, not study data"  |
 +===========================================================================+

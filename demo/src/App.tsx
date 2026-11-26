@@ -75,7 +75,7 @@ export function App() {
               drafting and this page as a disclosed research and development assistant. It is not an author.
             </p>
             <p>
-              Typefaces: Bodoni Moda (Owen Earl) and Source Serif 4 (Frank Grie&szlig;hammer, Adobe), both under the SIL
+              Typefaces: Gloock (Duarte Pinto) and Source Serif 4 (Frank Grie&szlig;hammer, Adobe), both under the SIL
               Open Font License 1.1, self-hosted. Motion stops when your system asks for reduced motion.
             </p>
           </div>

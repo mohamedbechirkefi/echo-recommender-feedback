@@ -18,7 +18,7 @@ The page has its own brand: a record sleeve and liner notes (plan and review in 
 
 | Component | Version | Licence | Use |
 |---|---|---|---|
-| Bodoni Moda (Owen Earl), via `@fontsource-variable/bodoni-moda` | 5.3.0 | SIL Open Font License 1.1 | display type; Latin subset of the weight and optical-size variable font, declared in `src/style.css`, self-hosted |
+| Gloock (Duarte Pinto), via `@fontsource/gloock` | 5.3.0 | SIL Open Font License 1.1 | display type, its single weight 400, Latin subset, imported in `src/main.tsx`, self-hosted; also used by `tools/og/og.html` |
 | Source Serif 4 (Frank Grießhammer, Adobe), via `@fontsource/source-serif-4` | 5.3.1 | SIL Open Font License 1.1 | body text, tables and charts, weights 400 and 600, Latin subset, self-hosted |
 
 ## Commands

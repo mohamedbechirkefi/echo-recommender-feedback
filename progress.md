@@ -598,3 +598,20 @@ Screenshots (desktop 1440 full page, phone 390 in an iframe wrapper, Chrome head
 **Risks and notes.** The Open Graph image URL is absolute to the hosting address in `demo/README.md`. Full-page desktop screenshots were capped at 16,000 px; the page bottom was checked in a separate viewport shot.
 
 **Next action.** The coordinator deploys the rebuilt demo when the owner approves.
+
+## 2026-11-26: Demo typeface unique across the labs (owner request)
+
+**What changed.** Following `labs/_shared/FONT-UNIQUE-brief.md` (no two lab demos share a family), the display face moved from Bodoni Moda to Gloock; Source Serif 4 stays as the text face. Gloock has one weight (400), so every display rule is set at 400 with `font-synthesis: none`; the hero h1 and section h2 were cut by about 6 percent (Gloock is wider, with a taller x-height), with slightly open tracking because the face is set tight; needle labels keep tabular figures (Gloock has `tnum`). The logo wordmark is geometric paths, not drawn from the display face, so it was not redrawn; the Open Graph image (its headline was set in the display face) was re-rendered. No number, data, fixture, test expectation or accessible name changed.
+
+```
+$ npm uninstall @fontsource-variable/bodoni-moda; npm_config_before=2026-11-12 npm install --save-exact @fontsource/gloock@5.3.0
+$ Chrome headless --window-size=1200,630 tools/og/og.html -> public/brand/og.png (1200 x 630)
+$ npm test                                             Tests 29 passed (29)
+$ npm run build                                        built; 852 KB on disk, 724,022 bytes
+$ node tools/a11y_check.mjs dist                       A11Y-CHECK PASS
+$ PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_demo_export.py   4 passed
+```
+
+Screenshots (desktop 1440 and phone 390, full page, Chrome headless over CDP on local port 5243, server stopped after) were reviewed: a first pass with negative tracking looked cramped in the headline and needle labels; tracking opened slightly. No wrapping or overflow regressions seen.
+
+**Next action.** The coordinator deploys the rebuilt demo when the owner approves.
