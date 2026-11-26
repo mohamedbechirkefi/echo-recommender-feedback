@@ -118,7 +118,7 @@ export function Sandbox() {
         </label>
       </fieldset>
       <div className="buttons">
-        <button type="button" onClick={run} disabled={running}>Run</button>
+        <button type="button" className="primary" onClick={run} disabled={running}>Run</button>
         <button type="button" onClick={cancel} disabled={!running}>Cancel</button>
         <button type="button" onClick={reset}>Reset</button>
         <button type="button" onClick={download} disabled={!result || running}>Download this sandbox output (JSON)</button>
@@ -127,7 +127,7 @@ export function Sandbox() {
       <p aria-live="polite" className="sandbox-out">{message}</p>
       {!result && !running && <p className="note">No sandbox run yet. Choose settings and press Run.</p>}
       {result && p && (
-        <div className="figure-pair">
+        <div className="figure-pair sbx-out">
           <figure>
             <div className="map-wrap">
               <TasteMapSvg tracks={result.tracks}

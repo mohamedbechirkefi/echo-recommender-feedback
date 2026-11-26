@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArmDrift, ContrastForest, DriftCurves, TasteMapSvg } from "./charts";
 import { fmtEstimate, fmtInterval, loadResults, ResultsError, TASTE_POLICIES, type Estimate, type Results } from "./results";
 import { Sandbox } from "./Sandbox";
+import { HeroRecord, NeedleDial } from "./Record";
 
 type State = { kind: "loading" } | { kind: "error"; message: string } | { kind: "ready"; results: Results };
 
@@ -20,42 +21,112 @@ export function App() {
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
-      <header className="site">
-        <div className="wrap">
-          <p className="kicker">ECHO, a pre-registered simulation study of music recommendation</p>
-          <h1>Can recommendation policies change exposure and simulated taste rather than simply reflect it?</h1>
-          <nav aria-label="Sections">
-            <a href="#overview">Overview</a>
-            <a href="#results">Results</a>
-            <a href="#taste-map">Taste map</a>
-            <a href="#assumptions">Assumptions</a>
-            <a href="#method">Method and limitations</a>
-            <a href="#sandbox">Sandbox</a>
-          </nav>
-        </div>
-      </header>
-      <main id="main" className="wrap">
-        {state.kind === "loading" && <p role="status">Loading the published results.</p>}
-        {state.kind === "error" && (
-          <div role="alert" className="panel error">
-            <h2>Results unavailable</h2>
-            <p>The published results file failed validation, so no numbers are shown.</p>
-            <p><code>{state.message}</code></p>
+      <SiteNav />
+      <main id="main">
+        <header className="hero" id="top">
+          <div className="wrap hero-grid">
+            <div className="hero-text">
+              <h1>Can recommendation policies change exposure and simulated taste rather than simply reflect it?</h1>
+              <p className="answer">
+                Within this model, the direction of simulated taste change is not a property of the policy alone; it
+                depends on the update rule, the update rate and the catalogue geometry.
+              </p>
+              <p className="byline">
+                Mohamed Bechir Kefi, independent researcher. A pre-registered simulation study of music
+                recommendation; preprint draft, not peer-reviewed. Simulated preference change is not evidence of
+                human persuasion.
+              </p>
+            </div>
+            <HeroRecord />
           </div>
-        )}
-        {state.kind === "ready" && <Published r={state.results} />}
-        <Sandbox />
+        </header>
+        <div className="wrap">
+          {state.kind === "loading" && <p role="status">Loading the published results.</p>}
+          {state.kind === "error" && (
+            <div role="alert" className="panel error">
+              <h2>Results unavailable</h2>
+              <p>The published results file failed validation, so no numbers are shown.</p>
+              <p><code>{state.message}</code></p>
+            </div>
+          )}
+          {state.kind === "ready" && <Published r={state.results} />}
+          <Sandbox />
+        </div>
       </main>
       <footer className="site">
-        <div className="wrap">
-          <p>
-            Runs offline after the first load. No data about visitors is collected, stored or sent anywhere. Simulated
-            preference change is not evidence of human persuasion. Mohamed Bechir Kefi, independent researcher. Source:
-            https://github.com/mohamedbechirkefi/echo-recommender-feedback.
-          </p>
+        <div className="wrap foot-grid">
+          <div className="foot-brand">
+            <img src="brand/echo-lockup-reversed.svg" alt="ECHO" width="126" height="42" />
+            <p>Mohamed Bechir Kefi, independent researcher. Licence: ECHO Source-Available Non-Commercial Research License v1.0.</p>
+          </div>
+          <ul className="foot-links" aria-label="Links">
+            <li><a href="https://github.com/mohamedbechirkefi/echo-recommender-feedback">Repository on GitHub</a></li>
+            <li><a href="https://github.com/mohamedbechirkefi/echo-recommender-feedback/blob/main/research/paper/manuscript.md">Manuscript (preprint draft)</a></li>
+            <li><a href="https://labs.kefimohamedbechir.workers.dev">All labs</a></li>
+          </ul>
+          <div className="foot-notes">
+            <p>
+              Runs offline after the first load. No data about visitors is collected, stored or sent anywhere. Simulated
+              preference change is not evidence of human persuasion. No audio is played or distributed; the record
+              imagery is a visual metaphor.
+            </p>
+            <p>
+              AI assistance: an AI system (Claude, Anthropic) assisted with research engineering, analysis code,
+              drafting and this page as a disclosed research and development assistant. It is not an author.
+            </p>
+            <p>
+              Typefaces: Bodoni Moda (Owen Earl) and Source Serif 4 (Frank Grie&szlig;hammer, Adobe), both under the SIL
+              Open Font License 1.1, self-hosted. Motion stops when your system asks for reduced motion.
+            </p>
+          </div>
         </div>
       </footer>
     </>
+  );
+}
+
+const NAV: [string, string][] = [
+  ["key-result", "Key result"], ["overview", "Overview"], ["results", "Results"], ["taste-map", "Taste map"],
+  ["assumptions", "Assumptions"], ["method", "Method and limitations"], ["sandbox", "Sandbox"],
+];
+
+function SiteNav() {
+  const [active, setActive] = useState("");
+  const [bar, setBar] = useState<{ x: number; w: number } | null>(null);
+  const links = useRef<Record<string, HTMLAnchorElement | null>>({});
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const vis = new Set<string>();
+    const io = new IntersectionObserver((es) => {
+      for (const e of es) { if (e.isIntersecting) vis.add(e.target.id); else vis.delete(e.target.id); }
+      setActive(NAV.find(([id]) => vis.has(id))?.[0] ?? "");
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    const watch = () => NAV.forEach(([id]) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    watch();
+    const mo = new MutationObserver(watch);
+    mo.observe(document.getElementById("main") ?? document.body, { childList: true, subtree: true });
+    return () => { io.disconnect(); mo.disconnect(); };
+  }, []);
+  useEffect(() => {
+    const a = links.current[active];
+    setBar(a ? { x: a.offsetLeft, w: a.offsetWidth } : null);
+  }, [active]);
+  return (
+    <header className="site">
+      <div className="wrap navbar">
+        <a className="brand" href="#top" aria-label="ECHO, back to the top">
+          <img src="brand/echo-lockup.svg" alt="" width="96" height="32" />
+        </a>
+        <nav aria-label="Sections">
+          <div className="navtrack">
+            {NAV.map(([id, label]) => (
+              <a key={id} href={`#${id}`} ref={(el) => { links.current[id] = el; }} aria-current={active === id ? "location" : undefined}>{label}</a>
+            ))}
+            <span className="nav-ind" aria-hidden="true" style={bar ? { transform: `translateX(${bar.x}px) scaleX(${bar.w / 100})`, opacity: 1 } : { opacity: 0 }} />
+          </div>
+        </nav>
+      </div>
+    </header>
   );
 }
 
@@ -76,6 +147,34 @@ function Published({ r }: { r: Results }) {
   const ex4 = r.experiments.find((x) => x.id === "EXP-004")!;
   return (
     <>
+      <section id="key-result" aria-labelledby="h-key">
+        <p className="tag tag-measured">Measured result</p>
+        <h2 id="h-key">Taste as a needle angle</h2>
+        <p>
+          Drift is the angle between a listener's taste at the start and at the end of a session. Each record below
+          draws the published mean drift of every policy as that angle, with its 95 % interval along the policy's own
+          groove. On the synthetic catalogue SIM sits just short of RAND (SIM minus RAND {pair(p2)} rad); on the real
+          FMA catalogue it sits beyond it ({pair(p4)} rad), the opposite sign.
+        </p>
+        <div className="dials">
+          {(["EXP-002", "EXP-004"] as const).map((exp) => (
+            <figure key={exp} className="dial-card">
+              <figcaption className="dial-title">{exp === "EXP-002" ? "EXP-002, synthetic catalogue" : "EXP-004, real FMA catalogue"}</figcaption>
+              <NeedleDial id={`dial-${exp}`} rows={r.arm_drift[exp]} title={exp === "EXP-002" ? "EXP-002, synthetic catalogue" : "EXP-004, real FMA catalogue"} />
+              <ul className="dial-legend" aria-label={`${exp} policies, outer groove first`}>
+                {r.arm_drift[exp].map((a) => (
+                  <li key={a.policy}><span className={`key-swatch pol-${a.policy}`} aria-hidden="true" /> {a.policy} <span className="num">{a.display} {a.interval_display}</span></li>
+                ))}
+              </ul>
+            </figure>
+          ))}
+        </div>
+        <p className="note">
+          Adaptive preferences, 10 seeds per policy, radians. Grooves run from RAND (outer) to EXPLORE (inner); the two
+          needles are SIM and RAND. RAND itself moves simulated taste.
+        </p>
+      </section>
+
       <section id="overview" aria-labelledby="h-overview">
         <h2 id="h-overview">Overview</h2>
         <p className="status-label">{r.status_label}</p>
@@ -209,7 +308,7 @@ function Published({ r }: { r: Results }) {
             ))}
             <p className="meta">
               Report: <code>{e.report_path}</code>
-              {e.claim_ids.length > 0 ? <> · Claims: {e.claim_ids.join(", ")}</> : <> · No claim rests on this experiment.</>}
+              {e.claim_ids.length > 0 ? <>. Claims: {e.claim_ids.join(", ")}</> : <>. No claim rests on this experiment.</>}
             </p>
           </article>
         ))}
@@ -280,10 +379,11 @@ function TasteMapSection({ r }: { r: Results }) {
       <div className="controls" role="group" aria-label="Taste map controls">
         <div className="toggle-group" role="group" aria-labelledby="tm-policy-label">
           <span id="tm-policy-label" className="group-label">Policy (compared with RAND)</span>
-          <div className="buttons">
+          <div className="buttons seg">
             {TASTE_POLICIES.map((p) => (
               <button key={p} type="button" className="toggle" aria-pressed={policy === p} onClick={() => setPolicy(p)}>{p}</button>
             ))}
+            <span className="seg-ind" aria-hidden="true" style={{ width: `calc((100% - 8px) / ${TASTE_POLICIES.length})`, transform: `translateX(${Math.max(0, TASTE_POLICIES.indexOf(policy as never)) * 100}%)` }} />
           </div>
         </div>
         <label>

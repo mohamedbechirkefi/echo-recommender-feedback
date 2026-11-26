@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0
 // Hand-written SVG charts. Colours come from CSS classes (style.css), so both
 // colour schemes stay legible. Every chart has a text description next to it.
+import { useRef } from "react";
 import type { ArmRow, ChartRow } from "./results";
+import { useInView } from "./Record";
 
 const nice = (lo: number, hi: number, n = 6): number[] => {
   const step0 = (hi - lo) / n;
@@ -158,8 +160,10 @@ export function DriftCurves({ series, label, yMax }: { series: { policy: string;
   const y = (v: number) => top + (1 - v / ymax) * (H - top - bottom);
   const ends = series.map((s) => ({ s, yy: y(s.values[s.values.length - 1]) })).sort((a, b) => a.yy - b.yy);
   for (let i = 1; i < ends.length; i++) ends[i].yy = Math.max(ends[i].yy, ends[i - 1].yy + 14);
+  const ref = useRef<SVGSVGElement>(null);
+  const seen = useInView(ref);
   return (
-    <svg className="chart curves" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label}>
+    <svg ref={ref} className={`chart curves${seen ? "" : " pending"}`} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label}>
       {nice(0, ymax, 4).map((t) => (
         <g key={t}>
           <line className="grid" x1={left} x2={W - right} y1={y(t)} y2={y(t)} />
@@ -171,9 +175,11 @@ export function DriftCurves({ series, label, yMax }: { series: { policy: string;
       ))}
       <text className="axis-title" x={(left + W - right) / 2} y={H - 4} textAnchor="middle">session step</text>
       <text className="axis-title" x={12} y={top + 4} transform={`rotate(-90 12 ${top + 4})`} textAnchor="end">mean drift (rad)</text>
+      <g className="lines">
       {series.map((s) => (
         <polyline key={s.policy} className={`line pol-${s.policy}`} points={s.values.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ")} />
       ))}
+      </g>
       {ends.map(({ s, yy }) => (
         <text key={s.policy} className={`end-label pol-${s.policy}`} x={W - right + 6} y={yy + 4}>{s.policy}</text>
       ))}

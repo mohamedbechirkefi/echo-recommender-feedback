@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 256" role="img" aria-label="ECHO"><title>ECHO</title>
+  <!-- SPDX-License-Identifier: LicenseRef-ECHO-NC-Research-1.0 -->
+  <path fill="#1E1A22" d="M177.83,27.69 A112,112 0 1 0 189.95,34.69 L174.91,60.75 A82,82 0 1 1 162.79,53.75 Z M156.76,64.18 A70,70 0 1 0 168.89,71.18 L155.78,93.88 A44,44 0 1 1 143.66,86.88 Z"/>
+  <path fill="#F29CB7" fill-rule="evenodd" d="M98,128 a30,30 0 1 0 60,0 a30,30 0 1 0 -60,0 Z M120,128 a8,8 0 1 1 16,0 a8,8 0 1 1 -16,0 Z"/>
+  <g fill="#24182C" fill-rule="evenodd"><g transform="translate(296 0)"><path d="M0,56 H32 V200 H0 Z M32,56 H90 V68 H32 Z M32,122 H80 V134 H32 Z M32,188 H94 V200 H32 Z"/></g><g transform="translate(408 0)"><path d="M94.13,79.82 A54,72 0 1 0 94.13,176.18 L74.81,168.15 A28,60 0 1 1 74.81,87.85 Z"/></g><g transform="translate(534 0)"><path d="M0,56 H32 V200 H0 Z M76,56 H108 V200 H76 Z M32,122 H76 V134 H32 Z"/></g><g transform="translate(660 0)"><path d="M54,56 A54,72 0 1 0 54,200 A54,72 0 1 0 54,56 Z M54,68 A28,60 0 1 1 54,188 A28,60 0 1 1 54,68 Z"/></g></g>
+</svg>

@@ -567,3 +567,34 @@ Every source of a PDF changed, so no PDF was restored. Inspected as PNG (60 ppi)
 Scans: absolute home paths in tracked files: 2, both in this file's M0 entry (append-only). Owner placeholders remaining: none. The built page loads nothing that is not same-origin (CSP `default-src 'self'`, a11y check).
 
 Open for the owner: B15 articles, B16 full-text review and sign-off, B18 release. Next action: the coordinator's push and Cloudflare deploy; then the owner's review.
+
+## 2026-11-26: Demo brand identity, motion and UI redesign (owner request)
+
+Authority: owner request of 2026-11-26 (shared brief `labs/_shared/DEMO-BRAND-brief.md`). Presentation only: no number, result, exported data, fixture, test expectation, scientific sentence, test id or accessible name changed; the page reads the same `public/data/results.json`. No push, no deploy.
+
+**Decisions.** Direction: record sleeve and liner notes (`demo/DESIGN.md`, with the review against the generic tells and the other demos; the previous warm-paper and brick-red look was itself one of the tells). New "Key result" section: per-policy mean drift from `arm_drift` (EXP-002 and EXP-004) drawn as literal angles on a quarter record, with intervals and a text list of every value; the hero illustration shows no number and is labelled "Illustration, not study data". The hero answer sentence is the manuscript abstract's last sentence. Footer gains the licence line, the AI-use line (from the manuscript's author metadata), links (repository, manuscript, labs index) and font credits. Light scheme only. The taste-map policy toggles keep their buttons and `aria-pressed`; a sliding indicator was added behind them.
+
+**Changed files.** `demo/DESIGN.md` (new), `demo/README.md` (identity and third-party notes), `demo/index.html` (description, favicon, theme colour, Open Graph), `demo/package.json` and `package-lock.json` (two Fontsource packages), `demo/src/App.tsx`, `demo/src/Record.tsx` (new), `demo/src/charts.tsx` (drift-curve reveal wrapper only), `demo/src/Sandbox.tsx` (class names only), `demo/src/main.tsx`, `demo/src/style.css`, `demo/public/brand/` (mark, mono, reversed, lockups, favicon SVG and 32 px PNG, `og.png`), `demo/tools/og/og.html` (new, source of `og.png`).
+
+**Commands and actual outputs.**
+
+```
+$ npm_config_before=2026-11-12 npm install --save-exact @fontsource-variable/bodoni-moda@5.3.0 @fontsource/source-serif-4@5.3.1
+                                                       added 1 package; added 2 packages (static @fontsource/bodoni-moda 5.3.0 tried first, then removed for the optical-size axis)
+$ python3 -I svg_audit.py public/brand/*.svg           6 files, 100/100 each (first draft 92/100: slit at 58 degrees flagged as a near-miss angle, snapped to 60)
+$ render_png.py favicon.svg --size 32                  favicon.png 32x32 via chrome (copied to favicon-32.png)
+$ Chrome headless --window-size=1200,630 tools/og/og.html -> public/brand/og.png (1200 x 630)
+$ npm test                                             Test Files 2 passed (2); Tests 29 passed (29)
+$ npm run build                                        built in 119ms
+$ node tools/a11y_check.mjs dist                       first run: FAIL no horizontal page scroll at 360 px (overflow 35px, the five-button policy control);
+                                                       after the fix: 9 PASS lines; A11Y-CHECK PASS
+$ PYTHONPATH=src .venv/bin/python -m pytest -q tests/test_demo_export.py
+                                                       4 passed in 8.94s
+$ du -sk dist; total bytes                             848 KB on disk; 725,646 bytes (including .woff fallbacks a modern browser does not fetch)
+```
+
+Screenshots (desktop 1440 full page, phone 390 in an iframe wrapper, Chrome headless over CDP after the hero animation) were reviewed in two critique passes: display face switched to the optical-size variable cut (the static cut rendered with low contrast at headline size), headline shortened, a circular clip on the taste map removed (it hid path ends), pill badges squared, phone panel padding reduced.
+
+**Risks and notes.** The Open Graph image URL is absolute to the hosting address in `demo/README.md`. Full-page desktop screenshots were capped at 16,000 px; the page bottom was checked in a separate viewport shot.
+
+**Next action.** The coordinator deploys the rebuilt demo when the owner approves.

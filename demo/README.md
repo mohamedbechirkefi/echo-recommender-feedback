@@ -10,6 +10,17 @@ A static research page for ECHO: overview and status, the published results with
 - **Sandbox output:** produced in the browser from the visitor's settings by a port of the session loop (`src/engine.ts`) in a Web Worker. Given the same random inputs, the port reproduces the Python engine's slates and choices exactly and its preferences and metrics within 1e-9 (`src/engine.test.ts`, fixture `src/fixtures/engine_fixture.json`). The sandbox world is smaller (300 tracks, 40 listeners, 60 steps) and uses its own random-number generator, so a sandbox seed does not reproduce any research seed.
 - **Assumption:** model parameters fixed by the frozen protocol.
 
+## Identity and motion
+
+The page has its own brand: a record sleeve and liner notes (plan and review in `DESIGN.md`). The hero illustration (a disc sliding out of its sleeve and a tonearm swinging in, once, under 2.5 s) is labelled "Illustration, not study data" and shows no number. The key-result figure draws each policy's published mean drift as a literal angle on a quarter record, with its 95 % interval along the policy's own groove; its needles swing to the published angles once when scrolled into view. With reduced motion, everything renders in its final state. Brand files (mark, lockups, favicon, Open Graph image) are in `public/brand/`; the Open Graph image is rendered from `tools/og/og.html` with Chrome headless. No audio is played; the record imagery is a visual metaphor.
+
+## Third-party notes
+
+| Component | Version | Licence | Use |
+|---|---|---|---|
+| Bodoni Moda (Owen Earl), via `@fontsource-variable/bodoni-moda` | 5.3.0 | SIL Open Font License 1.1 | display type; Latin subset of the weight and optical-size variable font, declared in `src/style.css`, self-hosted |
+| Source Serif 4 (Frank Grießhammer, Adobe), via `@fontsource/source-serif-4` | 5.3.1 | SIL Open Font License 1.1 | body text, tables and charts, weights 400 and 600, Latin subset, self-hosted |
+
 ## Commands
 
 Node from a local install (the project used Node 22); dependencies are pinned in `package-lock.json`.

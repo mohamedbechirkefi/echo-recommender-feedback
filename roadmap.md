@@ -92,6 +92,7 @@ Target: five focused development days. The schedule is an estimate, never a reas
 - [x] Secret, personal-data and licence scan (`release_checklist.md`; `dependency_licences.md`).
 - [ ] Owner review checklist completed: prepared for the owner (`author_review.md`, M6 section); open until the owner signs it off.
 - [ ] Nothing pushed without approval: nothing was pushed, tagged or released in M6. The coordinator pushed the repository on the owner's approval on 2026-11-25 (it is public); no tag or release exists, so the item stays open until the owner's release decision.
+- Update (2026-11-26): demo given its own brand identity, motion and UI (owner request, `demo/DESIGN.md`); same data, tests and A11Y-CHECK PASS.
 
 ## Cut order if the five-day target is threatened
 
